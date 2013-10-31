@@ -1,29 +1,26 @@
 //
-//  DNALattice.m
-//  GCDTests
+//  DNALattice3D.m
+//  CocoaGCDTests
 //
-//  Created by Christos Sotiriou on 30/10/13.
+//  Created by Christos Sotiriou on 31/10/13.
 //  Copyright (c) 2013 Oramind. All rights reserved.
 //
 
-#import "DNALattice.h"
+#import "DNALattice3D.h"
 
-@interface DNALattice ()
-
+@interface DNALattice3D ()
 @property (nonatomic) void *cube3d;
-
-
 @end
 
-@implementation DNALattice
+@implementation DNALattice3D
 
 - (id)copyWithZone:(NSZone *)zone
 {
-	DNALattice *result = [[DNALattice alloc] init];
+	DNALattice3D *result = [[DNALattice3D alloc] init];
 	return result;
 }
 
-- (DNALattice *)initWithSideNumber:(int)sideNumber andChar:(char)c
+- (id)initWithSideNumber:(int)sideNumber andChar:(char)c
 {
 	if (self = [super init]) {
 		_sideNumber = sideNumber;
@@ -62,7 +59,6 @@
 
 - (void)copyMemoryFrom:(char ***)origin to:(char***)dest
 {
-	char (*p)[self.sideNumber][self.sideNumber] = _cube3d;
 	//incomplete
 }
 
@@ -76,6 +72,5 @@
 {
     [self deleteCubeInternals];
 }
-
 
 @end

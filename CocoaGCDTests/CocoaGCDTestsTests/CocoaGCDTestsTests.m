@@ -7,6 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "DNALattice1d.h"
+
+@interface DNALattice1d (ext)
+@property (nonatomic, readonly) char *cube3d;
+@end
 
 @interface CocoaGCDTestsTests : XCTestCase
 
@@ -18,6 +23,7 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+
 }
 
 - (void)tearDown
@@ -26,9 +32,13 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testCreation
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+	const char alpha[8] = {'0','1','2','3','4','5','6','7'};
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:2 andChar:0];
+	[lattice copyData:alpha ofSize:8];
+	
+
 }
 
 @end

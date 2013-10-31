@@ -20,8 +20,10 @@
 		0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */; };
 		0699104B1821C41000290809 /* PatternMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcher.m */; };
 		0699104C1821C41000290809 /* PatternMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcher.m */; };
-		0699104D1821C41000290809 /* DNALattice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699104A1821C41000290809 /* DNALattice.m */; };
-		0699104E1821C41000290809 /* DNALattice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699104A1821C41000290809 /* DNALattice.m */; };
+		06F511FD18225E8E004591F9 /* DNALattice1d.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F511FC18225E8E004591F9 /* DNALattice1d.m */; };
+		06F511FE18225E8E004591F9 /* DNALattice1d.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F511FC18225E8E004591F9 /* DNALattice1d.m */; };
+		06F5120218225EF9004591F9 /* DNALattice3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5120118225EF9004591F9 /* DNALattice3D.m */; };
+		06F5120318225EF9004591F9 /* DNALattice3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5120118225EF9004591F9 /* DNALattice3D.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +58,11 @@
 		0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaGCDTestsTests.m; sourceTree = "<group>"; };
 		069910471821C41000290809 /* PatternMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcher.h; sourceTree = "<group>"; };
 		069910481821C41000290809 /* PatternMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcher.m; sourceTree = "<group>"; };
-		069910491821C41000290809 /* DNALattice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNALattice.h; sourceTree = "<group>"; };
-		0699104A1821C41000290809 /* DNALattice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNALattice.m; sourceTree = "<group>"; };
+		06F511FB18225E8E004591F9 /* DNALattice1d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNALattice1d.h; sourceTree = "<group>"; };
+		06F511FC18225E8E004591F9 /* DNALattice1d.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNALattice1d.m; sourceTree = "<group>"; };
+		06F5120018225EF9004591F9 /* DNALattice3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNALattice3D.h; sourceTree = "<group>"; };
+		06F5120118225EF9004591F9 /* DNALattice3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNALattice3D.m; sourceTree = "<group>"; };
+		06F5120418225F10004591F9 /* LatticeCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeCommon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +130,7 @@
 			children = (
 				069910471821C41000290809 /* PatternMatcher.h */,
 				069910481821C41000290809 /* PatternMatcher.m */,
-				069910491821C41000290809 /* DNALattice.h */,
-				0699104A1821C41000290809 /* DNALattice.m */,
+				06F511FF18225EE4004591F9 /* Lattices */,
 				069910251821C3FE00290809 /* AppDelegate.h */,
 				069910261821C3FE00290809 /* AppDelegate.m */,
 				069910281821C3FE00290809 /* MainMenu.xib */,
@@ -164,6 +168,18 @@
 				0699103A1821C3FE00290809 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06F511FF18225EE4004591F9 /* Lattices */ = {
+			isa = PBXGroup;
+			children = (
+				06F5120418225F10004591F9 /* LatticeCommon.h */,
+				06F511FB18225E8E004591F9 /* DNALattice1d.h */,
+				06F511FC18225E8E004591F9 /* DNALattice1d.m */,
+				06F5120018225EF9004591F9 /* DNALattice3D.h */,
+				06F5120118225EF9004591F9 /* DNALattice3D.m */,
+			);
+			name = Lattices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,10 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0699104D1821C41000290809 /* DNALattice.m in Sources */,
+				06F5120218225EF9004591F9 /* DNALattice3D.m in Sources */,
 				069910271821C3FE00290809 /* AppDelegate.m in Sources */,
 				0699104B1821C41000290809 /* PatternMatcher.m in Sources */,
 				069910201821C3FE00290809 /* main.m in Sources */,
+				06F511FD18225E8E004591F9 /* DNALattice1d.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */,
-				0699104E1821C41000290809 /* DNALattice.m in Sources */,
 				0699104C1821C41000290809 /* PatternMatcher.m in Sources */,
+				06F511FE18225E8E004591F9 /* DNALattice1d.m in Sources */,
+				06F5120318225EF9004591F9 /* DNALattice3D.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +498,7 @@
 				069910431821C3FE00290809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		069910441821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCDTestsTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +507,7 @@
 				069910461821C3FE00290809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

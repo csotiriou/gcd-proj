@@ -7,44 +7,37 @@
 //
 
 #import "AppDelegate.h"
-#import "DNALattice.h"
+
+#define SIDE 3
 
 @interface AppDelegate()
-
+@property (nonatomic) char * large;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	// Insert code here to initialize your application
-	DNALattice *lattice = [[DNALattice alloc] initWithSideNumber:100 andChar:'q'];
-	
-	
-//	printf("%c", [lattice getItemAti:0 andJ:0 andK:0]);
-//	char alpha[3][3][3] = { {'a','b','c'}, {'d','e','f'}, {'g','h','i'}};
-//	
-//	char ***_cube3d;
-//
-//	int size = 3;
-//
-//	_cube3d = (char ***)malloc(size * (sizeof(char**)));
-//	for (int i = 0; i< size; i++) {
-//		_cube3d[i] = (char **)malloc(size * sizeof(char*));
-//		for (int j = 0; j<size; j++) {
-//			_cube3d[i][j] = (char *)malloc(size * sizeof(char));
-//		}
-//	}
-//	
-//	
-//	for (int i = 0; i< size; i++) {
-//		for (int j = 0; j<size; j++) {
-//			for (int k = 0; k<size; k++) {
-//				_cube3d[i][j][k] = 'a';
-//			}
-//		}
-//	}
-	
 }
+
+- (void)initWithSize:(int)size
+{
+	self.large = (char*)malloc(size * size * size);
+	memset(self.large, 'a', size * size * size);
+}
+
+- (char)getX:(int)x andY:(int)y andZ:(int)z
+{
+	int index = x * SIDE * SIDE + y * SIDE + z;
+	return self.large[index];
+}
+
+- (void)setX:(int)x andY:(int)y andZ:(int)z toValue:(char)v
+{
+	int index = x * SIDE * SIDE + y * SIDE + z;
+	NSLog(@"setting index(%i,%i,%i)=%i to: %c",x,y,z, index, v);
+	self.large[index] = v;
+}
+
 
 @end
