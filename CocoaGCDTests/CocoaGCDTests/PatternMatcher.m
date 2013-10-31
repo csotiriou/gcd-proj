@@ -8,6 +8,24 @@
 
 #import "PatternMatcher.h"
 
+@interface PatternMatcher ()
+
+@end
+
 @implementation PatternMatcher
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.dictionaryToSearch = [NSMutableArray array];
+    }
+    return self;
+}
+
+
+- (void)start
+{
+	
+}
 
 @end

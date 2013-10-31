@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06391CE61822B0810060B751 /* AlgoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06391CE51822B0810060B751 /* AlgoTests.m */; };
 		069910141821C3FE00290809 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910131821C3FE00290809 /* Cocoa.framework */; };
 		0699101E1821C3FE00290809 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0699101C1821C3FE00290809 /* InfoPlist.strings */; };
 		069910201821C3FE00290809 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699101F1821C3FE00290809 /* main.m */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06391CE51822B0810060B751 /* AlgoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgoTests.m; sourceTree = "<group>"; };
 		069910101821C3FE00290809 /* CocoaGCDTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaGCDTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069910131821C3FE00290809 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		069910161821C3FE00290809 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */,
+				06391CE51822B0810060B751 /* AlgoTests.m */,
 				069910381821C3FE00290809 /* Supporting Files */,
 			);
 			path = CocoaGCDTestsTests;
@@ -292,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06391CE61822B0810060B751 /* AlgoTests.m in Sources */,
 				0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */,
 				0699104C1821C41000290809 /* PatternMatcher.m in Sources */,
 				06F511FE18225E8E004591F9 /* DNALattice1d.m in Sources */,

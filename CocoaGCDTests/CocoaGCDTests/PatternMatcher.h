@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PatternMatcher : NSObject
+#import "LatticeCommon.h"
 
+@interface PatternMatcher : NSObject
+@property (nonatomic, strong) id <LatticeCommon> lattice;
+
+@property (nonatomic, strong) NSMutableArray *dictionaryToSearch;
+
+- (void)start;
 @end

@@ -19,6 +19,7 @@
 
 @property (nonatomic, readonly) int sideNumber;
 @property (nonatomic, readonly) int numberOfElements;
+@property (nonatomic, readonly) BOOL isInitialized;
 
 /**
  Copies the data deom the argument to the object
@@ -26,5 +27,13 @@
  @param size the size of the data to copy. Must be equal to the size of this object
  */
 - (void)copyData:(const char *)dataToCopy ofSize:(int)size;
+
+
+/**
+ Fills the entire data with a specified character
+ @param character the character to fill the internal data
+ */
+- (void)fillArrayWithCharacter:(char)character;
+
 
 @end
