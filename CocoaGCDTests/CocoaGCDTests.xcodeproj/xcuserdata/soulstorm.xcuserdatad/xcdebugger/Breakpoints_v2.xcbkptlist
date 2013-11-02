@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CocoaGCDTestsTests/AlgoTests.m"
-            timestampString = "404943902.622136"
+            timestampString = "405003501.556381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "-testExample"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-testGethorizontalLines"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
