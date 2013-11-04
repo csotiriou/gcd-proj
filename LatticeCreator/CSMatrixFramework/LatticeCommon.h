@@ -8,12 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
-/**
-	Class descriptor for Lattice objects
- */
 @protocol LatticeCommon <NSObject>
-
 @required
 @property (nonatomic, readonly) int sideNumber;
 

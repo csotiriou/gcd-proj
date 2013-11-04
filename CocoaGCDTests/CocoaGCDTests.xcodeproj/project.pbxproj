@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06391CE61822B0810060B751 /* AlgoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06391CE51822B0810060B751 /* AlgoTests.m */; };
+		0682C49A1827072C00F6D5F4 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0682C4881827060800F6D5F4 /* CSMatrixFramework.framework */; };
+		0682C49D182707FF00F6D5F4 /* CSMatrixFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0682C4881827060800F6D5F4 /* CSMatrixFramework.framework */; };
+		0682C4CA18270C6000F6D5F4 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0682C4881827060800F6D5F4 /* CSMatrixFramework.framework */; };
 		069910141821C3FE00290809 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910131821C3FE00290809 /* Cocoa.framework */; };
 		0699101E1821C3FE00290809 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0699101C1821C3FE00290809 /* InfoPlist.strings */; };
 		069910201821C3FE00290809 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699101F1821C3FE00290809 /* main.m */; };
@@ -21,10 +24,6 @@
 		0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */; };
 		0699104B1821C41000290809 /* PatternMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcher.m */; };
 		0699104C1821C41000290809 /* PatternMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcher.m */; };
-		06F511FD18225E8E004591F9 /* DNALattice1d.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F511FC18225E8E004591F9 /* DNALattice1d.m */; };
-		06F511FE18225E8E004591F9 /* DNALattice1d.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F511FC18225E8E004591F9 /* DNALattice1d.m */; };
-		06F5120218225EF9004591F9 /* DNALattice3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5120118225EF9004591F9 /* DNALattice3D.m */; };
-		06F5120318225EF9004591F9 /* DNALattice3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5120118225EF9004591F9 /* DNALattice3D.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +36,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0682C49C182707EF00F6D5F4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0682C49D182707FF00F6D5F4 /* CSMatrixFramework.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		06391CE51822B0810060B751 /* AlgoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgoTests.m; sourceTree = "<group>"; };
+		0682C4881827060800F6D5F4 /* CSMatrixFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CSMatrixFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug/CSMatrixFramework.framework"; sourceTree = "<group>"; };
 		069910101821C3FE00290809 /* CocoaGCDTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaGCDTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069910131821C3FE00290809 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		069910161821C3FE00290809 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -60,11 +73,6 @@
 		0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaGCDTestsTests.m; sourceTree = "<group>"; };
 		069910471821C41000290809 /* PatternMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcher.h; sourceTree = "<group>"; };
 		069910481821C41000290809 /* PatternMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcher.m; sourceTree = "<group>"; };
-		06F511FB18225E8E004591F9 /* DNALattice1d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNALattice1d.h; sourceTree = "<group>"; };
-		06F511FC18225E8E004591F9 /* DNALattice1d.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNALattice1d.m; sourceTree = "<group>"; };
-		06F5120018225EF9004591F9 /* DNALattice3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNALattice3D.h; sourceTree = "<group>"; };
-		06F5120118225EF9004591F9 /* DNALattice3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNALattice3D.m; sourceTree = "<group>"; };
-		06F5120418225F10004591F9 /* LatticeCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeCommon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0682C49A1827072C00F6D5F4 /* CSMatrixFramework.framework in Frameworks */,
 				069910141821C3FE00290809 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0682C4CA18270C6000F6D5F4 /* CSMatrixFramework.framework in Frameworks */,
 				069910341821C3FE00290809 /* Cocoa.framework in Frameworks */,
 				069910331821C3FE00290809 /* XCTest.framework in Frameworks */,
 			);
@@ -110,6 +120,7 @@
 		069910121821C3FE00290809 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0682C4881827060800F6D5F4 /* CSMatrixFramework.framework */,
 				069910131821C3FE00290809 /* Cocoa.framework */,
 				069910321821C3FE00290809 /* XCTest.framework */,
 				069910151821C3FE00290809 /* Other Frameworks */,
@@ -132,7 +143,6 @@
 			children = (
 				069910471821C41000290809 /* PatternMatcher.h */,
 				069910481821C41000290809 /* PatternMatcher.m */,
-				06F511FF18225EE4004591F9 /* Lattices */,
 				069910251821C3FE00290809 /* AppDelegate.h */,
 				069910261821C3FE00290809 /* AppDelegate.m */,
 				069910281821C3FE00290809 /* MainMenu.xib */,
@@ -173,18 +183,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		06F511FF18225EE4004591F9 /* Lattices */ = {
-			isa = PBXGroup;
-			children = (
-				06F5120418225F10004591F9 /* LatticeCommon.h */,
-				06F511FB18225E8E004591F9 /* DNALattice1d.h */,
-				06F511FC18225E8E004591F9 /* DNALattice1d.m */,
-				06F5120018225EF9004591F9 /* DNALattice3D.h */,
-				06F5120118225EF9004591F9 /* DNALattice3D.m */,
-			);
-			name = Lattices;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,6 +193,7 @@
 				0699100C1821C3FE00290809 /* Sources */,
 				0699100D1821C3FE00290809 /* Frameworks */,
 				0699100E1821C3FE00290809 /* Resources */,
+				0682C49C182707EF00F6D5F4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -283,11 +282,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06F5120218225EF9004591F9 /* DNALattice3D.m in Sources */,
 				069910271821C3FE00290809 /* AppDelegate.m in Sources */,
 				0699104B1821C41000290809 /* PatternMatcher.m in Sources */,
 				069910201821C3FE00290809 /* main.m in Sources */,
-				06F511FD18225E8E004591F9 /* DNALattice1d.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,8 +295,6 @@
 				06391CE61822B0810060B751 /* AlgoTests.m in Sources */,
 				0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */,
 				0699104C1821C41000290809 /* PatternMatcher.m in Sources */,
-				06F511FE18225E8E004591F9 /* DNALattice1d.m in Sources */,
-				06F5120318225EF9004591F9 /* DNALattice3D.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +417,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaGCDTests/CocoaGCDTests-Prefix.pch";
 				INFOPLIST_FILE = "CocoaGCDTests/CocoaGCDTests-Info.plist";
@@ -435,6 +434,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaGCDTests/CocoaGCDTests-Prefix.pch";
 				INFOPLIST_FILE = "CocoaGCDTests/CocoaGCDTests-Info.plist";
@@ -451,6 +454,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaGCDTests/CocoaGCDTests-Prefix.pch";
@@ -473,6 +477,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaGCDTests/CocoaGCDTests-Prefix.pch";

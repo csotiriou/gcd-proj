@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <CSMatrixFramework/CSMatrixFramework.h>
 
 #define SIDE 3
 

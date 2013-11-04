@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "DNALattice1d.h"
+#import <CSMatrixFramework/CSMatrixFramework.h>
 
 @interface DNALattice1d (ext)
 @property (nonatomic, readonly) char *cube3d;

@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CSMatrixFramework/CSMatrixFramework.h>
 
-#import "LatticeCommon.h"
-
+/**
+Class that aims at finding patterns into a given lattice. To be implemented
+*/
 @interface PatternMatcher : NSObject
+
 @property (nonatomic, strong) id <LatticeCommon> lattice;
 
 @property (nonatomic, strong) NSMutableArray *dictionaryToSearch;

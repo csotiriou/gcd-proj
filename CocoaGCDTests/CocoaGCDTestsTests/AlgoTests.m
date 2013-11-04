@@ -7,8 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-
-#import "DNALattice1d.h"
+#import <CSMatrixFramework/CSMatrixFramework.h>
 #import "PatternMatcher.h"
 
 @interface AlgoTests : XCTestCase
