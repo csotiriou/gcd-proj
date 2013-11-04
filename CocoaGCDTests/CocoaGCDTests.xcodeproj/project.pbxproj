@@ -11,6 +11,9 @@
 		0682C49A1827072C00F6D5F4 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0682C4881827060800F6D5F4 /* CSMatrixFramework.framework */; };
 		0682C49D182707FF00F6D5F4 /* CSMatrixFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0682C4881827060800F6D5F4 /* CSMatrixFramework.framework */; };
 		0682C4CA18270C6000F6D5F4 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0682C4881827060800F6D5F4 /* CSMatrixFramework.framework */; };
+		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
+		0690D94E18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
+		0690D95018282AE1000E8165 /* PatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94F18282AE1000E8165 /* PatternTests.m */; };
 		069910141821C3FE00290809 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910131821C3FE00290809 /* Cocoa.framework */; };
 		0699101E1821C3FE00290809 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0699101C1821C3FE00290809 /* InfoPlist.strings */; };
 		069910201821C3FE00290809 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699101F1821C3FE00290809 /* main.m */; };
@@ -22,8 +25,8 @@
 		069910341821C3FE00290809 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910131821C3FE00290809 /* Cocoa.framework */; };
 		0699103C1821C3FE00290809 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0699103A1821C3FE00290809 /* InfoPlist.strings */; };
 		0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */; };
-		0699104B1821C41000290809 /* PatternMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcher.m */; };
-		0699104C1821C41000290809 /* PatternMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcher.m */; };
+		0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcherSequential.m */; };
+		0699104C1821C41000290809 /* PatternMatcherSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcherSequential.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 /* Begin PBXFileReference section */
 		06391CE51822B0810060B751 /* AlgoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgoTests.m; sourceTree = "<group>"; };
 		0682C4881827060800F6D5F4 /* CSMatrixFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CSMatrixFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug/CSMatrixFramework.framework"; sourceTree = "<group>"; };
+		0690D94B18280FD1000E8165 /* PatternMatcherBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherBase.h; sourceTree = "<group>"; };
+		0690D94C18280FD1000E8165 /* PatternMatcherBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherBase.m; sourceTree = "<group>"; };
+		0690D94F18282AE1000E8165 /* PatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTests.m; sourceTree = "<group>"; };
 		069910101821C3FE00290809 /* CocoaGCDTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaGCDTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069910131821C3FE00290809 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		069910161821C3FE00290809 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -71,8 +77,8 @@
 		069910391821C3FE00290809 /* CocoaGCDTestsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaGCDTestsTests-Info.plist"; sourceTree = "<group>"; };
 		0699103B1821C3FE00290809 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaGCDTestsTests.m; sourceTree = "<group>"; };
-		069910471821C41000290809 /* PatternMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcher.h; sourceTree = "<group>"; };
-		069910481821C41000290809 /* PatternMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcher.m; sourceTree = "<group>"; };
+		069910471821C41000290809 /* PatternMatcherSequential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherSequential.h; sourceTree = "<group>"; };
+		069910481821C41000290809 /* PatternMatcherSequential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherSequential.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +147,10 @@
 		069910191821C3FE00290809 /* CocoaGCDTests */ = {
 			isa = PBXGroup;
 			children = (
-				069910471821C41000290809 /* PatternMatcher.h */,
-				069910481821C41000290809 /* PatternMatcher.m */,
+				0690D94B18280FD1000E8165 /* PatternMatcherBase.h */,
+				0690D94C18280FD1000E8165 /* PatternMatcherBase.m */,
+				069910471821C41000290809 /* PatternMatcherSequential.h */,
+				069910481821C41000290809 /* PatternMatcherSequential.m */,
 				069910251821C3FE00290809 /* AppDelegate.h */,
 				069910261821C3FE00290809 /* AppDelegate.m */,
 				069910281821C3FE00290809 /* MainMenu.xib */,
@@ -169,6 +177,7 @@
 			children = (
 				0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */,
 				06391CE51822B0810060B751 /* AlgoTests.m */,
+				0690D94F18282AE1000E8165 /* PatternTests.m */,
 				069910381821C3FE00290809 /* Supporting Files */,
 			);
 			path = CocoaGCDTestsTests;
@@ -186,9 +195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0699100F1821C3FE00290809 /* CocoaGCDTests */ = {
+		0699100F1821C3FE00290809 /* CocoaGCD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 069910411821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCDTests" */;
+			buildConfigurationList = 069910411821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCD" */;
 			buildPhases = (
 				0699100C1821C3FE00290809 /* Sources */,
 				0699100D1821C3FE00290809 /* Frameworks */,
@@ -199,14 +208,14 @@
 			);
 			dependencies = (
 			);
-			name = CocoaGCDTests;
+			name = CocoaGCD;
 			productName = CocoaGCDTests;
 			productReference = 069910101821C3FE00290809 /* CocoaGCDTests.app */;
 			productType = "com.apple.product-type.application";
 		};
-		069910301821C3FE00290809 /* CocoaGCDTestsTests */ = {
+		069910301821C3FE00290809 /* CocoaGCDTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 069910441821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCDTestsTests" */;
+			buildConfigurationList = 069910441821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCDTests" */;
 			buildPhases = (
 				0699102D1821C3FE00290809 /* Sources */,
 				0699102E1821C3FE00290809 /* Frameworks */,
@@ -217,7 +226,7 @@
 			dependencies = (
 				069910361821C3FE00290809 /* PBXTargetDependency */,
 			);
-			name = CocoaGCDTestsTests;
+			name = CocoaGCDTests;
 			productName = CocoaGCDTestsTests;
 			productReference = 069910311821C3FE00290809 /* CocoaGCDTestsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -249,8 +258,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0699100F1821C3FE00290809 /* CocoaGCDTests */,
-				069910301821C3FE00290809 /* CocoaGCDTestsTests */,
+				0699100F1821C3FE00290809 /* CocoaGCD */,
+				069910301821C3FE00290809 /* CocoaGCDTests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,8 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */,
 				069910271821C3FE00290809 /* AppDelegate.m in Sources */,
-				0699104B1821C41000290809 /* PatternMatcher.m in Sources */,
+				0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */,
 				069910201821C3FE00290809 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,9 +302,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0690D94E18280FD1000E8165 /* PatternMatcherBase.m in Sources */,
 				06391CE61822B0810060B751 /* AlgoTests.m in Sources */,
 				0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */,
-				0699104C1821C41000290809 /* PatternMatcher.m in Sources */,
+				0699104C1821C41000290809 /* PatternMatcherSequential.m in Sources */,
+				0690D95018282AE1000E8165 /* PatternTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +315,7 @@
 /* Begin PBXTargetDependency section */
 		069910361821C3FE00290809 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0699100F1821C3FE00290809 /* CocoaGCDTests */;
+			target = 0699100F1821C3FE00290809 /* CocoaGCD */;
 			targetProxy = 069910351821C3FE00290809 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -500,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		069910411821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCDTests" */ = {
+		069910411821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				069910421821C3FE00290809 /* Debug */,
@@ -509,7 +521,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		069910441821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCDTestsTests" */ = {
+		069910441821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCDTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				069910451821C3FE00290809 /* Debug */,

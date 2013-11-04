@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0699100F1821C3FE00290809"
                BuildableName = "CocoaGCDTests.app"
-               BlueprintName = "CocoaGCDTests"
+               BlueprintName = "CocoaGCD"
                ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "069910301821C3FE00290809"
                BuildableName = "CocoaGCDTestsTests.xctest"
-               BlueprintName = "CocoaGCDTestsTests"
+               BlueprintName = "CocoaGCDTests"
                ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0699100F1821C3FE00290809"
             BuildableName = "CocoaGCDTests.app"
-            BlueprintName = "CocoaGCDTests"
+            BlueprintName = "CocoaGCD"
             ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0699100F1821C3FE00290809"
             BuildableName = "CocoaGCDTests.app"
-            BlueprintName = "CocoaGCDTests"
+            BlueprintName = "CocoaGCD"
             ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0699100F1821C3FE00290809"
             BuildableName = "CocoaGCDTests.app"
-            BlueprintName = "CocoaGCDTests"
+            BlueprintName = "CocoaGCD"
             ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

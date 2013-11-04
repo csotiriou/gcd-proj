@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 #import <CSMatrixFramework/CSMatrixFramework.h>
-#import "PatternMatcher.h"
+#import "PatternMatcherSequential.h"
 
 @interface AlgoTests : XCTestCase
 @property (nonatomic, strong) DNALattice1d *lattice;
-@property (nonatomic, strong) PatternMatcher *patternMatcher;
+@property (nonatomic, strong) PatternMatcherSequential *patternMatcher;
 @end
 
 @implementation AlgoTests
@@ -21,7 +21,7 @@
 {
     [super setUp];
 	self.lattice = [[DNALattice1d alloc] initWithSideNumber:3 andChar:'0'];
-	self.patternMatcher = [[PatternMatcher alloc] init];
+	self.patternMatcher = [[PatternMatcherSequential alloc] init];
 	
 	self.patternMatcher.lattice = self.lattice;
 	[self.patternMatcher.dictionaryToSearch addObject:@"abba"];
@@ -74,6 +74,8 @@
 
 - (void)testExample
 {
+	NSString *alpha = @"beta";
+	
 	//	NSMutableArray *arr = [NSMutableArray array];
 	//	for (int i=0; i<self.lattice.sideNumber; i++) {		//change lattice
 	//		for (int j=0; j<self.lattice.sideNumber; j++) {
@@ -147,7 +149,7 @@
 		for (int k=0; k<self.lattice.sideNumber; k++) {
 			char text2[self.lattice.sideNumber+1];
 			for (int j=0; j<self.lattice.sideNumber; j++) {
-				NSLog(@"character: %c", [self.lattice getItemAti:i andJ:j andK:k]);
+//				NSLog(@"character: %c", [self.lattice getItemAti:i andJ:j andK:k]);
 				text2[j] = [self.lattice getItemAti:i andJ:j andK:k]; //add the characters
 			}
 			text2[self.lattice.sideNumber] = '\0'; //make it a valid string
