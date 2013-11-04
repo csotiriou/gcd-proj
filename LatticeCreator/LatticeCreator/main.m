@@ -14,6 +14,8 @@ int main(int argc, const char * argv[])
 
 	@autoreleasepool {
 		DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:1000 andChar:'a'];
+		DNALattice1d *lattice2 = [lattice copy];
+		
 		CSMatrixExporter *exporter = [[CSMatrixExporter alloc] initWithLattice:lattice];
 		[exporter exportToFile:[@"~/Desktop/output.desc" stringByStandardizingPath]];
 	    

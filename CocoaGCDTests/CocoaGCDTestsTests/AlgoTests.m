@@ -198,8 +198,9 @@
 }
 
 
-- (void)testGetLinesDiagonally //
+- (void)testGetLinesDiagonally //from top left t bottom right
 {
+	//start from the element that is in the 0,n-1 place and form diagonal strings using that
 	NSMutableArray *linesArray = [NSMutableArray array];
 	
 	for (int i=0; i<self.lattice.sideNumber; i++){
@@ -215,8 +216,6 @@
 		
 		NSMutableString *currentString = [NSMutableString string];
 		while ( !end) {
-//			currentPoint = CGPointMake(currentHorizontal, currentVertical);
-//			NSLog(@"current point: %@", NSStringFromPoint(currentPoint));
 			[currentString appendFormat:@"%c", [self.lattice getItemAti:i andJ:currentHorizontal andK:currentVertical]];
 			currentHorizontal++;
 			currentVertical++;
@@ -250,8 +249,54 @@
 	}
 	NSArray *expected = @[@"bf\naei\ndh\n", @"ko\njnr\nmq\n", @"tx\nsw0\nvz\n"];
 	XCTAssertTrue([self arrayWithStrings:expected isEqualToArrayWithStrings:linesArray], @"error - wrong output");
+}
+
+- (void)testGetLinesDiagonally2 //from bottom left to top right, more understandable but possibly less efficient than the other algorithm
+{
+	NSMutableArray *linesArray = [NSMutableArray array];
+	
+	for (int lattice=0; lattice<self.lattice.sideNumber; lattice++) {
+		int sideCount = 4;
+		int currentHorizontal = 0;
+		int currentVertical = sideCount-2;
+		
+		NSMutableString *currentString = [NSMutableString string];
+		
+	
+		while (currentVertical >= 0) {
+			[currentString appendFormat:@"%c", [self.lattice getItemAti:lattice andJ:currentHorizontal andK:currentVertical]];
+			NSLog(@"examining: %i, %i, %i", lattice, currentHorizontal, currentVertical);
+			currentVertical--;
+			currentHorizontal++;
+			if (currentVertical<0) {
+				[currentString appendFormat:@"\n"];
+				currentVertical = currentHorizontal-2;//since this is a square matrix
+				currentHorizontal = 0;
+			}
+		}
+		[currentString appendFormat:@"\n"];
+		currentHorizontal = sideCount-2;
+		currentVertical = sideCount-1;
+		
+		while (currentHorizontal >= 0) {
+			[currentString appendFormat:@"%c", [self.lattice getItemAti:lattice andJ:currentHorizontal andK:currentVertical]];
+			currentVertical--;
+			currentHorizontal++;
+			
+			if (currentHorizontal>=sideCount) {
+				[currentString appendFormat:@"\n"];
+				currentHorizontal = currentVertical;
+				currentVertical = sideCount-1;
+			}
+		}
+
+		[linesArray addObject:currentString];
+	}
+	
 	
 }
+
+
 
 - (BOOL)arrayWithStrings:(NSArray *)arr isEqualToArrayWithStrings:(NSArray *)arr2
 {
