@@ -19,17 +19,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-//	unichar alpha = 'a';
-//	char beta = 'a';
-	
-//	NSLog(@"log");
-	
-	NSString *a = @"alpha";
-	char b[] = "alpha";
-	
-	
-//	int result = strcmp([a cStringUsingEncoding:NSUTF8StringEncoding], b);
-//	NSLog(@"test");
+
 }
 
 

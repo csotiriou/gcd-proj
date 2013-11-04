@@ -147,7 +147,7 @@
 			
 			while (currentVertical >= 0) {
 				[currentString appendFormat:@"%c", [self.lattice getItemAti:lattice andJ:currentHorizontal andK:currentVertical]];
-				NSLog(@"examining: %i, %i, %i", lattice, currentHorizontal, currentVertical);
+//				NSLog(@"examining: %i, %i, %i", lattice, currentHorizontal, currentVertical);
 				currentVertical--;
 				currentHorizontal++;
 				if (currentVertical<0) {

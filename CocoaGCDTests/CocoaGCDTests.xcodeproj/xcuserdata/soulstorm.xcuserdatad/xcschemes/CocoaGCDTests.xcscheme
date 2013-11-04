@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0699100F1821C3FE00290809"
-               BuildableName = "CocoaGCDTests.app"
+               BuildableName = "CocoaGCD.app"
                BlueprintName = "CocoaGCD"
                ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "069910301821C3FE00290809"
-               BuildableName = "CocoaGCDTestsTests.xctest"
+               BuildableName = "CocoaGCDTests.xctest"
                BlueprintName = "CocoaGCDTests"
                ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0699100F1821C3FE00290809"
-            BuildableName = "CocoaGCDTests.app"
+            BuildableName = "CocoaGCD.app"
             BlueprintName = "CocoaGCD"
             ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0699100F1821C3FE00290809"
-            BuildableName = "CocoaGCDTests.app"
+            BuildableName = "CocoaGCD.app"
             BlueprintName = "CocoaGCD"
             ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0699100F1821C3FE00290809"
-            BuildableName = "CocoaGCDTests.app"
+            BuildableName = "CocoaGCD.app"
             BlueprintName = "CocoaGCD"
             ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
          </BuildableReference>

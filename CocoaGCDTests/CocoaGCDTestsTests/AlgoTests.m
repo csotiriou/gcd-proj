@@ -72,42 +72,6 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-	NSString *alpha = @"beta";
-	
-	//	NSMutableArray *arr = [NSMutableArray array];
-	//	for (int i=0; i<self.lattice.sideNumber; i++) {		//change lattice
-	//		for (int j=0; j<self.lattice.sideNumber; j++) {
-	//
-	//			char text[self.lattice.sideNumber+1];
-	//
-	//			for (int k=0; k<self.lattice.sideNumber; k++) {
-	//				text[k] = [self.lattice getItemAti:i andJ:j andK:k]; //add the characters
-	//			}
-	//			text[self.lattice.sideNumber] = '\0'; //make it a valid string
-	//			NSString *line = [NSString stringWithCString:text encoding:NSUTF8StringEncoding];
-	//			[arr addObject:line];
-	//		}
-	//	}
-	//
-	//	NSMutableArray *arr2 = [NSMutableArray array];
-	//
-	//
-	//	for (int i=0; i<self.lattice.sideNumber; i++) {		//change lattice
-	//		for (int k=0; k<self.lattice.sideNumber; k++) {
-	//			char text2[self.lattice.sideNumber+1];
-	//			for (int j=0; j<self.lattice.sideNumber; j++) {
-	//				NSLog(@"character: %c", [self.lattice getItemAti:i andJ:j andK:k]);
-	//				text2[j] = [self.lattice getItemAti:i andJ:j andK:k]; //add the characters
-	//			}
-	//			text2[self.lattice.sideNumber] = '\0'; //make it a valid string
-	//			NSString *line = [NSString stringWithCString:text2 encoding:NSUTF8StringEncoding];
-	//			[arr2 addObject:line];
-	//		}
-	//	}
-}
-
 
 - (void)testGethorizontalLines
 {
@@ -267,7 +231,7 @@
 	
 		while (currentVertical >= 0) {
 			[currentString appendFormat:@"%c", [self.lattice getItemAti:lattice andJ:currentHorizontal andK:currentVertical]];
-			NSLog(@"examining: %i, %i, %i", lattice, currentHorizontal, currentVertical);
+//			NSLog(@"examining: %i, %i, %i", lattice, currentHorizontal, currentVertical);
 			currentVertical--;
 			currentHorizontal++;
 			if (currentVertical<0) {

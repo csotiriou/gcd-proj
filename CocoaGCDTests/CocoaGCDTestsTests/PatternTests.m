@@ -21,7 +21,7 @@
 - (void)setUp
 {
     [super setUp];
-	self.lattice = [[DNALattice1d alloc] initWithSideNumber:10 andChar:'a'];
+	self.lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
 	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.lattice andDictionaryToSearch:@[@"aa",@"bb", @"cc"]];
 }
 

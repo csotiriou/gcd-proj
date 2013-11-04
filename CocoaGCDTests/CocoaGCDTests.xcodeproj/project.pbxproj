@@ -14,6 +14,16 @@
 		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
 		0690D94E18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
 		0690D95018282AE1000E8165 /* PatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94F18282AE1000E8165 /* PatternTests.m */; };
+		0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95318283608000E8165 /* DDAbstractDatabaseLogger.m */; };
+		0690D95D18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95318283608000E8165 /* DDAbstractDatabaseLogger.m */; };
+		0690D95E18283608000E8165 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95518283608000E8165 /* DDASLLogger.m */; };
+		0690D95F18283608000E8165 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95518283608000E8165 /* DDASLLogger.m */; };
+		0690D96018283608000E8165 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95718283608000E8165 /* DDFileLogger.m */; };
+		0690D96118283608000E8165 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95718283608000E8165 /* DDFileLogger.m */; };
+		0690D96218283608000E8165 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95918283608000E8165 /* DDLog.m */; };
+		0690D96318283608000E8165 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95918283608000E8165 /* DDLog.m */; };
+		0690D96418283608000E8165 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95B18283608000E8165 /* DDTTYLogger.m */; };
+		0690D96518283608000E8165 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95B18283608000E8165 /* DDTTYLogger.m */; };
 		069910141821C3FE00290809 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910131821C3FE00290809 /* Cocoa.framework */; };
 		0699101E1821C3FE00290809 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0699101C1821C3FE00290809 /* InfoPlist.strings */; };
 		069910201821C3FE00290809 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699101F1821C3FE00290809 /* main.m */; };
@@ -58,7 +68,18 @@
 		0690D94B18280FD1000E8165 /* PatternMatcherBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherBase.h; sourceTree = "<group>"; };
 		0690D94C18280FD1000E8165 /* PatternMatcherBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherBase.m; sourceTree = "<group>"; };
 		0690D94F18282AE1000E8165 /* PatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTests.m; sourceTree = "<group>"; };
-		069910101821C3FE00290809 /* CocoaGCDTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaGCDTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0690D95218283608000E8165 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		0690D95318283608000E8165 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		0690D95418283608000E8165 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		0690D95518283608000E8165 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		0690D95618283608000E8165 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		0690D95718283608000E8165 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		0690D95818283608000E8165 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		0690D95918283608000E8165 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		0690D95A18283608000E8165 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		0690D95B18283608000E8165 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		0690D96618283619000E8165 /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
+		069910101821C3FE00290809 /* CocoaGCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaGCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069910131821C3FE00290809 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		069910161821C3FE00290809 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		069910171821C3FE00290809 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -72,7 +93,7 @@
 		069910261821C3FE00290809 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		069910291821C3FE00290809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0699102B1821C3FE00290809 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		069910311821C3FE00290809 /* CocoaGCDTestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaGCDTestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		069910311821C3FE00290809 /* CocoaGCDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaGCDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		069910321821C3FE00290809 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		069910391821C3FE00290809 /* CocoaGCDTestsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaGCDTestsTests-Info.plist"; sourceTree = "<group>"; };
 		0699103B1821C3FE00290809 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -104,6 +125,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0690D951182835F7000E8165 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				0690D95218283608000E8165 /* DDAbstractDatabaseLogger.h */,
+				0690D95318283608000E8165 /* DDAbstractDatabaseLogger.m */,
+				0690D95418283608000E8165 /* DDASLLogger.h */,
+				0690D95518283608000E8165 /* DDASLLogger.m */,
+				0690D95618283608000E8165 /* DDFileLogger.h */,
+				0690D95718283608000E8165 /* DDFileLogger.m */,
+				0690D95818283608000E8165 /* DDLog.h */,
+				0690D95918283608000E8165 /* DDLog.m */,
+				0690D95A18283608000E8165 /* DDTTYLogger.h */,
+				0690D95B18283608000E8165 /* DDTTYLogger.m */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
 		069910071821C3FE00290809 = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +155,8 @@
 		069910111821C3FE00290809 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				069910101821C3FE00290809 /* CocoaGCDTests.app */,
-				069910311821C3FE00290809 /* CocoaGCDTestsTests.xctest */,
+				069910101821C3FE00290809 /* CocoaGCD.app */,
+				069910311821C3FE00290809 /* CocoaGCDTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +185,8 @@
 		069910191821C3FE00290809 /* CocoaGCDTests */ = {
 			isa = PBXGroup;
 			children = (
+				0690D96618283619000E8165 /* Definitions.h */,
+				0690D951182835F7000E8165 /* External */,
 				0690D94B18280FD1000E8165 /* PatternMatcherBase.h */,
 				0690D94C18280FD1000E8165 /* PatternMatcherBase.m */,
 				069910471821C41000290809 /* PatternMatcherSequential.h */,
@@ -210,7 +250,7 @@
 			);
 			name = CocoaGCD;
 			productName = CocoaGCDTests;
-			productReference = 069910101821C3FE00290809 /* CocoaGCDTests.app */;
+			productReference = 069910101821C3FE00290809 /* CocoaGCD.app */;
 			productType = "com.apple.product-type.application";
 		};
 		069910301821C3FE00290809 /* CocoaGCDTests */ = {
@@ -228,7 +268,7 @@
 			);
 			name = CocoaGCDTests;
 			productName = CocoaGCDTestsTests;
-			productReference = 069910311821C3FE00290809 /* CocoaGCDTestsTests.xctest */;
+			productReference = 069910311821C3FE00290809 /* CocoaGCDTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -293,8 +333,13 @@
 			files = (
 				0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */,
 				069910271821C3FE00290809 /* AppDelegate.m in Sources */,
+				0690D95E18283608000E8165 /* DDASLLogger.m in Sources */,
+				0690D96418283608000E8165 /* DDTTYLogger.m in Sources */,
+				0690D96018283608000E8165 /* DDFileLogger.m in Sources */,
+				0690D96218283608000E8165 /* DDLog.m in Sources */,
 				0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */,
 				069910201821C3FE00290809 /* main.m in Sources */,
+				0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,9 +348,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0690D94E18280FD1000E8165 /* PatternMatcherBase.m in Sources */,
+				0690D96518283608000E8165 /* DDTTYLogger.m in Sources */,
+				0690D96118283608000E8165 /* DDFileLogger.m in Sources */,
 				06391CE61822B0810060B751 /* AlgoTests.m in Sources */,
+				0690D95D18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */,
 				0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */,
 				0699104C1821C41000290809 /* PatternMatcherSequential.m in Sources */,
+				0690D96318283608000E8165 /* DDLog.m in Sources */,
+				0690D95F18283608000E8165 /* DDASLLogger.m in Sources */,
 				0690D95018282AE1000E8165 /* PatternTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
