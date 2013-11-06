@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "CSMatrixExporter.h"
+#import "CSMatrixImporter.h"
 #import "LatticeCommon.h"
 #import "DNALattice1d.h"
 #import "DNALattice3D.h"

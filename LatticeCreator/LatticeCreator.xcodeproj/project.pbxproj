@@ -30,6 +30,9 @@
 		0682C4C918270B7100F6D5F4 /* LatticeCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C4C018270B7100F6D5F4 /* LatticeCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0682C4CE1827202F00F6D5F4 /* CSFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C4CC1827202F00F6D5F4 /* CSFileReader.h */; };
 		0682C4CF1827202F00F6D5F4 /* CSFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0682C4CD1827202F00F6D5F4 /* CSFileReader.m */; };
+		06A9AACE182ACCA80066EE5B /* CSMatrixImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 06A9AACC182ACCA80066EE5B /* CSMatrixImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06A9AAD1182ACCA80066EE5B /* CSMatrixImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AACD182ACCA80066EE5B /* CSMatrixImporter.m */; };
+		06A9AAD2182AD4720066EE5B /* CSMatrixImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AACD182ACCA80066EE5B /* CSMatrixImporter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,8 @@
 		0682C4C018270B7100F6D5F4 /* LatticeCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeCommon.h; sourceTree = "<group>"; };
 		0682C4CC1827202F00F6D5F4 /* CSFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFileReader.h; sourceTree = "<group>"; };
 		0682C4CD1827202F00F6D5F4 /* CSFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFileReader.m; sourceTree = "<group>"; };
+		06A9AACC182ACCA80066EE5B /* CSMatrixImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMatrixImporter.h; sourceTree = "<group>"; };
+		06A9AACD182ACCA80066EE5B /* CSMatrixImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMatrixImporter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +195,7 @@
 				0682C4CB1827202300F6D5F4 /* External */,
 				0682C45E182704D500F6D5F4 /* CSMatrixFramework.h */,
 				0682C4A318270B2100F6D5F4 /* Lattices */,
-				0682C47B1827052800F6D5F4 /* CSMatrixExporter.h */,
-				0682C47C1827052800F6D5F4 /* CSMatrixExporter.m */,
+				06A9AACB182ACA470066EE5B /* Exporters-Importers */,
 				0682C458182704D500F6D5F4 /* Supporting Files */,
 			);
 			path = CSMatrixFramework;
@@ -247,6 +251,17 @@
 			name = External;
 			sourceTree = "<group>";
 		};
+		06A9AACB182ACA470066EE5B /* Exporters-Importers */ = {
+			isa = PBXGroup;
+			children = (
+				0682C47B1827052800F6D5F4 /* CSMatrixExporter.h */,
+				0682C47C1827052800F6D5F4 /* CSMatrixExporter.m */,
+				06A9AACC182ACCA80066EE5B /* CSMatrixImporter.h */,
+				06A9AACD182ACCA80066EE5B /* CSMatrixImporter.m */,
+			);
+			name = "Exporters-Importers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -258,6 +273,7 @@
 				0682C4C518270B7100F6D5F4 /* DNALattice3D.h in Headers */,
 				0682C4C918270B7100F6D5F4 /* LatticeCommon.h in Headers */,
 				0682C4CE1827202F00F6D5F4 /* CSFileReader.h in Headers */,
+				06A9AACE182ACCA80066EE5B /* CSMatrixImporter.h in Headers */,
 				0682C4C118270B7100F6D5F4 /* DNALattice1d.h in Headers */,
 				0682C47D1827052800F6D5F4 /* CSMatrixExporter.h in Headers */,
 			);
@@ -389,6 +405,7 @@
 				0682C4C718270B7100F6D5F4 /* DNALattice3D.m in Sources */,
 				0682C4CF1827202F00F6D5F4 /* CSFileReader.m in Sources */,
 				0682C4C318270B7100F6D5F4 /* DNALattice1d.m in Sources */,
+				06A9AAD2182AD4720066EE5B /* CSMatrixImporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +415,7 @@
 			files = (
 				0682C47F1827052800F6D5F4 /* CSMatrixExporter.m in Sources */,
 				0682C4C818270B7100F6D5F4 /* DNALattice3D.m in Sources */,
+				06A9AAD1182ACCA80066EE5B /* CSMatrixImporter.m in Sources */,
 				0682C4C418270B7100F6D5F4 /* DNALattice1d.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

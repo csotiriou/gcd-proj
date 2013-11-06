@@ -10,3 +10,6 @@
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 #define LOG_INIT_DEFAULT [DDLog addLogger:[DDTTYLogger sharedInstance]];
+
+#define CS_LOG_DIRECTORY_NAME @"CocoaLogs"
+#define CS_INTERMEDIATE_PATHS_DIRECTORY @"Desktop"

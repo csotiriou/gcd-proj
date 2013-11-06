@@ -37,6 +37,9 @@
 		0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */; };
 		0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcherSequential.m */; };
 		0699104C1821C41000290809 /* PatternMatcherSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcherSequential.m */; };
+		06A9AAC4182AA3590066EE5B /* PatternMatcherGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */; };
+		06A9AAC5182AA3590066EE5B /* PatternMatcherGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */; };
+		06A9AACA182AC8810066EE5B /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC9182AC8810066EE5B /* Util.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,10 @@
 		0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaGCDTestsTests.m; sourceTree = "<group>"; };
 		069910471821C41000290809 /* PatternMatcherSequential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherSequential.h; sourceTree = "<group>"; };
 		069910481821C41000290809 /* PatternMatcherSequential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherSequential.m; sourceTree = "<group>"; };
+		06A9AAC2182AA3590066EE5B /* PatternMatcherGCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherGCD.h; sourceTree = "<group>"; };
+		06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherGCD.m; sourceTree = "<group>"; };
+		06A9AAC8182AC8810066EE5B /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		06A9AAC9182AC8810066EE5B /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,11 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				0690D96618283619000E8165 /* Definitions.h */,
+				06A9AAC7182AC8730066EE5B /* Helpers */,
 				0690D951182835F7000E8165 /* External */,
-				0690D94B18280FD1000E8165 /* PatternMatcherBase.h */,
-				0690D94C18280FD1000E8165 /* PatternMatcherBase.m */,
-				069910471821C41000290809 /* PatternMatcherSequential.h */,
-				069910481821C41000290809 /* PatternMatcherSequential.m */,
+				06A9AAC1182AA26F0066EE5B /* Pattern Matchers */,
 				069910251821C3FE00290809 /* AppDelegate.h */,
 				069910261821C3FE00290809 /* AppDelegate.m */,
 				069910281821C3FE00290809 /* MainMenu.xib */,
@@ -230,6 +235,28 @@
 				0699103A1821C3FE00290809 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06A9AAC1182AA26F0066EE5B /* Pattern Matchers */ = {
+			isa = PBXGroup;
+			children = (
+				0690D94B18280FD1000E8165 /* PatternMatcherBase.h */,
+				0690D94C18280FD1000E8165 /* PatternMatcherBase.m */,
+				069910471821C41000290809 /* PatternMatcherSequential.h */,
+				069910481821C41000290809 /* PatternMatcherSequential.m */,
+				06A9AAC2182AA3590066EE5B /* PatternMatcherGCD.h */,
+				06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */,
+			);
+			name = "Pattern Matchers";
+			sourceTree = "<group>";
+		};
+		06A9AAC7182AC8730066EE5B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				06A9AAC8182AC8810066EE5B /* Util.h */,
+				06A9AAC9182AC8810066EE5B /* Util.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,9 +362,11 @@
 				069910271821C3FE00290809 /* AppDelegate.m in Sources */,
 				0690D95E18283608000E8165 /* DDASLLogger.m in Sources */,
 				0690D96418283608000E8165 /* DDTTYLogger.m in Sources */,
+				06A9AAC4182AA3590066EE5B /* PatternMatcherGCD.m in Sources */,
 				0690D96018283608000E8165 /* DDFileLogger.m in Sources */,
 				0690D96218283608000E8165 /* DDLog.m in Sources */,
 				0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */,
+				06A9AACA182AC8810066EE5B /* Util.m in Sources */,
 				069910201821C3FE00290809 /* main.m in Sources */,
 				0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */,
 			);
@@ -350,6 +379,7 @@
 				0690D94E18280FD1000E8165 /* PatternMatcherBase.m in Sources */,
 				0690D96518283608000E8165 /* DDTTYLogger.m in Sources */,
 				0690D96118283608000E8165 /* DDFileLogger.m in Sources */,
+				06A9AAC5182AA3590066EE5B /* PatternMatcherGCD.m in Sources */,
 				06391CE61822B0810060B751 /* AlgoTests.m in Sources */,
 				0690D95D18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */,
 				0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */,

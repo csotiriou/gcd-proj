@@ -9,6 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "LatticeCommon.h"
 
+/**
+DNALatice represented into a 3D array. Not yet complete
+*/
 @interface DNALattice3D : NSObject <LatticeCommon>
+
 @property (nonatomic, readonly) int sideNumber;
 @end

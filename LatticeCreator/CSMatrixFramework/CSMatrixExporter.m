@@ -31,7 +31,7 @@
 	
 	self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
 	[self.fileHandle writeData:[@"#File Descriptions\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[self.fileHandle writeData:[[NSString stringWithFormat:@"sidewidth:%i\n", self.lattice.sideNumber] dataUsingEncoding:NSUTF8StringEncoding]];
+	[self.fileHandle writeData:[[NSString stringWithFormat:@"s:%i\n", self.lattice.sideNumber] dataUsingEncoding:NSUTF8StringEncoding]];
 	[self.fileHandle writeData:[@"#Data begins below this line\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	if (self.fileHandle != nil) { //file is open
@@ -41,7 +41,7 @@
 				NSMutableString *bigChunk = [NSMutableString string];
 				for (int j=0; j< self.lattice.sideNumber; j++) {
 					for (int k = 0; k<self.lattice.sideNumber; k++) {
-						[bigChunk appendFormat:@"%i,%i,%i=%c\n", i,j,k, [self.lattice getItemAti:i andJ:j andK:k]];
+						[bigChunk appendFormat:@"d:%i,%i,%i=%c\n", i,j,k, [self.lattice getItemAti:i andJ:j andK:k]];
 					}
 				}
 				NSData *data = [bigChunk dataUsingEncoding:NSUTF8StringEncoding];
