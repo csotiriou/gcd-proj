@@ -19,4 +19,14 @@
 {
 	return [[NSHomeDirectory() stringByAppendingPathComponent:CS_INTERMEDIATE_PATHS_DIRECTORY] stringByAppendingPathComponent:CS_LOG_DIRECTORY_NAME];
 }
+
++ (BOOL)array:(NSArray *)array ContainsString:(NSString *)string
+{
+	for (NSString *str in array) {
+		if ([str rangeOfString:string].location != NSNotFound) {
+			return YES;
+		}
+	}
+	return NO;
+}
 @end

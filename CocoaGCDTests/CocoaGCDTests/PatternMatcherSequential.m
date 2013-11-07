@@ -34,7 +34,7 @@
 	@autoreleasepool {
 		NSArray *lines = [self obtainHorizontallLinesForProcessing];
 		for (NSString *word in self.dictionaryToSearch) {
-			if ([self array:lines ContainsString:word]) {
+			if ([Util array:lines ContainsString:word]) {
 				[self.wordsProcessedAndResults setValue:@YES forKey:word];
 			}
 		}
@@ -43,7 +43,7 @@
 	@autoreleasepool {
 		NSArray *lines = [self obtainVerticalLinesForProcessing];
 		for (NSString *word in self.dictionaryToSearch) {
-			if ([self array:lines ContainsString:word]) {
+			if ([Util array:lines ContainsString:word]) {
 				[self.wordsProcessedAndResults setValue:@YES forKey:word];
 			}
 		}
@@ -51,7 +51,7 @@
 	@autoreleasepool {
 		NSArray *lines = [self obtainDiagonalLinesBottomLeftTopRight];
 		for (NSString *word in self.dictionaryToSearch) {
-			if ([self array:lines ContainsString:word]) {
+			if ([Util array:lines ContainsString:word]) {
 				[self.wordsProcessedAndResults setValue:@YES forKey:word];
 			}
 		}
@@ -59,7 +59,7 @@
 	@autoreleasepool {
 		NSArray *lines = [self obtainDiagonalLinesTopLeftBottomRight];
 		for (NSString *word in self.dictionaryToSearch) {
-			if ([self array:lines ContainsString:word]) {
+			if ([Util array:lines ContainsString:word]) {
 				[self.wordsProcessedAndResults setValue:@YES forKey:word];
 			}
 		}
@@ -67,15 +67,7 @@
 	self.hasAlreadyRan = YES;
 }
 
-- (BOOL)array:(NSArray *)array ContainsString:(NSString *)string
-{
-	for (NSString *str in array) {
-		if ([str rangeOfString:string].location != NSNotFound) {
-			return YES;
-		}
-	}
-	return NO;
-}
+
 
 
 - (NSDictionary *)getResults

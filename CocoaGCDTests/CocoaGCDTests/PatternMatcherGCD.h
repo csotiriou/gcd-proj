@@ -10,4 +10,7 @@
 
 @interface PatternMatcherGCD : PatternMatcherBase
 
+
+- (void)testThreads;
+
 @end

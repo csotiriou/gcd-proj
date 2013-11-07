@@ -11,4 +11,5 @@
 @interface Util : NSObject
 + (NSString *)userHomeDirectoryPath;
 + (NSString *)logDirectoryPath;
++ (BOOL)array:(NSArray *)array ContainsString:(NSString *)string;
 @end

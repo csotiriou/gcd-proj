@@ -10,11 +10,12 @@
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "DDTTYLogger.h"
 #import "DDFileLogger.h"
+#import "PatternMatcherGCD.h"
 
 #define SIDE 3
 
 @interface AppDelegate()
-
+@property (nonatomic, strong) PatternMatcherGCD *patternMatcher;
 @end
 
 @implementation AppDelegate
@@ -30,6 +31,16 @@
 	[[fileLogger logFileManager] setMaximumNumberOfLogFiles:10];
 	[DDLog addLogger:fileLogger];
 	
+	CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
+
+//	DNALattice1d *lattice = [importer dnaLatticeFromFileAtLocation:[[Util userHomeDirectoryPath] stringByAppendingPathComponent:@"Desktop/output.desc"]];
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:300 andChar:'a'];
+	
+	
+	self.patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:lattice andDictionaryToSearch:@[@"aaa", @"bb"]];
+	[self.patternMatcher startScanning];
+//	[self.patternMatcher testThreads];;
+//	[self.patternMatcher testThreadsOperationQueue];
 }
 
 
