@@ -15,6 +15,7 @@
 	if (self = [super init]) {
 		self.lattice = lattice;
 		self.dictionaryToSearch = [dictionaryOfWords mutableCopy];
+		self.latticeExtractor = [[LatticeLineExtractor alloc] init];
 	}
 	return self;
 }
@@ -178,6 +179,13 @@
 	return linesArray;
 }
 
+
+
+
+- (void)lineWasFound:(NSString *)line
+{
+	@throw [NSException exceptionWithName:@"-lineWasFound: You must implement this function to subclasses" reason:@"" userInfo:nil];
+}
 - (void)startScanning
 {
 	@throw [NSException exceptionWithName:@"You must implement this function to subclasses" reason:@"" userInfo:nil];

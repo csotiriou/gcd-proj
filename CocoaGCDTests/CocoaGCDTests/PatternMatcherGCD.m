@@ -53,26 +53,71 @@
 - (void)startScanning
 {
 	__block __weak PatternMatcherGCD *weakSelf = self; //avoid circular references
+	
+	//	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
+	//		[weakSelf scanVerticalLines];
+	//	});
+	//
+	//	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
+	//		[weakSelf scanHorizontalLines];
+	//	});
+	//
+	//	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
+	//		[weakSelf scanDiagonal1];
+	//	});
+	//
+	//	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
+	//		[weakSelf scanDiagonal2];
+	//	});
+	//
+	//
+	//	dispatch_group_notify(self.operationGroup, self.backgroundProcessQueue, ^{
+	//		[weakSelf allTasksDone];
+	//	});
+	
 	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-		[weakSelf scanVerticalLines];
+		[self.latticeExtractor obtainDiagonalLinesBottomLeftTopRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+			[self serialySearchForStringsInLine:line];
+		}];
 	});
 	
 	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-		[weakSelf scanHorizontalLines];
+		[self.latticeExtractor obtainDiagonalLinesTopLeftBottomRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+			[self serialySearchForStringsInLine:line];
+		}];
 	});
 	
 	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-		[weakSelf scanDiagonal1];
+		[self.latticeExtractor obtainHorizontallLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+			[self serialySearchForStringsInLine:line];
+		}];
+		
 	});
 	
 	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-		[weakSelf scanDiagonal2];
+		[self.latticeExtractor obtainLinesInIntraLatticeForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+			[self serialySearchForStringsInLine:line];
+		}];
 	});
 	
 	
 	dispatch_group_notify(self.operationGroup, self.backgroundProcessQueue, ^{
-		[weakSelf allTasksDone];
+		[self.latticeExtractor obtainVerticalLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+			[self serialySearchForStringsInLine:line];
+		}];
 	});
+}
+
+- (void)serialySearchForStringsInLine:(NSString *)line
+{
+	//serialize access to the array that we have to search, and eliminate elements that we have already found to ease the burden
+	for (NSString *word in self.dictionaryToSearch) {
+		if ([[self.wordsProcessedAndResults valueForKey:word] boolValue] == NO) {
+			if ([line rangeOfString:word].location != NSNotFound) {
+				[self.wordsProcessedAndResults setValue:@YES forKey:word];
+			}
+		}
+	}
 }
 
 - (void)scanVerticalLines

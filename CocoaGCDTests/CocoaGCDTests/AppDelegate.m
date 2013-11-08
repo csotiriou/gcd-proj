@@ -37,8 +37,8 @@
 	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:1000 andChar:'a'];
 	
 	
-	self.patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:lattice andDictionaryToSearch:@[@"aaa", @"bb"]];
-//	[self.patternMatcher startScanning];
+	self.patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:lattice andDictionaryToSearch:@[@"aaa", @"bb", @"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb"]];
+	[self.patternMatcher startScanning];
 //	[self.patternMatcher testThreads];;
 //	[self.patternMatcher testThreadsOperationQueue];
 }

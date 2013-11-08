@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		06391CE61822B0810060B751 /* AlgoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06391CE51822B0810060B751 /* AlgoTests.m */; };
 		068A86DD182D6E0D003E03C5 /* CSMatrixFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
+		068A86E0182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */; };
+		068A86E1182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */; };
 		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
 		0690D94E18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
 		0690D95018282AE1000E8165 /* PatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94F18282AE1000E8165 /* PatternTests.m */; };
@@ -94,6 +96,8 @@
 
 /* Begin PBXFileReference section */
 		06391CE51822B0810060B751 /* AlgoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgoTests.m; sourceTree = "<group>"; };
+		068A86DE182D6F77003E03C5 /* LatticeLineExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractor.h; sourceTree = "<group>"; };
+		068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatticeLineExtractor.m; sourceTree = "<group>"; };
 		0690D94B18280FD1000E8165 /* PatternMatcherBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherBase.h; sourceTree = "<group>"; };
 		0690D94C18280FD1000E8165 /* PatternMatcherBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherBase.m; sourceTree = "<group>"; };
 		0690D94F18282AE1000E8165 /* PatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTests.m; sourceTree = "<group>"; };
@@ -178,7 +182,6 @@
 		069910071821C3FE00290809 = {
 			isa = PBXGroup;
 			children = (
-				06E0F2AC182CEF3100227AC2 /* LatticeCreator.xcodeproj */,
 				069910191821C3FE00290809 /* CocoaGCDTests */,
 				069910371821C3FE00290809 /* CocoaGCDTestsTests */,
 				069910121821C3FE00290809 /* Frameworks */,
@@ -198,6 +201,7 @@
 		069910121821C3FE00290809 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06E0F2AC182CEF3100227AC2 /* LatticeCreator.xcodeproj */,
 				069910131821C3FE00290809 /* Cocoa.framework */,
 				069910321821C3FE00290809 /* XCTest.framework */,
 				069910151821C3FE00290809 /* Other Frameworks */,
@@ -220,13 +224,13 @@
 			children = (
 				0690D96618283619000E8165 /* Definitions.h */,
 				06A9AAC7182AC8730066EE5B /* Helpers */,
-				0690D951182835F7000E8165 /* External */,
 				06A9AAC1182AA26F0066EE5B /* Pattern Matchers */,
 				069910251821C3FE00290809 /* AppDelegate.h */,
 				069910261821C3FE00290809 /* AppDelegate.m */,
 				069910281821C3FE00290809 /* MainMenu.xib */,
 				0699102B1821C3FE00290809 /* Images.xcassets */,
 				0699101A1821C3FE00290809 /* Supporting Files */,
+				0690D951182835F7000E8165 /* External */,
 			);
 			path = CocoaGCDTests;
 			sourceTree = "<group>";
@@ -272,6 +276,8 @@
 				069910481821C41000290809 /* PatternMatcherSequential.m */,
 				06A9AAC2182AA3590066EE5B /* PatternMatcherGCD.h */,
 				06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */,
+				068A86DE182D6F77003E03C5 /* LatticeLineExtractor.h */,
+				068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */,
 			);
 			name = "Pattern Matchers";
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				06A9AACA182AC8810066EE5B /* Util.m in Sources */,
 				069910201821C3FE00290809 /* main.m in Sources */,
 				0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */,
+				068A86E0182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +461,7 @@
 				0690D96318283608000E8165 /* DDLog.m in Sources */,
 				0690D95F18283608000E8165 /* DDASLLogger.m in Sources */,
 				0690D95018282AE1000E8165 /* PatternTests.m in Sources */,
+				068A86E1182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
