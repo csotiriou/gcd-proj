@@ -4,4 +4,7 @@
    <FileRef
       location = "container:CocoaGCDTests/CocoaGCDTests.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:LatticeCreator/LatticeCreator.xcodeproj">
+   </FileRef>
 </Workspace>

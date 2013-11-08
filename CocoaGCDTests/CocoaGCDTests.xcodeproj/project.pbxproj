@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06391CE61822B0810060B751 /* AlgoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06391CE51822B0810060B751 /* AlgoTests.m */; };
+		068A86DD182D6E0D003E03C5 /* CSMatrixFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
 		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
 		0690D94E18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
 		0690D95018282AE1000E8165 /* PatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94F18282AE1000E8165 /* PatternTests.m */; };
@@ -85,6 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				068A86DD182D6E0D003E03C5 /* CSMatrixFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
