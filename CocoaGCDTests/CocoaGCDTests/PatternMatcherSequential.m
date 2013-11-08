@@ -33,6 +33,7 @@
 {
 	@autoreleasepool {
 		NSArray *lines = [self obtainHorizontallLinesForProcessing];
+		NSLog(@"horizontal lines obtained");
 		for (NSString *word in self.dictionaryToSearch) {
 			if ([Util array:lines ContainsString:word]) {
 				[self.wordsProcessedAndResults setValue:@YES forKey:word];
@@ -42,6 +43,7 @@
 
 	@autoreleasepool {
 		NSArray *lines = [self obtainVerticalLinesForProcessing];
+		NSLog(@"vertical lines obtained");
 		for (NSString *word in self.dictionaryToSearch) {
 			if ([Util array:lines ContainsString:word]) {
 				[self.wordsProcessedAndResults setValue:@YES forKey:word];
@@ -50,6 +52,7 @@
 	}
 	@autoreleasepool {
 		NSArray *lines = [self obtainDiagonalLinesBottomLeftTopRight];
+		NSLog(@"diagonal 1 lines obtained");
 		for (NSString *word in self.dictionaryToSearch) {
 			if ([Util array:lines ContainsString:word]) {
 				[self.wordsProcessedAndResults setValue:@YES forKey:word];
@@ -58,6 +61,7 @@
 	}
 	@autoreleasepool {
 		NSArray *lines = [self obtainDiagonalLinesTopLeftBottomRight];
+		NSLog(@"diagonal lines 2 lines obtained");
 		for (NSString *word in self.dictionaryToSearch) {
 			if ([Util array:lines ContainsString:word]) {
 				[self.wordsProcessedAndResults setValue:@YES forKey:word];
