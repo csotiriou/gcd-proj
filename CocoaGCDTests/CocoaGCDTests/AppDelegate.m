@@ -34,10 +34,10 @@
 	CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
 
 //	DNALattice1d *lattice = [importer dnaLatticeFromFileAtLocation:[[Util userHomeDirectoryPath] stringByAppendingPathComponent:@"Desktop/output.desc"]];
-	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:1000 andChar:'a'];
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'a'];
 	
 	
-	self.patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:lattice andDictionaryToSearch:@[@"aaa", @"bb", @"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb",@"aaa", @"bb"]];
+	self.patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:lattice andDictionaryToSearch:@[@"aaa", @"bb"]];
 	[self.patternMatcher startScanning];
 //	[self.patternMatcher testThreads];;
 //	[self.patternMatcher testThreadsOperationQueue];

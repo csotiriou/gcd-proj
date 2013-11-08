@@ -13,9 +13,10 @@
 @property (nonatomic, strong) dispatch_queue_t backgroundProcessQueue;
 @property (nonatomic, strong) dispatch_queue_t serialQueue;
 @property (nonatomic, strong) dispatch_group_t operationGroup;
-
-
 @property (nonatomic, strong) NSMutableDictionary *wordsProcessedAndResults;
+
+@property (nonatomic) unsigned long long totalLinesProcessed;
+@property (nonatomic, strong) NSDate *startDate;
 @end
 
 @implementation PatternMatcherGCD
@@ -53,27 +54,8 @@
 - (void)startScanning
 {
 	__block __weak PatternMatcherGCD *weakSelf = self; //avoid circular references
-	
-	//	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-	//		[weakSelf scanVerticalLines];
-	//	});
-	//
-	//	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-	//		[weakSelf scanHorizontalLines];
-	//	});
-	//
-	//	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-	//		[weakSelf scanDiagonal1];
-	//	});
-	//
-	//	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-	//		[weakSelf scanDiagonal2];
-	//	});
-	//
-	//
-	//	dispatch_group_notify(self.operationGroup, self.backgroundProcessQueue, ^{
-	//		[weakSelf allTasksDone];
-	//	});
+	self.totalLinesProcessed = 0;
+	self.startDate = [NSDate date];
 	
 	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
 		[self.latticeExtractor obtainDiagonalLinesBottomLeftTopRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
@@ -106,10 +88,14 @@
 			[self serialySearchForStringsInLine:line];
 		}];
 	});
+	dispatch_group_notify(self.operationGroup, self.backgroundProcessQueue, ^{
+		[weakSelf allTasksDone];
+	});
 }
 
 - (void)serialySearchForStringsInLine:(NSString *)line
 {
+	self.totalLinesProcessed++;
 	//serialize access to the array that we have to search, and eliminate elements that we have already found to ease the burden
 	for (NSString *word in self.dictionaryToSearch) {
 		if ([[self.wordsProcessedAndResults valueForKey:word] boolValue] == NO) {
@@ -172,6 +158,10 @@
 - (void)allTasksDone
 {
 	DDLogVerbose(@"all tasks are done");
+	DDLogVerbose(@"total lines processed: %llu", self.totalLinesProcessed);
+	NSDate *endDate = [NSDate date];
+	NSTimeInterval timeInterval = [endDate timeIntervalSinceDate:self.startDate];
+	DDLogVerbose(@"time needed: %f", timeInterval);
 }
 
 - (void)testThreads
