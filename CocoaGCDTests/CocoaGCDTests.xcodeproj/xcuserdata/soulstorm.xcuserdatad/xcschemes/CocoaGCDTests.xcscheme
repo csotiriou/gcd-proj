@@ -38,6 +38,16 @@
                ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "06D5DFB9183588DE00A7D320"
+               BuildableName = "GCDRunTesting.xctest"
+               BlueprintName = "GCDRunTesting"
+               ReferencedContainer = "container:CocoaGCDTests.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

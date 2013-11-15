@@ -100,8 +100,8 @@
 	for (NSString *word in self.dictionaryToSearch) {
 		if ([[self.wordsProcessedAndResults valueForKey:word] boolValue] == NO) {
 			if ([line rangeOfString:word].location != NSNotFound) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
-			}
+				//				[self.wordsProcessedAndResults setValue:@YES forKey:word];
+				[self seriallyAccessResultsDictionaryWithValue:@YES forKey:word];			}
 		}
 	}
 }
@@ -112,8 +112,8 @@
 		NSArray *lines = [self obtainVerticalLinesForProcessing];
 		for (NSString *word in self.dictionaryToSearch) {
 			if ([Util array:lines ContainsString:word]) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
-			}
+				//				[self.wordsProcessedAndResults setValue:@YES forKey:word];
+				[self seriallyAccessResultsDictionaryWithValue:@YES forKey:word];			}
 		}
 	}
 }
@@ -124,8 +124,8 @@
 		NSArray *lines = [self obtainHorizontallLinesForProcessing];
 		for (NSString *word in self.dictionaryToSearch) {
 			if ([Util array:lines ContainsString:word]) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
-			}
+				//				[self.wordsProcessedAndResults setValue:@YES forKey:word];
+				[self seriallyAccessResultsDictionaryWithValue:@YES forKey:word];			}
 		}
 	}
 }
@@ -136,7 +136,8 @@
 		NSArray *lines = [self obtainDiagonalLinesBottomLeftTopRight];
 		for (NSString *word in self.dictionaryToSearch) {
 			if ([Util array:lines ContainsString:word]) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
+				//				[self.wordsProcessedAndResults setValue:@YES forKey:word];
+				[self seriallyAccessResultsDictionaryWithValue:@YES forKey:word];
 			}
 		}
 	}
@@ -148,12 +149,26 @@
 		NSArray *lines = [self obtainDiagonalLinesTopLeftBottomRight];
 		for (NSString *word in self.dictionaryToSearch) {
 			if ([Util array:lines ContainsString:word]) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
+				//				[self.wordsProcessedAndResults setValue:@YES forKey:word];
+				[self seriallyAccessResultsDictionaryWithValue:@YES forKey:word];
 			}
 		}
 	}
 }
 
+
+/**
+ Forces serial access to the dictionary which holds the results, to avoid multithreading issues.
+ 
+ @param value the parameter to associate with the value
+ @param key the key to associate the value with.
+ */
+- (void)seriallyAccessResultsDictionaryWithValue:(id)value forKey:(NSString *)key
+{
+	dispatch_async(self.serialQueue, ^{
+		[self.wordsProcessedAndResults setValue:value forKey:key];
+	});
+}
 
 - (void)allTasksDone
 {

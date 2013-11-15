@@ -16,6 +16,17 @@
 		self.lattice = lattice;
 		self.dictionaryToSearch = [dictionaryOfWords mutableCopy];
 		self.latticeExtractor = [[LatticeLineExtractor alloc] init];
+		
+		
+		//add the reversed words to the array to search. instead of reversing
+		//each of the found strings in order to search for a direction, we can just pre-calculate
+		//the reversed search strings from the start, and search for them instead.
+		NSMutableArray *secondaryArray = [NSMutableArray array];
+		for (NSString *word in self.dictionaryToSearch) {
+			[secondaryArray addObject:[word reversedString]];
+		}
+		
+		[self.dictionaryToSearch addObjectsFromArray:secondaryArray];
 	}
 	return self;
 }
@@ -134,6 +145,8 @@
 	return linesArray;
 }
 
+//different kind of algorithm. just for test. simpler to program, but has O(n^2)complexity. Still prefer this one, though,
+//since it can be adapted.
 - (NSArray *)obtainDiagonalLinesBottomLeftTopRight
 {
 	NSMutableArray *linesArray = [NSMutableArray array];

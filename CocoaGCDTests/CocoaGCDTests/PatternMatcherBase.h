@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "LatticeLineExtractor.h"
+#import "CSAdditions.h"
+
 
 
 /**

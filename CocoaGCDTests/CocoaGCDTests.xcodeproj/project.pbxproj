@@ -7,23 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06391CE61822B0810060B751 /* AlgoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06391CE51822B0810060B751 /* AlgoTests.m */; };
 		068A86DD182D6E0D003E03C5 /* CSMatrixFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
 		068A86E0182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */; };
-		068A86E1182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */; };
 		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
-		0690D94E18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
-		0690D95018282AE1000E8165 /* PatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94F18282AE1000E8165 /* PatternTests.m */; };
 		0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95318283608000E8165 /* DDAbstractDatabaseLogger.m */; };
-		0690D95D18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95318283608000E8165 /* DDAbstractDatabaseLogger.m */; };
 		0690D95E18283608000E8165 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95518283608000E8165 /* DDASLLogger.m */; };
-		0690D95F18283608000E8165 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95518283608000E8165 /* DDASLLogger.m */; };
 		0690D96018283608000E8165 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95718283608000E8165 /* DDFileLogger.m */; };
-		0690D96118283608000E8165 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95718283608000E8165 /* DDFileLogger.m */; };
 		0690D96218283608000E8165 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95918283608000E8165 /* DDLog.m */; };
-		0690D96318283608000E8165 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95918283608000E8165 /* DDLog.m */; };
 		0690D96418283608000E8165 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95B18283608000E8165 /* DDTTYLogger.m */; };
-		0690D96518283608000E8165 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95B18283608000E8165 /* DDTTYLogger.m */; };
 		069910141821C3FE00290809 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910131821C3FE00290809 /* Cocoa.framework */; };
 		0699101E1821C3FE00290809 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0699101C1821C3FE00290809 /* InfoPlist.strings */; };
 		069910201821C3FE00290809 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699101F1821C3FE00290809 /* main.m */; };
@@ -31,25 +22,35 @@
 		069910271821C3FE00290809 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910261821C3FE00290809 /* AppDelegate.m */; };
 		0699102A1821C3FE00290809 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069910281821C3FE00290809 /* MainMenu.xib */; };
 		0699102C1821C3FE00290809 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0699102B1821C3FE00290809 /* Images.xcassets */; };
-		069910331821C3FE00290809 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910321821C3FE00290809 /* XCTest.framework */; };
-		069910341821C3FE00290809 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910131821C3FE00290809 /* Cocoa.framework */; };
-		0699103C1821C3FE00290809 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0699103A1821C3FE00290809 /* InfoPlist.strings */; };
-		0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */; };
 		0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcherSequential.m */; };
-		0699104C1821C41000290809 /* PatternMatcherSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcherSequential.m */; };
 		06A9AAC4182AA3590066EE5B /* PatternMatcherGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */; };
-		06A9AAC5182AA3590066EE5B /* PatternMatcherGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */; };
 		06A9AACA182AC8810066EE5B /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC9182AC8810066EE5B /* Util.m */; };
-		06E0F2BA182CEF4400227AC2 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
+		06D5DFB51835878800A7D320 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
+		06D5DFBB183588DE00A7D320 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910321821C3FE00290809 /* XCTest.framework */; };
+		06D5DFC1183588DE00A7D320 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06D5DFBF183588DE00A7D320 /* InfoPlist.strings */; };
+		06D5DFC3183588DE00A7D320 /* GCDRunTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D5DFC2183588DE00A7D320 /* GCDRunTesting.m */; };
+		06D5DFCA183588E800A7D320 /* CocoaGCDTestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0699103D1821C3FE00290809 /* CocoaGCDTestsTests.m */; };
+		06D5DFCB183588EA00A7D320 /* AlgoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06391CE51822B0810060B751 /* AlgoTests.m */; };
+		06D5DFCC183588EC00A7D320 /* PatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94F18282AE1000E8165 /* PatternTests.m */; };
+		06D5DFCD1835891700A7D320 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
+		06D5DFD018358F7200A7D320 /* CSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D5DFCF18358F7200A7D320 /* CSAdditions.m */; };
+		06D5DFD118358F7200A7D320 /* CSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D5DFCF18358F7200A7D320 /* CSAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		069910351821C3FE00290809 /* PBXContainerItemProxy */ = {
+		06D5DFB31835878100A7D320 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06E0F2AC182CEF3100227AC2 /* LatticeCreator.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0682C44F182704D500F6D5F4;
+			remoteInfo = CSMatrixFramework;
+		};
+		06D5DFC5183588DE00A7D320 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 069910081821C3FE00290809 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0699100F1821C3FE00290809;
-			remoteInfo = CocoaGCDTests;
+			remoteInfo = CocoaGCD;
 		};
 		06E0F2B2182CEF3100227AC2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -71,13 +72,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 0682C465182704D500F6D5F4;
 			remoteInfo = CSMatrixFrameworkTests;
-		};
-		06E0F2B8182CEF3900227AC2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 06E0F2AC182CEF3100227AC2 /* LatticeCreator.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0682C44F182704D500F6D5F4;
-			remoteInfo = CSMatrixFramework;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -126,7 +120,6 @@
 		069910261821C3FE00290809 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		069910291821C3FE00290809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0699102B1821C3FE00290809 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		069910311821C3FE00290809 /* CocoaGCDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaGCDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		069910321821C3FE00290809 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		069910391821C3FE00290809 /* CocoaGCDTestsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaGCDTestsTests-Info.plist"; sourceTree = "<group>"; };
 		0699103B1821C3FE00290809 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -137,6 +130,13 @@
 		06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherGCD.m; sourceTree = "<group>"; };
 		06A9AAC8182AC8810066EE5B /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		06A9AAC9182AC8810066EE5B /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		06D5DFBA183588DE00A7D320 /* GCDRunTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCDRunTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06D5DFBE183588DE00A7D320 /* GCDRunTesting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GCDRunTesting-Info.plist"; sourceTree = "<group>"; };
+		06D5DFC0183588DE00A7D320 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		06D5DFC2183588DE00A7D320 /* GCDRunTesting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDRunTesting.m; sourceTree = "<group>"; };
+		06D5DFC4183588DE00A7D320 /* GCDRunTesting-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCDRunTesting-Prefix.pch"; sourceTree = "<group>"; };
+		06D5DFCE18358F7200A7D320 /* CSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAdditions.h; sourceTree = "<group>"; };
+		06D5DFCF18358F7200A7D320 /* CSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAdditions.m; sourceTree = "<group>"; };
 		06E0F2AC182CEF3100227AC2 /* LatticeCreator.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LatticeCreator.xcodeproj; path = ../LatticeCreator/LatticeCreator.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,17 +145,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06E0F2BA182CEF4400227AC2 /* CSMatrixFramework.framework in Frameworks */,
 				069910141821C3FE00290809 /* Cocoa.framework in Frameworks */,
+				06D5DFB51835878800A7D320 /* CSMatrixFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0699102E1821C3FE00290809 /* Frameworks */ = {
+		06D5DFB7183588DE00A7D320 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				069910341821C3FE00290809 /* Cocoa.framework in Frameworks */,
-				069910331821C3FE00290809 /* XCTest.framework in Frameworks */,
+				06D5DFCD1835891700A7D320 /* CSMatrixFramework.framework in Frameworks */,
+				06D5DFBB183588DE00A7D320 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +184,7 @@
 			children = (
 				069910191821C3FE00290809 /* CocoaGCDTests */,
 				069910371821C3FE00290809 /* CocoaGCDTestsTests */,
+				06D5DFBC183588DE00A7D320 /* GCDRunTesting */,
 				069910121821C3FE00290809 /* Frameworks */,
 				069910111821C3FE00290809 /* Products */,
 			);
@@ -193,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				069910101821C3FE00290809 /* CocoaGCD.app */,
-				069910311821C3FE00290809 /* CocoaGCDTests.xctest */,
+				06D5DFBA183588DE00A7D320 /* GCDRunTesting.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -287,8 +288,29 @@
 			children = (
 				06A9AAC8182AC8810066EE5B /* Util.h */,
 				06A9AAC9182AC8810066EE5B /* Util.m */,
+				06D5DFCE18358F7200A7D320 /* CSAdditions.h */,
+				06D5DFCF18358F7200A7D320 /* CSAdditions.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		06D5DFBC183588DE00A7D320 /* GCDRunTesting */ = {
+			isa = PBXGroup;
+			children = (
+				06D5DFC2183588DE00A7D320 /* GCDRunTesting.m */,
+				06D5DFBD183588DE00A7D320 /* Supporting Files */,
+			);
+			path = GCDRunTesting;
+			sourceTree = "<group>";
+		};
+		06D5DFBD183588DE00A7D320 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06D5DFBE183588DE00A7D320 /* GCDRunTesting-Info.plist */,
+				06D5DFBF183588DE00A7D320 /* InfoPlist.strings */,
+				06D5DFC4183588DE00A7D320 /* GCDRunTesting-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		06E0F2AD182CEF3100227AC2 /* Products */ = {
@@ -316,29 +338,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				06E0F2B9182CEF3900227AC2 /* PBXTargetDependency */,
+				06D5DFB41835878100A7D320 /* PBXTargetDependency */,
 			);
 			name = CocoaGCD;
 			productName = CocoaGCDTests;
 			productReference = 069910101821C3FE00290809 /* CocoaGCD.app */;
 			productType = "com.apple.product-type.application";
 		};
-		069910301821C3FE00290809 /* CocoaGCDTests */ = {
+		06D5DFB9183588DE00A7D320 /* GCDRunTesting */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 069910441821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCDTests" */;
+			buildConfigurationList = 06D5DFC7183588DE00A7D320 /* Build configuration list for PBXNativeTarget "GCDRunTesting" */;
 			buildPhases = (
-				0699102D1821C3FE00290809 /* Sources */,
-				0699102E1821C3FE00290809 /* Frameworks */,
-				0699102F1821C3FE00290809 /* Resources */,
+				06D5DFB6183588DE00A7D320 /* Sources */,
+				06D5DFB7183588DE00A7D320 /* Frameworks */,
+				06D5DFB8183588DE00A7D320 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				069910361821C3FE00290809 /* PBXTargetDependency */,
+				06D5DFC6183588DE00A7D320 /* PBXTargetDependency */,
 			);
-			name = CocoaGCDTests;
-			productName = CocoaGCDTestsTests;
-			productReference = 069910311821C3FE00290809 /* CocoaGCDTests.xctest */;
+			name = GCDRunTesting;
+			productName = GCDRunTesting;
+			productReference = 06D5DFBA183588DE00A7D320 /* GCDRunTesting.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -350,7 +372,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Oramind;
 				TargetAttributes = {
-					069910301821C3FE00290809 = {
+					06D5DFB9183588DE00A7D320 = {
 						TestTargetID = 0699100F1821C3FE00290809;
 					};
 				};
@@ -375,7 +397,7 @@
 			projectRoot = "";
 			targets = (
 				0699100F1821C3FE00290809 /* CocoaGCD */,
-				069910301821C3FE00290809 /* CocoaGCDTests */,
+				06D5DFB9183588DE00A7D320 /* GCDRunTesting */,
 			);
 		};
 /* End PBXProject section */
@@ -416,11 +438,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0699102F1821C3FE00290809 /* Resources */ = {
+		06D5DFB8183588DE00A7D320 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0699103C1821C3FE00290809 /* InfoPlist.strings in Resources */,
+				06D5DFC1183588DE00A7D320 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,43 +462,37 @@
 				0690D96218283608000E8165 /* DDLog.m in Sources */,
 				0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */,
 				06A9AACA182AC8810066EE5B /* Util.m in Sources */,
+				06D5DFD018358F7200A7D320 /* CSAdditions.m in Sources */,
 				069910201821C3FE00290809 /* main.m in Sources */,
 				0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */,
 				068A86E0182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0699102D1821C3FE00290809 /* Sources */ = {
+		06D5DFB6183588DE00A7D320 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0690D94E18280FD1000E8165 /* PatternMatcherBase.m in Sources */,
-				0690D96518283608000E8165 /* DDTTYLogger.m in Sources */,
-				0690D96118283608000E8165 /* DDFileLogger.m in Sources */,
-				06A9AAC5182AA3590066EE5B /* PatternMatcherGCD.m in Sources */,
-				06391CE61822B0810060B751 /* AlgoTests.m in Sources */,
-				0690D95D18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */,
-				0699103E1821C3FE00290809 /* CocoaGCDTestsTests.m in Sources */,
-				0699104C1821C41000290809 /* PatternMatcherSequential.m in Sources */,
-				0690D96318283608000E8165 /* DDLog.m in Sources */,
-				0690D95F18283608000E8165 /* DDASLLogger.m in Sources */,
-				0690D95018282AE1000E8165 /* PatternTests.m in Sources */,
-				068A86E1182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */,
+				06D5DFCA183588E800A7D320 /* CocoaGCDTestsTests.m in Sources */,
+				06D5DFD118358F7200A7D320 /* CSAdditions.m in Sources */,
+				06D5DFC3183588DE00A7D320 /* GCDRunTesting.m in Sources */,
+				06D5DFCC183588EC00A7D320 /* PatternTests.m in Sources */,
+				06D5DFCB183588EA00A7D320 /* AlgoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		069910361821C3FE00290809 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0699100F1821C3FE00290809 /* CocoaGCD */;
-			targetProxy = 069910351821C3FE00290809 /* PBXContainerItemProxy */;
-		};
-		06E0F2B9182CEF3900227AC2 /* PBXTargetDependency */ = {
+		06D5DFB41835878100A7D320 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CSMatrixFramework;
-			targetProxy = 06E0F2B8182CEF3900227AC2 /* PBXContainerItemProxy */;
+			targetProxy = 06D5DFB31835878100A7D320 /* PBXContainerItemProxy */;
+		};
+		06D5DFC6183588DE00A7D320 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0699100F1821C3FE00290809 /* CocoaGCD */;
+			targetProxy = 06D5DFC5183588DE00A7D320 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -509,6 +525,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				0699103B1821C3FE00290809 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		06D5DFBF183588DE00A7D320 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06D5DFC0183588DE00A7D320 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -589,10 +613,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaGCDTests/CocoaGCDTests-Prefix.pch";
 				INFOPLIST_FILE = "CocoaGCDTests/CocoaGCDTests-Info.plist";
@@ -606,10 +626,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaGCDTests/CocoaGCDTests-Prefix.pch";
 				INFOPLIST_FILE = "CocoaGCDTests/CocoaGCDTests-Info.plist";
@@ -618,42 +634,38 @@
 			};
 			name = Release;
 		};
-		069910451821C3FE00290809 /* Debug */ = {
+		06D5DFC8183588DE00A7D320 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CocoaGCDTests.app/Contents/MacOS/CocoaGCDTests";
-				COMBINE_HIDPI_IMAGES = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CocoaGCD.app/Contents/MacOS/CocoaGCD";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaGCDTests/CocoaGCDTests-Prefix.pch";
+				GCC_PREFIX_HEADER = "GCDRunTesting/GCDRunTesting-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CocoaGCDTestsTests/CocoaGCDTestsTests-Info.plist";
+				INFOPLIST_FILE = "GCDRunTesting/GCDRunTesting-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		069910461821C3FE00290809 /* Release */ = {
+		06D5DFC9183588DE00A7D320 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CocoaGCDTests.app/Contents/MacOS/CocoaGCDTests";
-				COMBINE_HIDPI_IMAGES = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CocoaGCD.app/Contents/MacOS/CocoaGCD";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CocoaGCDTests-fjuxmkntfsmtzeagnfxymczjbdrh/Build/Products/Debug",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaGCDTests/CocoaGCDTests-Prefix.pch";
-				INFOPLIST_FILE = "CocoaGCDTestsTests/CocoaGCDTestsTests-Info.plist";
+				GCC_PREFIX_HEADER = "GCDRunTesting/GCDRunTesting-Prefix.pch";
+				INFOPLIST_FILE = "GCDRunTesting/GCDRunTesting-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -681,14 +693,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		069910441821C3FE00290809 /* Build configuration list for PBXNativeTarget "CocoaGCDTests" */ = {
+		06D5DFC7183588DE00A7D320 /* Build configuration list for PBXNativeTarget "GCDRunTesting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				069910451821C3FE00290809 /* Debug */,
-				069910461821C3FE00290809 /* Release */,
+				06D5DFC8183588DE00A7D320 /* Debug */,
+				06D5DFC9183588DE00A7D320 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

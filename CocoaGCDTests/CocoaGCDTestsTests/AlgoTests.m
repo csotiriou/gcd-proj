@@ -217,12 +217,64 @@
 	XCTAssertTrue([self arrayWithStrings:expected isEqualToArrayWithStrings:linesArray], @"error - wrong output");
 }
 
+
+
+- (void)testGetLinesDiagonallyNormalWayAlgorithm
+{
+	NSMutableArray *linesArray = [NSMutableArray array];
+	
+	for (int constantDimension=0; constantDimension<self.lattice.sideNumber; constantDimension++) {
+		int sideCount = self.lattice.sideNumber;
+		int currentHorizontal = 1;
+		int currentVertical = 0;
+		
+		NSMutableString *currentString = [NSMutableString string];
+		
+		
+		while (currentHorizontal < sideCount) {
+			[currentString appendFormat:@"%c", [self.lattice getItemAti:constantDimension andJ:currentHorizontal andK:currentVertical]];
+			
+			NSLog(@"examining: %i, %i, %i", constantDimension, currentHorizontal, currentVertical);
+			
+			currentVertical++;
+			currentHorizontal++;
+			if (currentHorizontal >= sideCount) {
+				[currentString appendFormat:@"\n"];
+				currentHorizontal = sideCount - (currentVertical -1 /*undo last step */);//since this is a square matrix
+				currentVertical = 0;
+			}
+		}
+		
+		[currentString appendFormat:@"\n"];
+		currentHorizontal = 0;
+		currentVertical = 0;
+		
+		while (currentVertical < sideCount) {
+			[currentString appendFormat:@"%c", [self.lattice getItemAti:constantDimension andJ:currentHorizontal andK:currentVertical]];
+			NSLog(@"examining: %i, %i, %i", constantDimension, currentHorizontal, currentVertical);
+			currentVertical++;
+			currentHorizontal++;
+			
+			if (currentVertical >= sideCount) {
+				[currentString appendFormat:@"\n"];
+				currentVertical = sideCount - (currentHorizontal -1);
+				currentHorizontal = 0;
+//				currentHorizontal = currentVertical;
+//				currentVertical = sideCount-1;
+			}
+		}
+		
+		[linesArray addObject:currentString];
+	}
+
+}
+
 - (void)testGetLinesDiagonally2 //from bottom left to top right, more understandable but possibly less efficient than the other algorithm
 {
 	NSMutableArray *linesArray = [NSMutableArray array];
 	
 	for (int lattice=0; lattice<self.lattice.sideNumber; lattice++) {
-		int sideCount = 4;
+		int sideCount = self.lattice.sideNumber;
 		int currentHorizontal = 0;
 		int currentVertical = sideCount-2;
 		
@@ -258,9 +310,117 @@
 
 		[linesArray addObject:currentString];
 	}
-	
-	
 }
+
+- (void)testGetDiagonallyZ1 //diagonally, from z = 0 to z = n, from bottom to top
+{
+	//start from the element that is in the 0,n-1 place and form diagonal strings using that
+	NSMutableArray *linesArray = [NSMutableArray array];
+	
+	for (int constantDimension=0; constantDimension<self.lattice.sideNumber; constantDimension++) {
+		int sideCount = self.lattice.sideNumber;
+		int currentHorizontal = 0;
+		int currentVertical = sideCount-2;
+		
+		NSMutableString *currentString = [NSMutableString string];
+		
+		
+		while (currentVertical >= 0) {
+			[currentString appendFormat:@"%c", [self.lattice getItemAti:currentVertical andJ:currentHorizontal andK:constantDimension]];
+			//			NSLog(@"examining: %i, %i, %i", lattice, currentHorizontal, currentVertical);
+			currentVertical--;
+			currentHorizontal++;
+			if (currentVertical<0) {
+				[currentString appendFormat:@"\n"];
+				currentVertical = currentHorizontal-2;//since this is a square matrix
+				currentHorizontal = 0;
+			}
+		}
+		[currentString appendFormat:@"\n"];
+		currentHorizontal = sideCount-2;
+		currentVertical = sideCount-1;
+		
+		while (currentHorizontal >= 0) {
+			[currentString appendFormat:@"%c", [self.lattice getItemAti:currentVertical andJ:currentHorizontal andK:constantDimension]];
+			currentVertical--;
+			currentHorizontal++;
+			
+			if (currentHorizontal>=sideCount) {
+				[currentString appendFormat:@"\n"];
+				currentHorizontal = currentVertical;
+				currentVertical = sideCount-1;
+			}
+		}
+		
+		[linesArray addObject:currentString];
+	}
+}
+
+- (void)testGetDiagonallyZ2 //diagonally, from z = 0 to z = n, from top to bottom
+{
+	NSMutableArray *linesArray = [NSMutableArray array];
+	
+	for (int constantDimension=0; constantDimension<self.lattice.sideNumber; constantDimension++) {
+		int sideCount = self.lattice.sideNumber;
+		int currentHorizontal = 1;
+		int currentVertical = 0;
+		
+		NSMutableString *currentString = [NSMutableString string];
+		
+		
+		while (currentHorizontal < sideCount) {
+			[currentString appendFormat:@"%c", [self.lattice getItemAti:currentVertical andJ:currentHorizontal andK:constantDimension]];
+			
+			
+			currentVertical++;
+			currentHorizontal++;
+			if (currentHorizontal >= sideCount) {
+				[currentString appendFormat:@"\n"];
+				currentHorizontal = sideCount - (currentVertical -1 /*undo last step */);//since this is a square matrix
+				currentVertical = 0;
+			}
+		}
+		
+		[currentString appendFormat:@"\n"];
+		currentHorizontal = 0;
+		currentVertical = 0;
+		
+		while (currentVertical < sideCount) {
+			[currentString appendFormat:@"%c", [self.lattice getItemAti:currentVertical andJ:currentHorizontal andK:constantDimension]];
+			currentVertical++;
+			currentHorizontal++;
+			
+			if (currentVertical >= sideCount) {
+				[currentString appendFormat:@"\n"];
+				currentVertical = sideCount - (currentHorizontal -1);
+				currentHorizontal = 0;
+				//				currentHorizontal = currentVertical;
+				//				currentVertical = sideCount-1;
+			}
+		}
+		
+		[linesArray addObject:currentString];
+	}
+}
+
+
+- (void)testGetReversedString
+{
+	NSString *original = @"this is a string";
+	const char *originalChars = [original cStringUsingEncoding:NSUTF8StringEncoding];
+	char reverseString[original.length];
+	
+	int i;
+	for (i = 1; i<= original.length; i++) {
+		reverseString[i-1] = originalChars[original.length - i];
+	}
+	reverseString[original.length] = '\0'; //add the terminating character
+	
+	NSString *finalString = [NSString stringWithCString:reverseString encoding:NSUTF8StringEncoding];
+	XCTAssertEqualObjects(finalString, @"gnirts a si siht", @"strings are not equal");
+}
+
+
 
 
 
