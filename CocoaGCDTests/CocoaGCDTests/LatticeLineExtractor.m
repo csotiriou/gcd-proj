@@ -70,57 +70,6 @@
 
 
 
-/*- (void)obtainDiagonalLinesTopLeftBottomRightForLattice:(id<LatticeCommon>)lattice withLineCompletionBlock:(void (^)(NSString *line))block
-{
-	for (int i=0; i<lattice.sideNumber; i++){
-		@autoreleasepool {
-			int sideCount = lattice.sideNumber;
-			int startVertical = sideCount - 2; //the element before the last one in the Y axis
-			
-			int currentHorizontal = 0;
-			int currentVertical = startVertical;
-			
-			BOOL hasCompletedVericalStarts = NO;
-			
-			BOOL end = NO;
-			
-			NSMutableString *currentString = [NSMutableString string];
-			while ( !end) {
-				[currentString appendFormat:@"%c", [lattice getItemAti:i andJ:currentHorizontal andK:currentVertical]];
-				currentHorizontal++;
-				currentVertical++;
-				
-				if (currentVertical >= sideCount) { //if we have reached the bottom end
-					if (!hasCompletedVericalStarts) {
-						currentVertical = (currentVertical == 0? 0 : (sideCount - 1) - currentHorizontal); // we know that it is a square, so it's easy to calculate the next starting point.
-						[currentString appendFormat:@"\n"];
-						currentHorizontal = 0;
-						if (currentHorizontal == 0 && currentVertical == 0){
-							hasCompletedVericalStarts = YES;
-						}
-					}else{ //case happens when we have the change from vertical to horizontal starts
-						currentHorizontal = 1;
-						currentVertical = 0;
-						[currentString appendFormat:@"\n"];
-					}
-				}
-				if (currentHorizontal >= sideCount) {
-					currentVertical --; //what was the value before the increment that happened only because we thought we had space
-					currentHorizontal = (sideCount -1) - (currentVertical-1);
-					
-					[currentString appendFormat:@"\n"];
-					currentVertical = 0;
-				}
-				if (currentHorizontal == sideCount-1 && currentVertical == 0) {
-					end = YES;
-					//				[linesArray addObject:currentString];
-					block(currentString);
-				}
-			}
-		}
-	}
-}*/
-
 - (void)obtainDiagonalLinesTopLeftBottomRightForLattice:(id<LatticeCommon>)lattice withLineCompletionBlock:(void (^)(NSString *line))block
 {
 	for (int constantDimension=0; constantDimension < lattice.sideNumber; constantDimension++) {
@@ -134,7 +83,7 @@
 		while (currentHorizontal < sideCount) {
 			[currentString appendFormat:@"%c", [lattice getItemAti:constantDimension andJ:currentHorizontal andK:currentVertical]];
 			
-			NSLog(@"examining: %i, %i, %i", constantDimension, currentHorizontal, currentVertical);
+//			NSLog(@"examining: %i, %i, %i", constantDimension, currentHorizontal, currentVertical);
 			
 			currentVertical++;
 			currentHorizontal++;
@@ -151,7 +100,7 @@
 		
 		while (currentVertical < sideCount) {
 			[currentString appendFormat:@"%c", [lattice getItemAti:constantDimension andJ:currentHorizontal andK:currentVertical]];
-			NSLog(@"examining: %i, %i, %i", constantDimension, currentHorizontal, currentVertical);
+//			NSLog(@"examining: %i, %i, %i", constantDimension, currentHorizontal, currentVertical);
 			currentVertical++;
 			currentHorizontal++;
 			

@@ -12,6 +12,11 @@
 #import "CSAdditions.h"
 
 
+@class PatternMatcherBase;
+
+@protocol PatternMatcherBaseDelegate <NSObject>
+- (void)patternMatcher:(PatternMatcherBase *)matcher didFinishWithResults:(NSDictionary *)results;
+@end
 
 /**
  Abstract class implementing the basic functionality, helpful functions, and patterns
@@ -19,8 +24,12 @@
  */
 @interface PatternMatcherBase : NSObject
 @property (nonatomic, strong) id <LatticeCommon> lattice;
+@property (nonatomic, weak) id<PatternMatcherBaseDelegate> delegate;
 @property (nonatomic, strong) NSMutableArray *dictionaryToSearch;
 @property (nonatomic, strong) LatticeLineExtractor *latticeExtractor;
+@property (nonatomic, strong) NSMutableDictionary *wordsProcessedAndResults;
+@property (nonatomic) BOOL hasAlreadyRan;
+
 
 - (NSArray *)obtainHorizontallLinesForProcessing;
 - (NSArray *)obtainVerticalLinesForProcessing;
@@ -31,4 +40,6 @@
 - (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords;
 - (void)lineWasFound:(NSString *)line;
 - (void)startScanning;
+
+- (void)signalComplete;
 @end

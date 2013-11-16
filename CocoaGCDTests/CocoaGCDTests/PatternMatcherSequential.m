@@ -9,8 +9,6 @@
 #import "PatternMatcherSequential.h"
 
 @interface PatternMatcherSequential ()
-@property (nonatomic, strong) NSMutableDictionary *wordsProcessedAndResults;
-@property (nonatomic) BOOL hasAlreadyRan;
 @end
 
 @implementation PatternMatcherSequential
@@ -31,57 +29,62 @@
 
 - (void)startScanning
 {
-	@autoreleasepool {
-		NSArray *lines = [self obtainHorizontallLinesForProcessing];
-		NSLog(@"horizontal lines obtained");
-		for (NSString *word in self.dictionaryToSearch) {
-			if ([Util array:lines ContainsString:word]) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
-			}
-		}
-	}
-
-	@autoreleasepool {
-		NSArray *lines = [self obtainVerticalLinesForProcessing];
-		NSLog(@"vertical lines obtained");
-		for (NSString *word in self.dictionaryToSearch) {
-			if ([Util array:lines ContainsString:word]) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
-			}
-		}
-	}
-	@autoreleasepool {
-		NSArray *lines = [self obtainDiagonalLinesBottomLeftTopRight];
-		NSLog(@"diagonal 1 lines obtained");
-		for (NSString *word in self.dictionaryToSearch) {
-			if ([Util array:lines ContainsString:word]) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
-			}
-		}
-	}
-	@autoreleasepool {
-		NSArray *lines = [self obtainDiagonalLinesTopLeftBottomRight];
-		NSLog(@"diagonal lines 2 lines obtained");
-		for (NSString *word in self.dictionaryToSearch) {
-			if ([Util array:lines ContainsString:word]) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
-			}
-		}
-	}
+	[self.latticeExtractor obtainDiagonalLinesBottomLeftTopRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+		NSLog(@"line obtained");
+		[self serialySearchForStringsInLine:line];
+	}];
+	
+	[self.latticeExtractor obtainDiagonalLinesTopLeftBottomRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+		[self serialySearchForStringsInLine:line];
+	}];
+	
+	[self.latticeExtractor obtainHorizontallLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+		[self serialySearchForStringsInLine:line];
+	}];
+	
+	[self.latticeExtractor obtainLinesInIntraLatticeForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+		[self serialySearchForStringsInLine:line];
+	}];
+	
+	[self.latticeExtractor obtainVerticalLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+		[self serialySearchForStringsInLine:line];
+	}];
+	
+	[self.latticeExtractor obtainDiagonalHeightConstantZ1ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+		[self serialySearchForStringsInLine:line];
+	}];
+	
+	[self.latticeExtractor obtainDiagonalHeightConstantZ2ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+		[self serialySearchForStringsInLine:line];
+	}];
+	
+	[self signalComplete];
+	
 	self.hasAlreadyRan = YES;
 }
 
 
-
-
-- (NSDictionary *)getResults
+- (void)serialySearchForStringsInLine:(NSString *)line
 {
-	if (!self.hasAlreadyRan) {
-		[self startScanning];
+	//serialize access to the array that we have to search, and eliminate elements that we have already found to ease the burden
+	for (NSString *word in self.dictionaryToSearch) {
+		if ([[self.wordsProcessedAndResults valueForKey:word] boolValue] == NO) {
+			if ([line rangeOfString:word].location != NSNotFound) {
+				[self.wordsProcessedAndResults setValue:@YES forKey:word];
+			}
+		}
 	}
-	return self.wordsProcessedAndResults;
 }
 
+
+//- (NSDictionary *)getResults
+//{
+//	if (!self.hasAlreadyRan) {
+//		[self startScanning];
+//	}
+//	return self.wordsProcessedAndResults;
+//}
+//
 
 
 @end

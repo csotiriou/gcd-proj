@@ -7,21 +7,27 @@
 //
 
 #import "AppDelegate.h"
-#import <CSMatrixFramework/CSMatrixFramework.h>
+
 #import "DDTTYLogger.h"
 #import "DDFileLogger.h"
-#import "PatternMatcherGCD.h"
+#import "MasterViewController.h"
+
 
 #define SIDE 3
 
 @interface AppDelegate()
-@property (nonatomic, strong) PatternMatcherGCD *patternMatcher;
+@property (nonatomic, strong) MasterViewController *masterViewController;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+	
+	self.masterViewController = [[MasterViewController alloc] initWithNibName:NSStringFromClass([MasterViewController class]) bundle:nil];
+	
+	self.window.contentView = self.masterViewController.view;
+	
 	//setup logging
 	[DDLog addLogger:[DDTTYLogger sharedInstance]];
 	DDLogFileManagerDefault *defaultManager = [[DDLogFileManagerDefault alloc] initWithLogsDirectory:[Util logDirectoryPath]];
@@ -30,16 +36,6 @@
 	[fileLogger setRollingFrequency:(3600.0 * 24.0)];
 	[[fileLogger logFileManager] setMaximumNumberOfLogFiles:10];
 	[DDLog addLogger:fileLogger];
-	
-
-//	DNALattice1d *lattice = [importer dnaLatticeFromFileAtLocation:[[Util userHomeDirectoryPath] stringByAppendingPathComponent:@"Desktop/output.desc"]];
-	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:10 andChar:'a'];
-	
-	
-	self.patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:lattice andDictionaryToSearch:@[@"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb"]];
-	[self.patternMatcher startScanning];
-//	[self.patternMatcher testThreads];;
-//	[self.patternMatcher testThreadsOperationQueue];
 }
 
 

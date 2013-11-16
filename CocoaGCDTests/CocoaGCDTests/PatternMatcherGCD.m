@@ -53,21 +53,11 @@
 
 - (void)startScanning
 {
-	__block __weak PatternMatcherGCD *weakSelf = self; //avoid circular references
+//	__block __weak PatternMatcherGCD *weakSelf = self; //avoid circular references
 	self.totalLinesProcessed = 0;
 	self.startDate = [NSDate date];
 	
-	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-		[self.latticeExtractor obtainDiagonalLinesBottomLeftTopRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
-			[self serialySearchForStringsInLine:line];
-		}];
-	});
 	
-	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
-		[self.latticeExtractor obtainDiagonalLinesTopLeftBottomRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
-			[self serialySearchForStringsInLine:line];
-		}];
-	});
 	
 	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
 		[self.latticeExtractor obtainHorizontallLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
@@ -83,14 +73,46 @@
 	});
 	
 	
-	dispatch_group_notify(self.operationGroup, self.backgroundProcessQueue, ^{
+	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
 		[self.latticeExtractor obtainVerticalLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 			[self serialySearchForStringsInLine:line];
 		}];
 	});
-	dispatch_group_notify(self.operationGroup, self.backgroundProcessQueue, ^{
-		[weakSelf allTasksDone];
+	
+	
+	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
+		[self.latticeExtractor obtainDiagonalLinesTopLeftBottomRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+			[self serialySearchForStringsInLine:line];
+		}];
 	});
+	
+	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
+		[self.latticeExtractor obtainDiagonalLinesBottomLeftTopRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+			[self serialySearchForStringsInLine:line];
+		}];
+	});
+	
+	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
+		[self.latticeExtractor obtainDiagonalHeightConstantZ2ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+			[self serialySearchForStringsInLine:line];
+		}];
+	});
+	
+	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, ^{
+		[self.latticeExtractor obtainDiagonalHeightConstantZ1ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
+			[self serialySearchForStringsInLine:line];
+		}];
+	});
+		
+	dispatch_group_notify(self.operationGroup, self.backgroundProcessQueue, ^{
+		[self allTasksDone];
+	});
+
+}
+
+- (void)addAsynchronousGroupOperation:(void(^)())operation
+{
+	dispatch_group_async(self.operationGroup, self.backgroundProcessQueue, operation);
 }
 
 - (void)serialySearchForStringsInLine:(NSString *)line
@@ -177,6 +199,8 @@
 	NSDate *endDate = [NSDate date];
 	NSTimeInterval timeInterval = [endDate timeIntervalSinceDate:self.startDate];
 	DDLogVerbose(@"time needed: %f", timeInterval);
+	
+	[self signalComplete];
 }
 
 - (void)testThreads

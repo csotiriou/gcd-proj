@@ -8,6 +8,8 @@
 
 #import "PatternMatcherBase.h"
 
+
+
 @implementation PatternMatcherBase
 
 - (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords
@@ -192,6 +194,13 @@
 	return linesArray;
 }
 
+
+- (void)signalComplete
+{
+	if ([self.delegate respondsToSelector:@selector(patternMatcher:didFinishWithResults:)]) {
+		[self.delegate patternMatcher:self didFinishWithResults:self.wordsProcessedAndResults];
+	}
+}
 
 
 

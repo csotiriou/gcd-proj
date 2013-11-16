@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C6F1837B6AE005D90EF /* MasterViewController.m */; };
+		067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067A9C701837B6AE005D90EF /* MasterViewController.xib */; };
 		068A86DD182D6E0D003E03C5 /* CSMatrixFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
 		068A86E0182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */; };
 		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
@@ -90,6 +92,9 @@
 
 /* Begin PBXFileReference section */
 		06391CE51822B0810060B751 /* AlgoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgoTests.m; sourceTree = "<group>"; };
+		067A9C6E1837B6AE005D90EF /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		067A9C6F1837B6AE005D90EF /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		067A9C701837B6AE005D90EF /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
 		068A86DE182D6F77003E03C5 /* LatticeLineExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractor.h; sourceTree = "<group>"; };
 		068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatticeLineExtractor.m; sourceTree = "<group>"; };
 		0690D94B18280FD1000E8165 /* PatternMatcherBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherBase.h; sourceTree = "<group>"; };
@@ -162,6 +167,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		067A9C6A1837B301005D90EF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				069910281821C3FE00290809 /* MainMenu.xib */,
+				067A9C6E1837B6AE005D90EF /* MasterViewController.h */,
+				067A9C6F1837B6AE005D90EF /* MasterViewController.m */,
+				067A9C701837B6AE005D90EF /* MasterViewController.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		0690D951182835F7000E8165 /* External */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,7 +244,7 @@
 				06A9AAC1182AA26F0066EE5B /* Pattern Matchers */,
 				069910251821C3FE00290809 /* AppDelegate.h */,
 				069910261821C3FE00290809 /* AppDelegate.m */,
-				069910281821C3FE00290809 /* MainMenu.xib */,
+				067A9C6A1837B301005D90EF /* UI */,
 				0699102B1821C3FE00290809 /* Images.xcassets */,
 				0699101A1821C3FE00290809 /* Supporting Files */,
 				0690D951182835F7000E8165 /* External */,
@@ -431,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */,
 				0699101E1821C3FE00290809 /* InfoPlist.strings in Resources */,
 				0699102C1821C3FE00290809 /* Images.xcassets in Resources */,
 				069910241821C3FE00290809 /* Credits.rtf in Resources */,
@@ -459,6 +476,7 @@
 				0690D96418283608000E8165 /* DDTTYLogger.m in Sources */,
 				06A9AAC4182AA3590066EE5B /* PatternMatcherGCD.m in Sources */,
 				0690D96018283608000E8165 /* DDFileLogger.m in Sources */,
+				067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */,
 				0690D96218283608000E8165 /* DDLog.m in Sources */,
 				0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */,
 				06A9AACA182AC8810066EE5B /* Util.m in Sources */,
@@ -700,6 +718,7 @@
 				06D5DFC9183588DE00A7D320 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
