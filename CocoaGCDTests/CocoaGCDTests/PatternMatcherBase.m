@@ -16,19 +16,21 @@
 {
 	if (self = [super init]) {
 		self.lattice = lattice;
-		self.dictionaryToSearch = [dictionaryOfWords mutableCopy];
+		self.dictionaryToSearch = [NSMutableArray array];
 		self.latticeExtractor = [[LatticeLineExtractor alloc] init];
 		
 		
 		//add the reversed words to the array to search. instead of reversing
 		//each of the found strings in order to search for a direction, we can just pre-calculate
 		//the reversed search strings from the start, and search for them instead.
-		NSMutableArray *secondaryArray = [NSMutableArray array];
-		for (NSString *word in self.dictionaryToSearch) {
+		NSMutableArray *secondaryArray = [NSMutableArray arrayWithArray:dictionaryOfWords];
+		for (NSString *word in dictionaryOfWords) {
 			[secondaryArray addObject:[word reversedString]];
 		}
 		
-		[self.dictionaryToSearch addObjectsFromArray:secondaryArray];
+		//now trying to eliminate duplicate values to avoid multiple useless operations
+		NSSet *distinctValues = [NSSet setWithArray:secondaryArray];
+		[self.dictionaryToSearch addObjectsFromArray:distinctValues.allObjects];
 	}
 	return self;
 }

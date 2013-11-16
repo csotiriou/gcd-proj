@@ -30,7 +30,6 @@
 - (void)startScanning
 {
 	[self.latticeExtractor obtainDiagonalLinesBottomLeftTopRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
-		NSLog(@"line obtained");
 		[self serialySearchForStringsInLine:line];
 	}];
 	

@@ -15,5 +15,6 @@
 
 @property (strong) IBOutlet NSTextField *progressLabel;
 @property (strong) IBOutlet NSProgressIndicator *progressActivityIndicator;
+@property (strong) IBOutlet NSTextView *resultsTextView;
 
 @end

@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="progressActivityIndicator" destination="eRd-SO-Oya" id="AdJ-Bg-Vfz"/>
                 <outlet property="progressLabel" destination="jBD-qa-bEs" id="3Jf-wB-jsi"/>
+                <outlet property="resultsTextView" destination="vSM-hV-42X" id="QYb-QP-c0o"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
@@ -18,14 +19,14 @@
             <rect key="frame" x="0.0" y="0.0" width="488" height="191"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zec-8u-9GL">
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zec-8u-9GL">
                     <rect key="frame" x="220" y="36" width="248" height="135"/>
                     <autoresizingMask key="autoresizingMask"/>
-                    <clipView key="contentView" ambiguous="YES" misplaced="YES" id="wer-iB-Rxo">
+                    <clipView key="contentView" id="wer-iB-Rxo">
                         <rect key="frame" x="1" y="1" width="246" height="133"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="vSM-hV-42X">
+                            <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="vSM-hV-42X">
                                 <rect key="frame" x="0.0" y="0.0" width="246" height="133"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,6 +39,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </clipView>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="135" id="TyL-UX-y1x"/>
+                        <constraint firstAttribute="width" constant="248" id="Utb-6T-aHc"/>
+                    </constraints>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="s29-Jp-jbu">
                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -86,6 +91,8 @@
             <constraints>
                 <constraint firstItem="6Qg-rV-xBh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="FDA-0K-dCJ"/>
                 <constraint firstItem="6Qg-rV-xBh" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="LAh-Qr-ASJ"/>
+                <constraint firstItem="Zec-8u-9GL" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="220" id="N3V-2p-dQK"/>
+                <constraint firstItem="Zec-8u-9GL" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="fcC-vy-Dzd"/>
             </constraints>
         </customView>
     </objects>

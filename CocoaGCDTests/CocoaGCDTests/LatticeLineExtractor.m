@@ -113,7 +113,7 @@
 
 		block(currentString);
 	}
-
+	
 }
 
 
