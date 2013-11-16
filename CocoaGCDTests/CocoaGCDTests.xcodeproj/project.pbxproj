@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C6F1837B6AE005D90EF /* MasterViewController.m */; };
 		067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067A9C701837B6AE005D90EF /* MasterViewController.xib */; };
+		067A9C751838165A005D90EF /* PatternMatcherAsynchronous.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */; };
 		068A86DD182D6E0D003E03C5 /* CSMatrixFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
 		068A86E0182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */; };
 		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
@@ -95,6 +96,8 @@
 		067A9C6E1837B6AE005D90EF /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		067A9C6F1837B6AE005D90EF /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		067A9C701837B6AE005D90EF /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		067A9C731838165A005D90EF /* PatternMatcherAsynchronous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherAsynchronous.h; sourceTree = "<group>"; };
+		067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherAsynchronous.m; sourceTree = "<group>"; };
 		068A86DE182D6F77003E03C5 /* LatticeLineExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractor.h; sourceTree = "<group>"; };
 		068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatticeLineExtractor.m; sourceTree = "<group>"; };
 		0690D94B18280FD1000E8165 /* PatternMatcherBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherBase.h; sourceTree = "<group>"; };
@@ -289,6 +292,8 @@
 			children = (
 				0690D94B18280FD1000E8165 /* PatternMatcherBase.h */,
 				0690D94C18280FD1000E8165 /* PatternMatcherBase.m */,
+				067A9C731838165A005D90EF /* PatternMatcherAsynchronous.h */,
+				067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */,
 				069910471821C41000290809 /* PatternMatcherSequential.h */,
 				069910481821C41000290809 /* PatternMatcherSequential.m */,
 				06A9AAC2182AA3590066EE5B /* PatternMatcherGCD.h */,
@@ -480,6 +485,7 @@
 				0690D96218283608000E8165 /* DDLog.m in Sources */,
 				0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */,
 				06A9AACA182AC8810066EE5B /* Util.m in Sources */,
+				067A9C751838165A005D90EF /* PatternMatcherAsynchronous.m in Sources */,
 				06D5DFD018358F7200A7D320 /* CSAdditions.m in Sources */,
 				069910201821C3FE00290809 /* main.m in Sources */,
 				0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */,

@@ -65,25 +65,9 @@
 
 - (void)serialySearchForStringsInLine:(NSString *)line
 {
-	//serialize access to the array that we have to search, and eliminate elements that we have already found to ease the burden
-	for (NSString *word in self.dictionaryToSearch) {
-		if ([[self.wordsProcessedAndResults valueForKey:word] boolValue] == NO) {
-			if ([line rangeOfString:word].location != NSNotFound) {
-				[self.wordsProcessedAndResults setValue:@YES forKey:word];
-			}
-		}
-	}
+	[self matchStringsForLine:line withFoundBlock:^(NSString *wordFound) {
+		[self.wordsProcessedAndResults setValue:@YES forKey:wordFound];
+	}];
 }
-
-
-//- (NSDictionary *)getResults
-//{
-//	if (!self.hasAlreadyRan) {
-//		[self startScanning];
-//	}
-//	return self.wordsProcessedAndResults;
-//}
-//
-
 
 @end

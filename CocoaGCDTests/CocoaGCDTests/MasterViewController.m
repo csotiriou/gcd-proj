@@ -24,7 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'a'];
+		self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
 		self.dictionaryToSearch = @[@"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"acaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb"];
     }
     return self;

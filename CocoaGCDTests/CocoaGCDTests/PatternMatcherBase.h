@@ -29,17 +29,41 @@
 @property (nonatomic, strong) LatticeLineExtractor *latticeExtractor;
 @property (nonatomic, strong) NSMutableDictionary *wordsProcessedAndResults;
 @property (nonatomic) BOOL hasAlreadyRan;
+@property (nonatomic, readonly) NSArray *reversedDictionaryToSearch;
 
 
-- (NSArray *)obtainHorizontallLinesForProcessing;
-- (NSArray *)obtainVerticalLinesForProcessing;
-- (NSArray *)obtainLinesInIntraLatticeForProcessing;
-- (NSArray *)obtainDiagonalLinesTopLeftBottomRight;
-- (NSArray *)obtainDiagonalLinesBottomLeftTopRight;
 
+/**
+ @brief Inits the pattern matcher with a lattice and a dictionary of words
+ @param lattice a lattice
+ @param dictionaryOfWords an array of words to search in the lattice.
+ */
 - (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords;
-- (void)lineWasFound:(NSString *)line;
+
+
+/**
+ Starts scanning the lattice. After scanning ends, the delegate will be called.
+ */
 - (void)startScanning;
 
+
+/**
+ @brief signals the delegate if any, that the whole process is complete. Made public, in order to be called
+ by subclasses, and not directly by external classes.
+ */
 - (void)signalComplete;
+
+
+/**
+ @brief Searches a line for strings that are included in the dictionary to search. performs search in both directions. In case
+ where a line indeed contains a word, this word is passed as the argument in the 'found' block. In case where no word is found
+ inside the line, the 'foundBlock' is not even called. Avoids searching words that have already been found
+ 
+ @discussion Since subclasses use the same algorihm for searching but do different actions when a word is found, the 'foundBlock'
+ will allow them to specify different behaviors.
+ 
+ @param line the line to search the strings into
+ @param foundBlock the block to be called if a word is found inside a line
+ */
+- (void)matchStringsForLine:(NSString *)line withFoundBlock:(void(^)(NSString *wordFound))foundBlock;
 @end

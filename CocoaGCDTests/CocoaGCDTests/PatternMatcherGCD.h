@@ -6,11 +6,8 @@
 //  Copyright (c) 2013 Oramind. All rights reserved.
 //
 
-#import "PatternMatcherBase.h"
+#import "PatternMatcherAsynchronous.h"
 
-@interface PatternMatcherGCD : PatternMatcherBase
-
-
-- (void)testThreads;
+@interface PatternMatcherGCD : PatternMatcherAsynchronous
 
 @end
