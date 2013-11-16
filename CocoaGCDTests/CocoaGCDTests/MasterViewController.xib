@@ -10,6 +10,7 @@
                 <outlet property="progressActivityIndicator" destination="eRd-SO-Oya" id="AdJ-Bg-Vfz"/>
                 <outlet property="progressLabel" destination="jBD-qa-bEs" id="3Jf-wB-jsi"/>
                 <outlet property="resultsTextView" destination="vSM-hV-42X" id="QYb-QP-c0o"/>
+                <outlet property="runTestsGCD2ButtonPressed" destination="rrR-ew-Pz5" id="UDo-Oe-PaC"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
@@ -87,6 +88,17 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rrR-ew-Pz5">
+                    <rect key="frame" x="14" y="77" width="165" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Run Tests GCD 2" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nKi-gv-2H2">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <connections>
+                            <action selector="runTestsGCD2ButtonPressed:" target="-2" id="30P-h6-4pu"/>
+                        </connections>
+                    </buttonCell>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="6Qg-rV-xBh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="FDA-0K-dCJ"/>

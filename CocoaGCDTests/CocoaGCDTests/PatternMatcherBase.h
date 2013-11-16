@@ -28,8 +28,8 @@
 @property (nonatomic, strong) NSMutableArray *dictionaryToSearch;
 @property (nonatomic, strong) LatticeLineExtractor *latticeExtractor;
 @property (nonatomic, strong) NSMutableDictionary *wordsProcessedAndResults;
-@property (nonatomic) BOOL hasAlreadyRan;
 @property (nonatomic, readonly) NSArray *reversedDictionaryToSearch;
+@property (nonatomic) BOOL hasAlreadyRan;
 
 
 

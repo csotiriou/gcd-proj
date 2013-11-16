@@ -10,6 +10,7 @@
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "PatternMatcherGCD.h"
 #import "PatternMatcherSequential.h"
+#import "PatternMatcherGCD2.h"
 
 @interface MasterViewController () <PatternMatcherBaseDelegate>
 @property (nonatomic, strong) PatternMatcherBase *patternMatcher;
@@ -24,8 +25,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
-		self.dictionaryToSearch = @[@"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"acaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb"];
+		self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'a'];
+		self.dictionaryToSearch = @[@"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"acaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"kajsgdas78", @"asds", @"sadiou", @"#$d", @"ajsds"];
     }
     return self;
 }
@@ -53,6 +54,15 @@
 	[self.patternMatcher startScanning];
 }
 
+- (IBAction)runTestsGCD2ButtonPressed:(id)sender {
+	self.startDate = [NSDate date];
+	[self setupProcessIndicatorWithLabelString:@"running GCD 2 pattern matcher tests."];
+	self.patternMatcher = [[PatternMatcherGCD2 alloc] initWithLattice:self.dnaLattice andDictionaryToSearch:self.dictionaryToSearch];
+	self.patternMatcher.delegate = self;
+	[self.patternMatcher startScanning];
+
+}
+
 - (void)setupProcessIndicatorWithLabelString:(NSString *)textInLabel
 {
 	[self.progressLabel setStringValue:textInLabel];
@@ -70,6 +80,7 @@
 - (void)patternMatcher:(PatternMatcherBase *)matcher didFinishWithResults:(NSDictionary *)results
 {
 	DDLogVerbose(@"task was done.");
+	DDLogVerbose(@"results: %@", results.description);
 	[self hideProcessIndicator];
 	
 	NSDate *endDate = [NSDate date];

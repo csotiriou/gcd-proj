@@ -42,28 +42,8 @@
 }
 
 
-//- (void)serialySearchForStringsInLine:(NSString *)line
-//{
-//	//serialize access to the array that we have to search, and eliminate elements that we have already found to ease the burden
-//	for (int i = 0; i < self.dictionaryToSearch.count; i++) {
-//		NSString *word = [self.dictionaryToSearch objectAtIndex:i];
-//		if ([[self.wordsProcessedAndResults valueForKey:word] boolValue] == NO) { //only check if we have not found it already.
-//			NSString *reversedWord = [self.reversedDictionaryToSearch objectAtIndex:i];
-//			
-//			if ([line rangeOfString:word].location != NSNotFound || [line rangeOfString:reversedWord].location != NSNotFound) {
-//				[self seriallyAccessResultsDictionaryWithValue:@YES forKey:word]; //set the flag for this element to true
-//			}
-//		}
-//	}
-//}
 
 
-/**
- Forces serial access to the dictionary which holds the results, to avoid multithreading issues.
- 
- @param value the parameter to associate with the value
- @param key the key to associate the value with.
- */
 - (void)seriallyAccessResultsDictionaryWithValue:(id)value forKey:(NSString *)key
 {
 	dispatch_async(self.serialQueue, ^{

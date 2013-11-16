@@ -14,6 +14,11 @@
 @property (nonatomic, readonly) dispatch_queue_t serialQ;
 @property (nonatomic, readonly) dispatch_group_t operationGroup;
 
+
+
 - (void)initThreads;
+
+
+
 - (void)seriallyAccessResultsDictionaryWithValue:(id)value forKey:(NSString *)key;
 @end

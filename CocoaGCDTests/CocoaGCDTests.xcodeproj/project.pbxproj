@@ -10,6 +10,7 @@
 		067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C6F1837B6AE005D90EF /* MasterViewController.m */; };
 		067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067A9C701837B6AE005D90EF /* MasterViewController.xib */; };
 		067A9C751838165A005D90EF /* PatternMatcherAsynchronous.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */; };
+		067A9C7A18382030005D90EF /* PatternMatcherGCD2.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C7918382030005D90EF /* PatternMatcherGCD2.m */; };
 		068A86DD182D6E0D003E03C5 /* CSMatrixFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
 		068A86E0182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */; };
 		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
@@ -98,6 +99,8 @@
 		067A9C701837B6AE005D90EF /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
 		067A9C731838165A005D90EF /* PatternMatcherAsynchronous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherAsynchronous.h; sourceTree = "<group>"; };
 		067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherAsynchronous.m; sourceTree = "<group>"; };
+		067A9C7818382030005D90EF /* PatternMatcherGCD2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherGCD2.h; sourceTree = "<group>"; };
+		067A9C7918382030005D90EF /* PatternMatcherGCD2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherGCD2.m; sourceTree = "<group>"; };
 		068A86DE182D6F77003E03C5 /* LatticeLineExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractor.h; sourceTree = "<group>"; };
 		068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatticeLineExtractor.m; sourceTree = "<group>"; };
 		0690D94B18280FD1000E8165 /* PatternMatcherBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherBase.h; sourceTree = "<group>"; };
@@ -179,6 +182,32 @@
 				067A9C701837B6AE005D90EF /* MasterViewController.xib */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		067A9C7618381FE5005D90EF /* Base Components */ = {
+			isa = PBXGroup;
+			children = (
+				0690D94B18280FD1000E8165 /* PatternMatcherBase.h */,
+				0690D94C18280FD1000E8165 /* PatternMatcherBase.m */,
+				067A9C731838165A005D90EF /* PatternMatcherAsynchronous.h */,
+				067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */,
+				068A86DE182D6F77003E03C5 /* LatticeLineExtractor.h */,
+				068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */,
+			);
+			name = "Base Components";
+			sourceTree = "<group>";
+		};
+		067A9C7718381FF0005D90EF /* Actual Matchers */ = {
+			isa = PBXGroup;
+			children = (
+				069910471821C41000290809 /* PatternMatcherSequential.h */,
+				069910481821C41000290809 /* PatternMatcherSequential.m */,
+				06A9AAC2182AA3590066EE5B /* PatternMatcherGCD.h */,
+				06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */,
+				067A9C7818382030005D90EF /* PatternMatcherGCD2.h */,
+				067A9C7918382030005D90EF /* PatternMatcherGCD2.m */,
+			);
+			name = "Actual Matchers";
 			sourceTree = "<group>";
 		};
 		0690D951182835F7000E8165 /* External */ = {
@@ -290,16 +319,8 @@
 		06A9AAC1182AA26F0066EE5B /* Pattern Matchers */ = {
 			isa = PBXGroup;
 			children = (
-				0690D94B18280FD1000E8165 /* PatternMatcherBase.h */,
-				0690D94C18280FD1000E8165 /* PatternMatcherBase.m */,
-				067A9C731838165A005D90EF /* PatternMatcherAsynchronous.h */,
-				067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */,
-				069910471821C41000290809 /* PatternMatcherSequential.h */,
-				069910481821C41000290809 /* PatternMatcherSequential.m */,
-				06A9AAC2182AA3590066EE5B /* PatternMatcherGCD.h */,
-				06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */,
-				068A86DE182D6F77003E03C5 /* LatticeLineExtractor.h */,
-				068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */,
+				067A9C7618381FE5005D90EF /* Base Components */,
+				067A9C7718381FF0005D90EF /* Actual Matchers */,
 			);
 			name = "Pattern Matchers";
 			sourceTree = "<group>";
@@ -476,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */,
+				067A9C7A18382030005D90EF /* PatternMatcherGCD2.m in Sources */,
 				069910271821C3FE00290809 /* AppDelegate.m in Sources */,
 				0690D95E18283608000E8165 /* DDASLLogger.m in Sources */,
 				0690D96418283608000E8165 /* DDTTYLogger.m in Sources */,

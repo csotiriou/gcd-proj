@@ -11,6 +11,7 @@
 @interface MasterViewController : NSViewController
 - (IBAction)runTestsSequentialButtonPressed:(id)sender;
 - (IBAction)runTestsGCDButtonPressed:(id)sender;
+- (IBAction)runTestsGCD2ButtonPressed:(id)sender;
 
 
 @property (strong) IBOutlet NSTextField *progressLabel;

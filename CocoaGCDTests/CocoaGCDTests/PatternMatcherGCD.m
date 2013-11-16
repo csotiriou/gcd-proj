@@ -15,25 +15,6 @@
 
 @implementation PatternMatcherGCD
 
-- (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords
-{
-	if (self = [super initWithLattice:lattice andDictionaryToSearch:dictionaryOfWords]) {
-		[self initThreads];
-	}
-	return self;
-}
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [self initThreads];
-    }
-    return self;
-}
-
-
-
 
 - (void)startScanning
 {
