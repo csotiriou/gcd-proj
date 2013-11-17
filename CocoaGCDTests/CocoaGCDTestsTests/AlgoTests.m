@@ -10,6 +10,7 @@
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "PatternMatcherSequential.h"
 
+
 @interface AlgoTests : XCTestCase
 @property (nonatomic, strong) DNALattice1d *lattice;
 @property (nonatomic, strong) PatternMatcherSequential *patternMatcher;

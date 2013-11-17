@@ -7,6 +7,8 @@
 //
 
 #import "DNALattice1d.h"
+#define CS_SKIP_BOUNDARY_CHECKS
+
 
 @interface DNALattice1d ()
 @property (nonatomic) char *cube3D;
@@ -36,8 +38,9 @@
 
 - (void)initWithSize:(int)sideNumber andChar:(char)c
 {
-	if (sideNumber > 1000 || sideNumber < 5) {
+	if (sideNumber > 1000 || sideNumber < 3) {
 		@throw [NSException exceptionWithName:@"Invalid Argument" reason:@"DNA Lattices must be constructed with a side number between 5 and 1000" userInfo:nil];
+
 	}else{
 		_sideNumber = sideNumber;
 		_numberOfElements = sideNumber * sideNumber * sideNumber;

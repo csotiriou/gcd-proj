@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "PatternMatcherSequential.h"
 #import <CSMatrixFramework/CSMatrixFramework.h>
+#import "Expecta.h"
 
 
 @interface PatternTests : XCTestCase
@@ -34,10 +35,7 @@
 - (void)testExample
 {
 	[self.patternMatcher startScanning];
-	NSDictionary *dict = [self.patternMatcher getResults];
-	
-	XCTAssertTrue([[dict valueForKey:@"aa"] boolValue], @"");
-	XCTAssertFalse([[dict valueForKey:@"bb"] boolValue], @"");
+	expect(self.patternMatcher.hasAlreadyRan).to.beTruthy();
 }
 
 @end

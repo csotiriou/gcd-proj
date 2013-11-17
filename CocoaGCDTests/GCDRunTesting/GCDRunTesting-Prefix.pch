@@ -7,3 +7,6 @@
 #ifdef __OBJC__
 	#import <Cocoa/Cocoa.h>
 #endif
+
+#define EXP_SHORTHAND
+#define CS_SKIP_BOUNDARY_CHECKS

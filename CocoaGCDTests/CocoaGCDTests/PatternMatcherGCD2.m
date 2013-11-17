@@ -102,6 +102,12 @@
 }
 
 
+/**
+ Separates the jobs to be done according to the words that are to be searched and the processors available.
+ Creates a mutable array with items equal to the number of processors. Each item is also an array holding the
+ words that are to be processed by the processor at this index. Each place in this internal array contains an object
+ which contains the word to be found and its reverse.
+ */
 - (void)divideDictionariesBy:(int)divisionCount
 {
 	if (divisionCount % 2 != 0) {

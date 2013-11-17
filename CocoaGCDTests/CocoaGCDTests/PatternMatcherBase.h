@@ -60,7 +60,7 @@
  inside the line, the 'foundBlock' is not even called. Avoids searching words that have already been found
  
  @discussion Since subclasses use the same algorihm for searching but do different actions when a word is found, the 'foundBlock'
- will allow them to specify different behaviors.
+ will allow them to specify different behaviors when a line is found to contain a word.
  
  @param line the line to search the strings into
  @param foundBlock the block to be called if a word is found inside a line
