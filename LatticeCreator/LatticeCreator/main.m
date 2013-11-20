@@ -45,9 +45,15 @@ int main(int argc, const char * argv[])
 //		NSLog(@"char: %c", character);
 		
 		CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
+		__block DNALattice1d *lat = [[DNALattice1d alloc] initWithSideNumber:10 andChar:'a'];
 		[importer loadLatticeAtLocation:fileDescriptor completionBlock:^(DNALattice1d *lattice) {
 			NSLog(@"completed.");
+			lat = lattice;
 		}];
+		
+		CSMatrixExporter *exporter = [[CSMatrixExporter alloc] init];
+		exporter.lattice = lat;
+		[exporter exportToFile:fileDescriptor withDefaultCharacter:'k'];
 		
 	}
     return 0;

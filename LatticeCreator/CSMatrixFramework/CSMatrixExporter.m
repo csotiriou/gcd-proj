@@ -22,7 +22,7 @@
 	return self;
 }
 
-- (void)exportToFile:(NSString *)filePath
+- (void)exportToFile:(NSString *)filePath withDefaultCharacter:(char)defaultCharacter
 {
 	if ([[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:NO]) {
 		[[NSFileManager defaultManager] removeItemAtPath:filePath error:NULL];
@@ -30,12 +30,14 @@
 	[[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
 	
 	self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
-	[self.fileHandle writeData:[@"#File Descriptions\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[self.fileHandle writeData:[[NSString stringWithFormat:@"s:%i\n", self.lattice.sideNumber] dataUsingEncoding:NSUTF8StringEncoding]];
-	[self.fileHandle writeData:[@"#Data begins below this line\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	if (self.fileHandle != nil) { //file is open
 		NSLog(@"starting export...");
+		[self.fileHandle writeData:[@"#File Descriptions\n#Legend:\n#—- ’s’ indicates the size of each side\n#   of the lattice. Do not change this value unless\n#   you really know what you are doing.\n#— ‘f’ indicates the default character. positions in\n#   the lattice that are not explicitly mentioned in\n#   this file will get this value\n#— ’d’ indicates a position in the lattice. always comes\n#   in the form ’d:<lattice>,<column>,<row>=<character>’\n#   change manually the values you need. Be careful, you\n#   must preserve proper format.\n#LATTICE--BEGINS\n" dataUsingEncoding:NSUTF8StringEncoding]];
+		[self.fileHandle writeData:[[NSString stringWithFormat:@"s:%i\n", self.lattice.sideNumber] dataUsingEncoding:NSUTF8StringEncoding]];
+		[self.fileHandle writeData:[[NSString stringWithFormat:@"f:%c\n", defaultCharacter] dataUsingEncoding:NSUTF8StringEncoding]];
+		
+		[self.fileHandle writeData:[@"#Data begins below this line\n" dataUsingEncoding:NSUTF8StringEncoding]];
 		for (int i = 0; i< self.lattice.sideNumber; i++) {
 			@autoreleasepool { // release the interme
 				NSMutableString *bigChunk = [NSMutableString string];
@@ -53,5 +55,10 @@
 		NSLog(@"export finished");
 		
 	}
+}
+
+- (void)exportToFile:(NSString *)filePath
+{
+	[self exportToFile:filePath withDefaultCharacter:'0'];
 }
 @end
