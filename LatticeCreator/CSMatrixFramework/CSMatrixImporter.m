@@ -11,8 +11,10 @@
 
 @interface CSMatrixImporter () <CSFileReaderDelegate>
 @property (nonatomic, strong) CSFileReader *reader;
-
 @property (nonatomic, strong) DNALattice1d *resultLattice;
+
+@property (nonatomic) int numberOfVertices;
+@property (nonatomic) char defaultChar;
 @end
 
 @implementation CSMatrixImporter
@@ -22,6 +24,7 @@
     if (self) {
 		self.reader = [[CSFileReader alloc] init];
 		self.reader.delegate = self;
+		self.defaultChar = '0';
     }
     return self;
 }
@@ -41,15 +44,23 @@
 
 - (void)fileReader:(CSFileReader *)reader didEncounterLine:(NSString *)line
 {
-	if (![self string:line containsString:@"#"]) {
-		if ([line characterAtIndex:0] == 's') {//we have a lattice size definition
+	switch ([line characterAtIndex:0]) {
+		case '#':
+			break;
+		case 's':{
 			NSScanner *scanner = [NSScanner scannerWithString:line];
 			scanner.scanLocation = 2;
 			int latticeSize = 0;
 			[scanner scanInt:&latticeSize];
 			NSLog(@"creating lattice if size: %i", latticeSize);
-			self.resultLattice = [[DNALattice1d alloc] initWithSideNumber:latticeSize andChar:'0'];
-		}else if ([line characterAtIndex:0] == 'd') {//we have a line containing data
+			self.numberOfVertices = latticeSize;
+		}
+			break;
+		case 'd':{
+			if (!self.resultLattice) {
+				self.resultLattice = [[DNALattice1d alloc] initWithSideNumber:self.numberOfVertices andChar:self.defaultChar];
+				NSLog(@"created lattice with side: %i and default char: %c", self.numberOfVertices, self.defaultChar);
+			}
 			int i=0, j=0, k=0;
 			char scanCharacter = '0';
 			
@@ -60,10 +71,18 @@
 			[scanner scanInt:&j];
 			scanner.scanLocation++;
 			[scanner scanInt:&k];
+			scanner.scanLocation++;
 			
-			scanCharacter = [line characterAtIndex:line.length-2]; //just take the character before the last (the last one is the new line). No need to press the scanner to parse an nsstring and then convert to a character.
+			scanCharacter = [line characterAtIndex:[line rangeOfString:@"="].location+1]; //just take the character after the '=' sign. No need to press the scanner to parse an nsstring and then convert to a character.
 			[self.resultLattice setItemAti:i andJ:j andK:k value:scanCharacter];
 		}
+			break;
+		case 'f':{
+			self.defaultChar = [line characterAtIndex:2];
+		}
+			break;
+		default:
+			break;
 	}
 }
 

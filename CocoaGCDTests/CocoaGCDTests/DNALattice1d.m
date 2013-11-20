@@ -87,4 +87,21 @@
 {
 	memset(_cube3D, character, self.sideNumber * self.sideNumber * self.sideNumber);
 }
+
+- (NSString *)description
+{
+	NSMutableString *result = [NSMutableString string];
+	
+	for (int i= 0; i < self.sideNumber; i++) {
+		[result appendFormat:@"\n*****lattice: %i\n\n", i];
+		for (int j = 0; j < self.sideNumber; j++) {
+			[result appendFormat:@"%i\t|", j];
+			for (int k = 0; k < self.sideNumber; k++) {
+				[result appendFormat:@" %c", [self getItemAti:i andJ:j andK:k]];
+			}
+			[result appendFormat:@"\n"];
+		}
+	}
+	return result;
+}
 @end
