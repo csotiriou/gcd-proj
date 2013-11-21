@@ -70,38 +70,6 @@
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len
 {
 	return [self.wordList countByEnumeratingWithState:state objects:buffer count:len];
-	
-//	NSUInteger count = 0;
-//	NSEnumerator *enumerator = self.wordList.objectEnumerator;
-//	
-//	if (state->state == 0) {
-//		state->mutationsPtr = &state->extra[0];
-//	}else{
-//		for (int i = 0; i<state->state; i++) {
-//			[enumerator nextObject];
-//		}
-//	}
-//	
-//	if (state->state < self.wordList.count) {
-//		state->itemsPtr = buffer;
-//		
-//		while (state->state < self.wordList.count && count < len) {
-//			
-//			__unsafe_unretained id obj = enumerator.nextObject;
-//			if (obj) {
-//				buffer[count] = obj;
-//				state->state++;
-//				count++;
-//			}else{
-//				count = 0;
-//			}
-//		}
-//		
-//	}else{
-//		count = 0;
-//	}
-//	
-//	return count;
 }
 
 - (NSOrderedSet *)words

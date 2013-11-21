@@ -18,7 +18,6 @@
 		068B7920183D6E7200557CB5 /* CocoaGCDTestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B791D183D6E7200557CB5 /* CocoaGCDTestsTests.m */; };
 		068B7921183D6E7200557CB5 /* PatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B791E183D6E7200557CB5 /* PatternTests.m */; };
 		068B792A183D954F00557CB5 /* wordlist.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 068B7929183D954F00557CB5 /* wordlist.wdl */; };
-		068B792C183D961400557CB5 /* wordlist.wdl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 068B7929183D954F00557CB5 /* wordlist.wdl */; };
 		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
 		0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95318283608000E8165 /* DDAbstractDatabaseLogger.m */; };
 		0690D95E18283608000E8165 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95518283608000E8165 /* DDASLLogger.m */; };
@@ -99,7 +98,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				068B792C183D961400557CB5 /* wordlist.wdl in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
