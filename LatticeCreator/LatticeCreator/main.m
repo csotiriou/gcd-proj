@@ -14,37 +14,9 @@ int main(int argc, const char * argv[])
 
 	@autoreleasepool {
 		NSString *fileDescriptor = [@"~/Desktop/output.desc" stringByStandardizingPath];
+
 		
-//		DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
-//		DNALattice1d *lattice2 = [lattice copy];
-		
-//		CSMatrixExporter *exporter = [[CSMatrixExporter alloc] initWithLattice:lattice];
-//		[exporter exportToFile:[@"~/Desktop/output.desc" stringByStandardizingPath]];
-		
-//		NSString *line = @"d:123,321,10=a";
-//		NSScanner *scanner = [NSScanner scannerWithString:line];
-//		scanner.scanLocation = 2;
-//		int test = 0;
-//		int test2 = 0;
-//		int test3 = 0;
-//		
-//		char character = [line characterAtIndex:line.length-1];
-//		
-//		[scanner scanInt:&test];
-//		scanner.scanLocation ++;
-//		[scanner scanInt:&test2];
-//		scanner.scanLocation ++;
-//		[scanner scanInt:&test3];
-//		scanner.scanLocation++;
-////		[scanner scanInt:&character];
-//		
-//	    
-//		NSLog(@"test: %i", test);
-//		NSLog(@"test: %i", test2);
-//		NSLog(@"test: %i", test3);
-//		NSLog(@"char: %c", character);
-		
-		CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
+		/*CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
 		__block DNALattice1d *lat = [[DNALattice1d alloc] initWithSideNumber:10 andChar:'a'];
 		[importer loadLatticeAtLocation:fileDescriptor completionBlock:^(DNALattice1d *lattice) {
 			NSLog(@"completed.");
@@ -53,8 +25,40 @@ int main(int argc, const char * argv[])
 		
 		CSMatrixExporter *exporter = [[CSMatrixExporter alloc] init];
 		exporter.lattice = lat;
-		[exporter exportToFile:fileDescriptor withDefaultCharacter:'k'];
+		[exporter exportToFile:fileDescriptor withDefaultCharacter:'k'];*/
 		
+		
+		CSWordList *list = [[CSWordList alloc] init];
+		[list addWord:@"ok1"];
+		[list addWord:@"oka"];
+		[list addWord:@"ok1"];
+		[list addWord:@"ok2"];
+		[list addWord:@"ok2"];
+		[list addWord:@"ok2"];
+		[list addWord:@"ok5"];
+		[list addWord:@"ok4"];
+		[list addWord:@"ok3"];
+		[list addWord:@"ok2"];
+		[list addWord:@"ok1"];
+		[list addWord:@"okw"];
+		[list addWord:@"okq"];
+		[list addWord:@"okj"];
+		[list addWord:@"ok2"];
+		[list addWord:@"oka"];
+		[list addWord:@"oks"];
+		[list addWord:@"okf"];
+		[list addWord:@"ok9"];
+		[list addWord:@"ok2"];
+		[list addWord:@"098"];
+		for (int i = 100; i<999; i++) {
+			[list addWord:[NSString stringWithFormat:@"%i", i]];
+		}
+		
+		NSMutableString *str = [NSMutableString string];
+		for (NSString *str1 in list) {
+			[str appendFormat:@"%@", [NSString stringWithFormat:@"%@\n", str1]];
+		}
+		NSLog(@"%@", str);
 	}
     return 0;
 }

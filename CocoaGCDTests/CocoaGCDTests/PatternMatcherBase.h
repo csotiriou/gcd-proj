@@ -25,10 +25,13 @@
 @interface PatternMatcherBase : NSObject
 @property (nonatomic, strong) id <LatticeCommon> lattice;
 @property (nonatomic, weak) id<PatternMatcherBaseDelegate> delegate;
+
 @property (nonatomic, strong) NSMutableArray *dictionaryToSearch;
-@property (nonatomic, strong) LatticeLineExtractor *latticeExtractor;
-@property (nonatomic, strong) NSMutableDictionary *wordsProcessedAndResults;
 @property (nonatomic, readonly) NSArray *reversedDictionaryToSearch;
+@property (nonatomic, readonly) LatticeLineExtractor *latticeExtractor;
+
+@property (nonatomic, strong) NSMutableDictionary *wordsProcessedAndResults;
+
 @property (nonatomic) BOOL hasAlreadyRan;
 
 
@@ -40,6 +43,13 @@
  */
 - (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords;
 
+
+/**
+ @brief Inits the pattern matcher with a lattice and a wordlist object.
+ @param lattice a lattice
+ @param wordList a wordlist object containing unique strings.
+ */
+- (id)initWithLattice:(id<LatticeCommon>)lattice andWordList:(CSWordList *)wordList;
 
 /**
  Starts scanning the lattice. After scanning ends, the delegate will be called.
@@ -66,4 +76,10 @@
  @param foundBlock the block to be called if a word is found inside a line
  */
 - (void)matchStringsForLine:(NSString *)line withFoundBlock:(void(^)(NSString *wordFound))foundBlock;
+
+
+/**
+ Performs additional initializations. Override this method to perform initializations that happen after the initial ones.
+ */
+- (void)initPhase2;
 @end

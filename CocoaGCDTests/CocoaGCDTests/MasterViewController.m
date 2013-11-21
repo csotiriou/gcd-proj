@@ -15,7 +15,8 @@
 @interface MasterViewController () <PatternMatcherBaseDelegate>
 @property (nonatomic, strong) PatternMatcherBase *patternMatcher;
 @property (nonatomic, strong) id<LatticeCommon> dnaLattice;
-@property (nonatomic, strong) NSArray *dictionaryToSearch;
+//@property (nonatomic, strong) NSArray *dictionaryToSearch;
+@property (nonatomic, strong) CSWordList *wordList;
 @property (nonatomic, strong) NSDate *startDate;
 @end
 
@@ -26,7 +27,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'a'];
-		self.dictionaryToSearch = @[@"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"acaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"kajsgdas78", @"asds", @"sadiou", @"#$d", @"ajsds"];
+//		self.dictionaryToSearch = @[@"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"acaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"kajsgdas78", @"asds", @"sadiou", @"#$d", @"ajsds"];
+		self.wordList = [[CSWordList alloc] init];
+		[self.wordList loadWordListFromFile:[[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"wdl"]];
+		
     }
     return self;
 }
@@ -41,7 +45,7 @@
 - (IBAction)runTestsSequentialButtonPressed:(id)sender {
 	self.startDate = [NSDate date];
 	[self setupProcessIndicatorWithLabelString:@"running sequential pattern matcher."];
-	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.dnaLattice andDictionaryToSearch:self.dictionaryToSearch];
+	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.dnaLattice andWordList:self.wordList];
 	self.patternMatcher.delegate = self;
 	[self.patternMatcher startScanning];
 }
@@ -49,7 +53,7 @@
 - (IBAction)runTestsGCDButtonPressed:(id)sender {
 	self.startDate = [NSDate date];
 	[self setupProcessIndicatorWithLabelString:@"running GCD pattern matcher tests."];
-	self.patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:self.dnaLattice andDictionaryToSearch:self.dictionaryToSearch];
+	self.patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:self.dnaLattice andWordList:self.wordList];
 	self.patternMatcher.delegate = self;
 	[self.patternMatcher startScanning];
 }
@@ -57,7 +61,7 @@
 - (IBAction)runTestsGCD2ButtonPressed:(id)sender {
 	self.startDate = [NSDate date];
 	[self setupProcessIndicatorWithLabelString:@"running GCD 2 pattern matcher tests."];
-	self.patternMatcher = [[PatternMatcherGCD2 alloc] initWithLattice:self.dnaLattice andDictionaryToSearch:self.dictionaryToSearch];
+	self.patternMatcher = [[PatternMatcherGCD2 alloc] initWithLattice:self.dnaLattice andWordList:self.wordList];
 	self.patternMatcher.delegate = self;
 	[self.patternMatcher startScanning];
 

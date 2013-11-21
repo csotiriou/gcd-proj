@@ -40,8 +40,8 @@
 {
 	if (sideNumber > 1000 || sideNumber < 3) {
 		@throw [NSException exceptionWithName:@"Invalid Argument" reason:@"DNA Lattices must be constructed with a side number between 5 and 1000" userInfo:nil];
-
 	}else{
+		_isInitialized = YES;
 		_sideNumber = sideNumber;
 		_numberOfElements = sideNumber * sideNumber * sideNumber;
 		_cube3D = (char*)malloc(sideNumber * sideNumber * sideNumber);

@@ -34,6 +34,11 @@
 	return self;
 }
 
+-(void)initPhase2
+{
+	[self initThreads];
+}
+
 - (void)initThreads
 {
 	self.backgroundProcessQueue = dispatch_queue_create("com.oramind.concurrent", DISPATCH_QUEUE_CONCURRENT);

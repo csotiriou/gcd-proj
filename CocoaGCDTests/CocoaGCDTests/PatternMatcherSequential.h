@@ -14,5 +14,4 @@
 Class that aims at finding patterns into a given lattice. To be implemented
 */
 @interface PatternMatcherSequential : PatternMatcherBase
-
 @end

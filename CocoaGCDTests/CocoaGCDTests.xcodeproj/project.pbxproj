@@ -17,6 +17,8 @@
 		068B791F183D6E7200557CB5 /* AlgoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B791C183D6E7200557CB5 /* AlgoTests.m */; };
 		068B7920183D6E7200557CB5 /* CocoaGCDTestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B791D183D6E7200557CB5 /* CocoaGCDTestsTests.m */; };
 		068B7921183D6E7200557CB5 /* PatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B791E183D6E7200557CB5 /* PatternTests.m */; };
+		068B792A183D954F00557CB5 /* wordlist.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 068B7929183D954F00557CB5 /* wordlist.wdl */; };
+		068B792C183D961400557CB5 /* wordlist.wdl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 068B7929183D954F00557CB5 /* wordlist.wdl */; };
 		0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D94C18280FD1000E8165 /* PatternMatcherBase.m */; };
 		0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95318283608000E8165 /* DDAbstractDatabaseLogger.m */; };
 		0690D95E18283608000E8165 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0690D95518283608000E8165 /* DDASLLogger.m */; };
@@ -91,6 +93,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		068B792B183D961100557CB5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				068B792C183D961400557CB5 /* wordlist.wdl in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +154,7 @@
 		068B791C183D6E7200557CB5 /* AlgoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgoTests.m; sourceTree = "<group>"; };
 		068B791D183D6E7200557CB5 /* CocoaGCDTestsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaGCDTestsTests.m; sourceTree = "<group>"; };
 		068B791E183D6E7200557CB5 /* PatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTests.m; sourceTree = "<group>"; };
+		068B7929183D954F00557CB5 /* wordlist.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordlist.wdl; sourceTree = "<group>"; };
 		0690D94B18280FD1000E8165 /* PatternMatcherBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherBase.h; sourceTree = "<group>"; };
 		0690D94C18280FD1000E8165 /* PatternMatcherBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherBase.m; sourceTree = "<group>"; };
 		0690D95218283608000E8165 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
@@ -367,6 +380,7 @@
 		0699101A1821C3FE00290809 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				068B7929183D954F00557CB5 /* wordlist.wdl */,
 				0699101B1821C3FE00290809 /* CocoaGCDTests-Info.plist */,
 				0699101C1821C3FE00290809 /* InfoPlist.strings */,
 				0699101F1821C3FE00290809 /* main.m */,
@@ -441,6 +455,7 @@
 				0699100D1821C3FE00290809 /* Frameworks */,
 				0699100E1821C3FE00290809 /* Resources */,
 				0682C49C182707EF00F6D5F4 /* CopyFiles */,
+				068B792B183D961100557CB5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -538,6 +553,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				068B792A183D954F00557CB5 /* wordlist.wdl in Resources */,
 				067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */,
 				0699101E1821C3FE00290809 /* InfoPlist.strings in Resources */,
 				0699102C1821C3FE00290809 /* Images.xcassets in Resources */,

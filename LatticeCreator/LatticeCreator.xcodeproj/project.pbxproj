@@ -31,6 +31,10 @@
 		0682C4CE1827202F00F6D5F4 /* CSFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C4CC1827202F00F6D5F4 /* CSFileReader.h */; };
 		0682C4CF1827202F00F6D5F4 /* CSFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0682C4CD1827202F00F6D5F4 /* CSFileReader.m */; };
 		068B791B183D6E0C00557CB5 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 068B7918183D6E0C00557CB5 /* libExpecta.a */; };
+		068B7923183D702400557CB5 /* Lattice1DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B7922183D702400557CB5 /* Lattice1DTests.m */; };
+		068B7926183D745600557CB5 /* CSWordList.h in Headers */ = {isa = PBXBuildFile; fileRef = 068B7924183D745600557CB5 /* CSWordList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		068B7927183D745600557CB5 /* CSWordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B7925183D745600557CB5 /* CSWordList.m */; };
+		068B7928183D745600557CB5 /* CSWordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B7925183D745600557CB5 /* CSWordList.m */; };
 		06A9AACE182ACCA80066EE5B /* CSMatrixImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 06A9AACC182ACCA80066EE5B /* CSMatrixImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06A9AAD1182ACCA80066EE5B /* CSMatrixImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AACD182ACCA80066EE5B /* CSMatrixImporter.m */; };
 		06A9AAD2182AD4720066EE5B /* CSMatrixImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AACD182ACCA80066EE5B /* CSMatrixImporter.m */; };
@@ -131,6 +135,9 @@
 		068B7918183D6E0C00557CB5 /* libExpecta.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libExpecta.a; sourceTree = "<group>"; };
 		068B7919183D6E0C00557CB5 /* NSObject+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Expecta.h"; sourceTree = "<group>"; };
 		068B791A183D6E0C00557CB5 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Expecta.h"; sourceTree = "<group>"; };
+		068B7922183D702400557CB5 /* Lattice1DTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lattice1DTests.m; sourceTree = "<group>"; };
+		068B7924183D745600557CB5 /* CSWordList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSWordList.h; sourceTree = "<group>"; };
+		068B7925183D745600557CB5 /* CSWordList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSWordList.m; sourceTree = "<group>"; };
 		06A9AACC182ACCA80066EE5B /* CSMatrixImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMatrixImporter.h; sourceTree = "<group>"; };
 		06A9AACD182ACCA80066EE5B /* CSMatrixImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMatrixImporter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -254,6 +261,7 @@
 			children = (
 				068B78F6183D6E0C00557CB5 /* Expecta */,
 				0682C472182704D600F6D5F4 /* CSMatrixFrameworkTests.m */,
+				068B7922183D702400557CB5 /* Lattice1DTests.m */,
 				0682C46D182704D600F6D5F4 /* Supporting Files */,
 			);
 			path = CSMatrixFrameworkTests;
@@ -341,6 +349,8 @@
 				0682C47C1827052800F6D5F4 /* CSMatrixExporter.m */,
 				06A9AACC182ACCA80066EE5B /* CSMatrixImporter.h */,
 				06A9AACD182ACCA80066EE5B /* CSMatrixImporter.m */,
+				068B7924183D745600557CB5 /* CSWordList.h */,
+				068B7925183D745600557CB5 /* CSWordList.m */,
 			);
 			name = "Exporters-Importers";
 			sourceTree = "<group>";
@@ -357,6 +367,7 @@
 				0682C4C918270B7100F6D5F4 /* LatticeCommon.h in Headers */,
 				0682C4CE1827202F00F6D5F4 /* CSFileReader.h in Headers */,
 				06A9AACE182ACCA80066EE5B /* CSMatrixImporter.h in Headers */,
+				068B7926183D745600557CB5 /* CSWordList.h in Headers */,
 				0682C4C118270B7100F6D5F4 /* DNALattice1d.h in Headers */,
 				0682C47D1827052800F6D5F4 /* CSMatrixExporter.h in Headers */,
 			);
@@ -477,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0682C43B182703F200F6D5F4 /* main.m in Sources */,
+				068B7927183D745600557CB5 /* CSWordList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0682C47E1827052800F6D5F4 /* CSMatrixExporter.m in Sources */,
+				068B7928183D745600557CB5 /* CSWordList.m in Sources */,
 				0682C4C718270B7100F6D5F4 /* DNALattice3D.m in Sources */,
 				0682C4CF1827202F00F6D5F4 /* CSFileReader.m in Sources */,
 				0682C4C318270B7100F6D5F4 /* DNALattice1d.m in Sources */,
@@ -499,6 +512,7 @@
 				0682C47F1827052800F6D5F4 /* CSMatrixExporter.m in Sources */,
 				0682C4C818270B7100F6D5F4 /* DNALattice3D.m in Sources */,
 				06A9AAD1182ACCA80066EE5B /* CSMatrixImporter.m in Sources */,
+				068B7923183D702400557CB5 /* Lattice1DTests.m in Sources */,
 				0682C4C418270B7100F6D5F4 /* DNALattice1d.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,6 +694,12 @@
 					"$(inherited)",
 					"/Users/soulstorm/Programming/gcd-proj/Common/Expecta",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -701,6 +721,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/soulstorm/Programming/gcd-proj/Common/Expecta",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
