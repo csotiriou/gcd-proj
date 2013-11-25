@@ -18,6 +18,23 @@
 
 - (void)startScanning
 {
+	[self startInternalThreads];
+	dispatch_group_notify(self.operationGroup, self.concurrentQ, ^{
+		[self allTasksDone];
+	});
+}
+
+- (void)startScanningWithCompletionBlock:(void (^)())completionBlock
+{
+	[self startInternalThreads];
+	dispatch_group_notify(self.operationGroup, self.concurrentQ, ^{
+		[self allTasksDone];
+		completionBlock();
+	});
+}
+
+- (void)startInternalThreads
+{
 	//	__block __weak PatternMatcherGCD *weakSelf = self; //avoid circular references
 	self.totalLinesProcessed = 0;
 	
@@ -65,11 +82,6 @@
 			[self serialySearchForStringsInLine:line];
 		}];
 	});
-	
-	dispatch_group_notify(self.operationGroup, self.concurrentQ, ^{
-		[self allTasksDone];
-	});
-	
 }
 
 - (void)addAsynchronousGroupOperation:(void(^)())operation

@@ -62,6 +62,12 @@
 	self.hasAlreadyRan = YES;
 }
 
+- (void)startScanningWithCompletionBlock:(void (^)())completionBlock
+{
+	[self startScanning];
+	completionBlock();
+}
+
 
 - (void)serialySearchForStringsInLine:(NSString *)line
 {

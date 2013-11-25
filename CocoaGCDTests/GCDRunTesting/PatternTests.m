@@ -10,9 +10,10 @@
 #import "PatternMatcherSequential.h"
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "Expecta.h"
+#import "TestCaseCommon.h"
 
 
-@interface PatternTests : XCTestCase
+@interface PatternTests : TestCaseCommon
 @property (nonatomic, strong) PatternMatcherSequential *patternMatcher;
 @property (nonatomic, strong) DNALattice1d *lattice;
 @end

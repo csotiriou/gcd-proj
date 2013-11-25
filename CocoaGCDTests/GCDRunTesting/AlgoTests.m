@@ -7,11 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "TestCaseCommon.h"
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "PatternMatcherSequential.h"
 
 
-@interface AlgoTests : XCTestCase
+@interface AlgoTests : TestCaseCommon
 @property (nonatomic, strong) DNALattice1d *lattice;
 @property (nonatomic, strong) PatternMatcherSequential *patternMatcher;
 @end

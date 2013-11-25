@@ -7,8 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <CSMatrixFramework/CSMatrixFramework.h>
+#import "TestCaseCommon.h"
+#import "PatternMatcherGCD.h"
+#import "Expecta.h"
+#import "TRVSMonitor.h"
 
-@interface GCDRunTesting : XCTestCase
+@interface GCDRunTesting : TestCaseCommon
 
 @end
 
@@ -17,7 +22,7 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+	
 }
 
 - (void)tearDown
@@ -26,8 +31,25 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testSimpleAsynchronous
 {
+	CSWordList *wordList = [[CSWordList alloc] init];
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
+	
+	[wordList loadWordListFromFile:[self.bundle pathForResource:@"testWords" ofType:@"wdl"]];
+	PatternMatcherGCD *patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:lattice andWordList:wordList];
+	
+	[patternMatcher startScanningWithCompletionBlock:^{
+		[self.monitor signal];
+	}];
+	
+	[self.monitor wait];
+	
+	expect(patternMatcher.hasAlreadyRan).will.beTruthy();
+	expect(patternMatcher.wordsProcessedAndResults[@"aaa"]).to.beTruthy();
+	expect(patternMatcher.wordsProcessedAndResults[@"bbb"]).to.beFalsy();
+	expect(patternMatcher.wordsProcessedAndResults[@"abc"]).to.beFalsy();
+	expect(patternMatcher.wordsProcessedAndResults[@"cba"]).to.beFalsy();
 }
 
 @end

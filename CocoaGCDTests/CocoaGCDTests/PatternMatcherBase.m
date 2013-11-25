@@ -108,6 +108,11 @@
 	return _dictionaryToSearchReverse;
 }
 
+- (void)startScanningWithCompletionBlock:(void (^)())completionBlock
+{
+	@throw [NSException exceptionWithName:@"You must implement this function to subclasses" reason:@"" userInfo:nil];
+
+}
 
 - (void)startScanning
 {

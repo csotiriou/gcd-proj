@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0603007D18440DE20056979F /* testWords.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 0603007C18440DE20056979F /* testWords.wdl */; };
+		0603008118440F5C0056979F /* TestCaseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603008018440F5C0056979F /* TestCaseCommon.m */; };
+		06030084184412090056979F /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 06030083184412090056979F /* TRVSMonitor.m */; };
 		067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C6F1837B6AE005D90EF /* MasterViewController.m */; };
 		067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067A9C701837B6AE005D90EF /* MasterViewController.xib */; };
 		067A9C751838165A005D90EF /* PatternMatcherAsynchronous.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */; };
@@ -104,6 +107,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0603007C18440DE20056979F /* testWords.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testWords.wdl; sourceTree = "<group>"; };
+		0603007E18440E910056979F /* TestCaseCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseCommon.h; sourceTree = "<group>"; };
+		0603008018440F5C0056979F /* TestCaseCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseCommon.m; sourceTree = "<group>"; };
+		06030082184412090056979F /* TRVSMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRVSMonitor.h; path = ../../Common/TRVS/TRVSMonitor.h; sourceTree = "<group>"; };
+		06030083184412090056979F /* TRVSMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRVSMonitor.m; path = ../../Common/TRVS/TRVSMonitor.m; sourceTree = "<group>"; };
 		067A9C6E1837B6AE005D90EF /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		067A9C6F1837B6AE005D90EF /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		067A9C701837B6AE005D90EF /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
@@ -411,7 +419,11 @@
 		06D5DFBC183588DE00A7D320 /* TESTS */ = {
 			isa = PBXGroup;
 			children = (
+				06030082184412090056979F /* TRVSMonitor.h */,
+				06030083184412090056979F /* TRVSMonitor.m */,
 				067A9C7B18383FF5005D90EF /* External */,
+				0603007E18440E910056979F /* TestCaseCommon.h */,
+				0603008018440F5C0056979F /* TestCaseCommon.m */,
 				068B791C183D6E7200557CB5 /* AlgoTests.m */,
 				068B791D183D6E7200557CB5 /* CocoaGCDTestsTests.m */,
 				068B791E183D6E7200557CB5 /* PatternTests.m */,
@@ -428,6 +440,7 @@
 				06D5DFBE183588DE00A7D320 /* GCDRunTesting-Info.plist */,
 				06D5DFBF183588DE00A7D320 /* InfoPlist.strings */,
 				06D5DFC4183588DE00A7D320 /* GCDRunTesting-Prefix.pch */,
+				0603007C18440DE20056979F /* testWords.wdl */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -565,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06D5DFC1183588DE00A7D320 /* InfoPlist.strings in Resources */,
+				0603007D18440DE20056979F /* testWords.wdl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +614,9 @@
 			files = (
 				068B7920183D6E7200557CB5 /* CocoaGCDTestsTests.m in Sources */,
 				06D5DFD118358F7200A7D320 /* CSAdditions.m in Sources */,
+				06030084184412090056979F /* TRVSMonitor.m in Sources */,
 				06D5DFC3183588DE00A7D320 /* GCDRunTesting.m in Sources */,
+				0603008118440F5C0056979F /* TestCaseCommon.m in Sources */,
 				068B791F183D6E7200557CB5 /* AlgoTests.m in Sources */,
 				068B7921183D6E7200557CB5 /* PatternTests.m in Sources */,
 			);

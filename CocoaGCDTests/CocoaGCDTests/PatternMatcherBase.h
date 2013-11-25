@@ -58,6 +58,16 @@
 
 
 /**
+ @brief Starts the scanning process. On completion, it runs the completion block. NOTICE:
+ Upon finishing the tasks, the completion block will be called in addition to the delegate
+ functions.
+ 
+ @param completionBlock the block to call upon completion.
+ */
+- (void)startScanningWithCompletionBlock:(void (^)())completionBlock;
+
+
+/**
  @brief signals the delegate if any, that the whole process is complete. Made public, in order to be called
  by subclasses, and not directly by external classes.
  */

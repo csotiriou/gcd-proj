@@ -15,7 +15,6 @@
 @interface MasterViewController () <PatternMatcherBaseDelegate>
 @property (nonatomic, strong) PatternMatcherBase *patternMatcher;
 @property (nonatomic, strong) id<LatticeCommon> dnaLattice;
-//@property (nonatomic, strong) NSArray *dictionaryToSearch;
 @property (nonatomic, strong) CSWordList *wordList;
 @property (nonatomic, strong) NSDate *startDate;
 @end
@@ -27,10 +26,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'a'];
-//		self.dictionaryToSearch = @[@"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"acaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"aaa", @"bb", @"kajsgdas78", @"asds", @"sadiou", @"#$d", @"ajsds"];
 		self.wordList = [[CSWordList alloc] init];
 		[self.wordList loadWordListFromFile:[[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"wdl"]];
-		
     }
     return self;
 }
