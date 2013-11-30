@@ -18,4 +18,7 @@
 @property (strong) IBOutlet NSProgressIndicator *progressActivityIndicator;
 @property (strong) IBOutlet NSTextView *resultsTextView;
 
+- (IBAction)loadDNAFile:(id)sender;
+- (IBAction)loadWDL:(id)sender;
+
 @end

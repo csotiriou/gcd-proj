@@ -24,17 +24,17 @@
                     <rect key="frame" x="220" y="36" width="248" height="135"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <clipView key="contentView" id="wer-iB-Rxo">
-                        <rect key="frame" x="1" y="1" width="246" height="133"/>
+                        <rect key="frame" x="1" y="1" width="231" height="133"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="vSM-hV-42X">
-                                <rect key="frame" x="0.0" y="0.0" width="246" height="133"/>
+                                <rect key="frame" x="0.0" y="0.0" width="231" height="133"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="246" height="133"/>
+                                <size key="minSize" width="231" height="133"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="246" height="133"/>
+                                <size key="minSize" width="231" height="133"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                             </textView>
                         </subviews>
@@ -49,12 +49,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1Ub-Cx-qj6">
-                        <rect key="frame" x="231" y="1" width="16" height="133"/>
+                        <rect key="frame" x="232" y="1" width="15" height="133"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Qg-rV-xBh">
-                    <rect key="frame" x="14" y="143" width="170" height="32"/>
+                    <rect key="frame" x="14" y="99" width="170" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Run Tests Sequential" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hrp-sJ-z3E">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -65,7 +65,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hYC-47-vQK">
-                    <rect key="frame" x="14" y="110" width="133" height="32"/>
+                    <rect key="frame" x="14" y="66" width="133" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Run Tests GCD" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FAO-Zw-dLT">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -89,7 +89,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rrR-ew-Pz5">
-                    <rect key="frame" x="14" y="77" width="165" height="32"/>
+                    <rect key="frame" x="14" y="33" width="165" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Run Tests GCD 2" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nKi-gv-2H2">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -99,10 +99,36 @@
                         </connections>
                     </buttonCell>
                 </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vs8-mw-Twa">
+                    <rect key="frame" x="20" y="149" width="93" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" title="Load DNA file" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="T6S-eU-6tv">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="loadDNAFile:" target="-2" id="ybk-WH-7zk"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yLL-q3-hL5">
+                    <rect key="frame" x="121" y="149" width="67" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" title="Load .wdl" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gJO-xp-ics">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="loadWDL:" target="-2" id="MTv-tv-TAn"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="6Qg-rV-xBh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="FDA-0K-dCJ"/>
+                <constraint firstItem="vs8-mw-Twa" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="2IV-Xy-b6O"/>
+                <constraint firstItem="vs8-mw-Twa" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="8hC-C5-Jak"/>
+                <constraint firstItem="6Qg-rV-xBh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="64" id="FDA-0K-dCJ"/>
+                <constraint firstItem="yLL-q3-hL5" firstAttribute="leading" secondItem="vs8-mw-Twa" secondAttribute="trailing" constant="8" id="HrO-eG-pV4"/>
                 <constraint firstItem="6Qg-rV-xBh" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="LAh-Qr-ASJ"/>
+                <constraint firstItem="yLL-q3-hL5" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="LHZ-uF-PJT"/>
                 <constraint firstItem="Zec-8u-9GL" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="220" id="N3V-2p-dQK"/>
                 <constraint firstItem="Zec-8u-9GL" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="fcC-vy-Dzd"/>
             </constraints>

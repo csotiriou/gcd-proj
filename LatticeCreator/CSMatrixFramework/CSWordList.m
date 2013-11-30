@@ -50,6 +50,7 @@
 - (void)loadWordListFromFile:(NSString *)filePath
 {
 	self.reader = [[CSFileReader alloc] init];
+	[self.wordList removeAllObjects];
 	self.reader.delegate = self;
 	[self.reader startReadingLineByLineFileAtPath:filePath encoding:NSUTF8StringEncoding];
 }

@@ -10,6 +10,7 @@
 		0603007D18440DE20056979F /* testWords.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 0603007C18440DE20056979F /* testWords.wdl */; };
 		0603008118440F5C0056979F /* TestCaseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603008018440F5C0056979F /* TestCaseCommon.m */; };
 		06030084184412090056979F /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 06030083184412090056979F /* TRVSMonitor.m */; };
+		06535481184A497A00340BCE /* cube.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06535480184A497A00340BCE /* cube.desc */; };
 		067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C6F1837B6AE005D90EF /* MasterViewController.m */; };
 		067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067A9C701837B6AE005D90EF /* MasterViewController.xib */; };
 		067A9C751838165A005D90EF /* PatternMatcherAsynchronous.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */; };
@@ -112,6 +113,7 @@
 		0603008018440F5C0056979F /* TestCaseCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseCommon.m; sourceTree = "<group>"; };
 		06030082184412090056979F /* TRVSMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRVSMonitor.h; path = ../../Common/TRVS/TRVSMonitor.h; sourceTree = "<group>"; };
 		06030083184412090056979F /* TRVSMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRVSMonitor.m; path = ../../Common/TRVS/TRVSMonitor.m; sourceTree = "<group>"; };
+		06535480184A497A00340BCE /* cube.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.desc; sourceTree = "<group>"; };
 		067A9C6E1837B6AE005D90EF /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		067A9C6F1837B6AE005D90EF /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		067A9C701837B6AE005D90EF /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 		0699101A1821C3FE00290809 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				06535480184A497A00340BCE /* cube.desc */,
 				068B7929183D954F00557CB5 /* wordlist.wdl */,
 				0699101B1821C3FE00290809 /* CocoaGCDTests-Info.plist */,
 				0699101C1821C3FE00290809 /* InfoPlist.strings */,
@@ -564,6 +567,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06535481184A497A00340BCE /* cube.desc in Resources */,
 				068B792A183D954F00557CB5 /* wordlist.wdl in Resources */,
 				067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */,
 				0699101E1821C3FE00290809 /* InfoPlist.strings in Resources */,
