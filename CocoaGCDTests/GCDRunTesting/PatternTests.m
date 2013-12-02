@@ -33,6 +33,7 @@
     [super tearDown];
 }
 
+
 - (void)testExample
 {
 	[self.patternMatcher startScanning];

@@ -67,7 +67,6 @@
 }
 
 
-
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len
 {
 	return [self.wordList countByEnumeratingWithState:state objects:buffer count:len];
@@ -76,6 +75,16 @@
 - (NSOrderedSet *)words
 {
 	return _wordList;
+}
+
+- (id)objectAtIndexedSubscript:(NSUInteger)idx
+{
+	return [self.wordList objectAtIndexedSubscript:idx];
+}
+
+- (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx
+{
+	@throw [NSException exceptionWithName:@"CSWordList does not allow setting obejcts directly to indexes, either with literals or without" reason:@"" userInfo:nil];
 }
 
 - (NSString *)description

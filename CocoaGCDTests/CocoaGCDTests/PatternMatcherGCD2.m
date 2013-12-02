@@ -30,6 +30,24 @@
 
 - (void)startScanning
 {
+	[self startInternalThreads];
+	dispatch_group_notify(self.operationGroup, self.concurrentQ, ^{
+		[self signalComplete];
+	});
+}
+
+- (void)startScanningWithCompletionBlock:(void (^)())completionBlock
+{
+	[self startInternalThreads];
+	dispatch_group_notify(self.operationGroup, self.concurrentQ, ^{
+		[self signalComplete];
+		completionBlock();
+	});
+}
+
+
+- (void)startInternalThreads
+{
 	[self.arrayOfArraysWithWordDictionaries removeAllObjects];
 	[self divideDictionariesBy:self.numberOfCores];
 	
@@ -50,7 +68,7 @@
 			[self.latticeExtractor obtainLinesInIntraLatticeForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
-
+			
 			[self.latticeExtractor obtainVerticalLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
@@ -73,12 +91,7 @@
 			CS_MACRO_END_DISPLAY;
 		});
 	}
-	
-	dispatch_group_notify(self.operationGroup, self.concurrentQ, ^{
-		[self signalComplete];
-	});
 }
-
 
 /**
 	Matches the patterns found in the appropriate slot (because each processor will look into specific silos)

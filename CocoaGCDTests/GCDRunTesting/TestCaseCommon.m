@@ -22,4 +22,15 @@
 {
 	return [NSBundle bundleForClass:[self class]];
 }
+
+- (NSString *)pathForSpecFileResource:(NSString *)name
+{
+	return [self.bundle pathForResource:name ofType:@"spec"];
+}
+
+- (NSString *)pathForWDLResourceOfName:(NSString *)name
+{
+	return [self.bundle pathForResource:name ofType:@"wdl"];
+}
+
 @end

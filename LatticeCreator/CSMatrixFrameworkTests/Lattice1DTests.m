@@ -10,6 +10,11 @@
 #import "DNALattice1d.h"
 #import "Expecta.h"
 
+@interface DNALattice1d ()
+@property (nonatomic) char *cube3D;
+@end
+
+
 @interface Lattice1DTests : XCTestCase
 @property (nonatomic, strong) DNALattice1d *dnaLattice;
 @end
@@ -43,6 +48,11 @@
 			}
 		}
 	}
+	
+	for (int i=0; i< self.dnaLattice.sideNumber * self.dnaLattice.sideNumber * self.dnaLattice.sideNumber; i++) {
+		expect(self.dnaLattice.cube3D[i]).to.equal('a');
+	}
+
 }
 
 - (void)testChangeSomething
@@ -51,6 +61,11 @@
 	expect([self.dnaLattice getItemAti:0 andJ:0 andK:0]).to.equal('l');
 }
 
+- (void)testRaiseException
+{
+	XCTAssertThrows(self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:10000 andChar:'a'], @"something's wrong with boundary check"); //that's too  much, will throw exception
+	XCTAssertThrows(self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:2 andChar:'a'], @"something's wrong with boundary check"); //that's too  little, will throw
+}
 
 - (void)testCopyLattice
 {

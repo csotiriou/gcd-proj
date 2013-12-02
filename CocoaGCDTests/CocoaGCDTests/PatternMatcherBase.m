@@ -109,13 +109,13 @@
 
 - (void)startScanningWithCompletionBlock:(void (^)())completionBlock
 {
-	@throw [NSException exceptionWithName:@"You must implement this function to subclasses" reason:@"" userInfo:nil];
+	@throw [NSException exceptionWithName:@"You must implement this function to subclasses" reason:@"Method Not implemented" userInfo:nil];
 
 }
 
 - (void)startScanning
 {
-	@throw [NSException exceptionWithName:@"You must implement this function to subclasses" reason:@"" userInfo:nil];
+	@throw [NSException exceptionWithName:@"You must implement this function to subclasses" reason:@"Method Not implemented" userInfo:nil];
 }
 
 @end

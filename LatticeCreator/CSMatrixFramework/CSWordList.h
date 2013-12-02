@@ -31,4 +31,11 @@
  @param filePath The path of the file to load the words from.
  */
 - (void)loadWordListFromFile:(NSString *)filePath;
+
+/*
+ Add support for literals
+ */
+- (id)objectAtIndexedSubscript:(NSUInteger)idx;
+- (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx;
+
 @end

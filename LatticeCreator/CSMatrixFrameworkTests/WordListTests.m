@@ -40,6 +40,20 @@
 	}
 }
 
+- (void)testNewLiteralSyntax
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
+	NSString *filePath = [mainBundle pathForResource:@"wordlist1" ofType:@"wdl"];
+	
+	[wordList loadWordListFromFile:filePath];
+	
+	for (int i = 0; i < wordList.words.count; i++) {
+		expect(wordList[i]).to.equal([NSString stringWithFormat:@"word%i", i+1]);
+	}
+}
+
+
 - (void)testFastEnumeration
 {
 	CSWordList *wordList = [[CSWordList alloc] init];
@@ -47,6 +61,7 @@
 	NSString *filePath = [mainBundle pathForResource:@"wordlist1" ofType:@"wdl"];
 	
 	[wordList loadWordListFromFile:filePath];
+	
 	
 	for (NSString *word in wordList) {
 		expect(word).toNot.beNil();
