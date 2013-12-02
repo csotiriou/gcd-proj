@@ -36,6 +36,7 @@
 
 -(void)initPhase2
 {
+	[super initPhase2];
 	[self initThreads];
 }
 

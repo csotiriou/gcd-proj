@@ -90,6 +90,7 @@
 
 /**
  Performs additional initializations. Override this method to perform initializations that happen after the initial ones.
+ If you override this method, you MUST call [super initPhase2] before your initialisation, to avoid overriding default behaviors.
  */
 - (void)initPhase2;
 @end

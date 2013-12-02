@@ -11,19 +11,21 @@
 
 @interface PatternMatcherGCD2 ()
 @property (nonatomic) int numberOfCores;
+
+/** 
+ An array
+ */
 @property (nonatomic, strong) NSMutableArray *arrayOfArraysWithWordDictionaries;
 @end
 
 @implementation PatternMatcherGCD2
 
 
-- (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords
+- (void)initPhase2
 {
-	if (self = [super initWithLattice:lattice andDictionaryToSearch:dictionaryOfWords]) {
-		self.numberOfCores = [Util getNumberOfAvailableCoresForCurrentMachine];
-		self.arrayOfArraysWithWordDictionaries = [NSMutableArray array];
-	}
-	return self;
+	[super initPhase2];
+	self.numberOfCores = [Util getNumberOfAvailableCoresForCurrentMachine];
+	self.arrayOfArraysWithWordDictionaries = [NSMutableArray array];
 }
 
 - (void)startScanning
@@ -31,52 +33,45 @@
 	[self.arrayOfArraysWithWordDictionaries removeAllObjects];
 	[self divideDictionariesBy:self.numberOfCores];
 	
+	/*
+	 We are going to have one operation for each silo, and in each 'silo' we will search all directions
+	 for a specific portion of the list of search strings we want.
+	 */
 	for (int i = 0; i<self.arrayOfArraysWithWordDictionaries.count; i++) {
+		
 		dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+			
+			NSString *currentOperation = [NSString stringWithFormat:@" beginning operations for silo: %i", i];
+			CS_MACRO_BEGIN_TIME(currentOperation);
 			[self.latticeExtractor obtainHorizontallLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
-		});
-		
-
-		dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+			
 			[self.latticeExtractor obtainLinesInIntraLatticeForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
-		});
 
-		
-		dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
 			[self.latticeExtractor obtainVerticalLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
-		});
-		
-		
-		dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+			
 			[self.latticeExtractor obtainDiagonalLinesTopLeftBottomRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
-		});
-		
-		dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+			
 			[self.latticeExtractor obtainDiagonalLinesBottomLeftTopRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
-		});
-		
-		dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+			
 			[self.latticeExtractor obtainDiagonalHeightConstantZ2ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
-		});
-		
-		dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+			
 			[self.latticeExtractor obtainDiagonalHeightConstantZ1ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
+			CS_MACRO_END_DISPLAY;
 		});
-
 	}
 	
 	dispatch_group_notify(self.operationGroup, self.concurrentQ, ^{

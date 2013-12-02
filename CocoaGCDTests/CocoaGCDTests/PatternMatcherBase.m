@@ -25,7 +25,6 @@
 		//now trying to eliminate duplicate values to avoid multiple useless operations
 		NSSet *uniques = [NSSet setWithArray:dictionaryOfWords];
 		[self preProcessWordDictionary:uniques.allObjects];
-		
 		[self initPhase2];
 	}
 	return self;
