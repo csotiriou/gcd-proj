@@ -38,12 +38,13 @@
 			}];
 		});
 		
+
 		dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
 			[self.latticeExtractor obtainLinesInIntraLatticeForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 				[self asynchronouslySearchForLine:line forSiloAtIndex:i];
 			}];
 		});
-		
+
 		
 		dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
 			[self.latticeExtractor obtainVerticalLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {

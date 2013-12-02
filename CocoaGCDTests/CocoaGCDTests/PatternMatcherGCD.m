@@ -35,52 +35,66 @@
 
 - (void)startInternalThreads
 {
-	//	__block __weak PatternMatcherGCD *weakSelf = self; //avoid circular references
+//	__block __weak PatternMatcherGCD *weakSelf = self; //avoid circular references
 	self.totalLinesProcessed = 0;
 	
 	
 	dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+		CS_MACRO_BEGIN_TIME(@"obtainHorizontallLinesForLattice");
 		[self.latticeExtractor obtainHorizontallLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 			[self serialySearchForStringsInLine:line];
 		}];
+		CS_MACRO_END_DISPLAY;
 	});
 	
 	dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+		CS_MACRO_BEGIN_TIME(@"obtainLinesInIntraLatticeForLattice");
 		[self.latticeExtractor obtainLinesInIntraLatticeForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 			[self serialySearchForStringsInLine:line];
 		}];
+		CS_MACRO_END_DISPLAY;
 	});
 	
 	
 	dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+		CS_MACRO_BEGIN_TIME(@"obtainVerticalLinesForLattice");
 		[self.latticeExtractor obtainVerticalLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 			[self serialySearchForStringsInLine:line];
 		}];
+		CS_MACRO_END_DISPLAY;
 	});
 	
 	
 	dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+		CS_MACRO_BEGIN_TIME(@"obtainDiagonalLinesTopLeftBottomRightForLattice");
 		[self.latticeExtractor obtainDiagonalLinesTopLeftBottomRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 			[self serialySearchForStringsInLine:line];
 		}];
+		CS_MACRO_END_DISPLAY;
 	});
 	
 	dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+		CS_MACRO_BEGIN_TIME(@"obtainDiagonalLinesBottomLeftTopRightForLattice");
 		[self.latticeExtractor obtainDiagonalLinesBottomLeftTopRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 			[self serialySearchForStringsInLine:line];
 		}];
+		CS_MACRO_END_DISPLAY;
 	});
 	
 	dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+		CS_MACRO_BEGIN_TIME(@"obtainDiagonalHeightConstantZ2ForLattice");
 		[self.latticeExtractor obtainDiagonalHeightConstantZ2ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 			[self serialySearchForStringsInLine:line];
 		}];
+		CS_MACRO_END_DISPLAY;
 	});
 	
 	dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
+		CS_MACRO_BEGIN_TIME(@"obtainDiagonalHeightConstantZ1ForLattice");
 		[self.latticeExtractor obtainDiagonalHeightConstantZ1ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 			[self serialySearchForStringsInLine:line];
 		}];
+		CS_MACRO_END_DISPLAY;
 	});
 }
 

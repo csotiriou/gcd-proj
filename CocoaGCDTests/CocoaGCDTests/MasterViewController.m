@@ -91,7 +91,7 @@
 	self.resultsTextView.string = resultStr;
 }
 - (IBAction)loadDNAFile:(id)sender {
-	NSOpenPanel *openPanel = [[NSOpenPanel alloc] init];
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setDirectoryURL:[NSURL fileURLWithPath:[@"~/" stringByStandardizingPath]]];
 	[openPanel setAllowedFileTypes:@[@"desc"]];
 	openPanel.allowsMultipleSelection = NO;
@@ -112,7 +112,7 @@
 }
 
 - (IBAction)loadWDL:(id)sender {
-	NSOpenPanel *openPanel = [[NSOpenPanel alloc] init];
+	NSOpenPanel *openPanel = [NSOpenPanel  openPanel];
 	[openPanel setDirectoryURL:[NSURL fileURLWithPath:[@"~/" stringByStandardizingPath]]];
 	[openPanel setAllowedFileTypes:@[@"wdl"]];
 	openPanel.allowsMultipleSelection = NO;
