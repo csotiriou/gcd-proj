@@ -12,7 +12,7 @@
 @interface PatternMatcherGCD2 ()
 @property (nonatomic) int numberOfCores;
 
-/** 
+/**
  An array
  */
 @property (nonatomic, strong) NSMutableArray *arrayOfArraysWithWordDictionaries;
@@ -94,9 +94,9 @@
 }
 
 /**
-	Matches the patterns found in the appropriate slot (because each processor will look into specific silos)
-	@param line the line to search for
-	@param index the index of the pool with the words to search
+ Matches the patterns found in the appropriate slot (because each processor will look into specific silos)
+ @param line the line to search for
+ @param index the index of the pool with the words to search
  */
 - (void)asynchronouslySearchForLine:(NSString *)line forSiloAtIndex:(int)index
 
@@ -107,7 +107,7 @@
 			[self seriallyAccessResultsDictionaryWithValue:@YES forKey:word.wordToSearch];
 		}
 	}
-
+	
 }
 
 

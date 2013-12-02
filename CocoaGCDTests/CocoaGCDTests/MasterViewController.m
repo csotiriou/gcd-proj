@@ -37,6 +37,7 @@
 {
 	[super loadView];
 	[self hideProcessIndicator];
+	[self refreshInfoLabel];
 }
 
 
@@ -90,6 +91,19 @@
 	NSString *resultStr = [NSString stringWithFormat:@"Finished running %@. Time taken: %f seconds.", NSStringFromClass([matcher class]), timeInterval];
 	self.resultsTextView.string = resultStr;
 }
+
+
+
+- (void)refreshInfoLabel
+{
+	self.latticeSideLabel.stringValue = [NSString stringWithFormat:@"%i", self.dnaLattice.sideNumber];
+	self.wordCountLabel.stringValue = [NSString stringWithFormat:@"%li", self.wordList.count];
+	self.wordLengthLabel.stringValue = [NSString stringWithFormat:@"%li", self.wordList.wordLength];
+}
+
+
+
+
 - (IBAction)loadDNAFile:(id)sender {
 	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setDirectoryURL:[NSURL fileURLWithPath:[@"~/" stringByStandardizingPath]]];
@@ -101,14 +115,13 @@
 	if (result == NSOKButton) {
 		NSURL *fileName = [openPanel URLs][0];
 		DDLogVerbose(@"loading file from file url: %@", fileName.absoluteString);
-//		[self.wordList loadWordListFromFile:fileName.path];
 		self.matrixImporter = [[CSMatrixImporter alloc] init];
 		[self.matrixImporter loadLatticeAtLocation:fileName.path completionBlock:^(DNALattice1d *lattice) {
 			self.dnaLattice = lattice;
 		}];
 		DDLogVerbose(@"loading done");
 	}
-	
+	[self refreshInfoLabel];
 }
 
 - (IBAction)loadWDL:(id)sender {
@@ -125,5 +138,6 @@
 		[self.wordList loadWordListFromFile:fileName.path];
 		DDLogVerbose(@"loading done");
 	}
+	[self refreshInfoLabel];
 }
 @end

@@ -23,16 +23,43 @@
  for all pattern matchers.
  */
 @interface PatternMatcherBase : NSObject
-@property (nonatomic, strong) id <LatticeCommon> lattice;
+
+/**
+ The lattice that is about to be processed. It represents a 3D cube, NxNxN
+ */
+@property (nonatomic, readonly) id <LatticeCommon> lattice;
+
+/**
+ The delegate object will be notified upon completion of processing.
+ */
 @property (nonatomic, weak) id<PatternMatcherBaseDelegate> delegate;
 
-@property (nonatomic, strong) NSMutableArray *dictionaryToSearch;
+/**
+ The dictionary of words to search. An array of strings.
+ */
+@property (nonatomic, readonly) NSArray *dictionaryToSearch;
+
+/**
+ The reversed words of the dictionary to be searched. An Array of strings.
+ */
 @property (nonatomic, readonly) NSArray *reversedDictionaryToSearch;
+
+/**
+ Helper class that extracts components from lattices in order to be processed. Use it, but don't change it.
+ */
 @property (nonatomic, readonly) LatticeLineExtractor *latticeExtractor;
 
-@property (nonatomic, strong) NSMutableDictionary *wordsProcessedAndResults;
+/**
+ Resulting dictionary for the given words. Each key represents a word given in the 'dictionaryToSearch'. Each value is
+ an NSNumber, representing 'YES' or 'NO', indicating if the word is found inside the dictionary or not. After the scanning of the cube has ended, this dictionary will hold the results.
+ */
+@property (nonatomic, readonly) NSMutableDictionary *wordsProcessedAndResults;
 
-@property (nonatomic) BOOL hasAlreadyRan;
+
+/**
+ Flag indicating if the object has already scanned the lattice once. Note that this flag is not being taken into account when starting a new scan, so it's up to the 3rd party developer to decide if he wants to do a new search or not.
+ */
+@property (nonatomic, readonly) BOOL hasAlreadyRan;
 
 
 
@@ -69,7 +96,9 @@
 
 /**
  @brief signals the delegate if any, that the whole process is complete. Made public, in order to be called
- by subclasses, and not directly by external classes.
+ by subclasses, and not directly by external classes. If you override 'signalComplete', you MUST call
+ [super signalComplete] somewhere inside the same function, in order to notify the delegates and set all flags to their
+ appropriate values.
  */
 - (void)signalComplete;
 

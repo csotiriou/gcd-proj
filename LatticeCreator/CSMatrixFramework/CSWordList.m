@@ -66,6 +66,15 @@
 	
 }
 
+- (NSInteger)count
+{
+	return self.wordList.count;
+}
+
+- (NSInteger)wordLength
+{
+	return (self.wordList.count == 0? 0 : [self.wordList.lastObject length]);
+}
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len
 {

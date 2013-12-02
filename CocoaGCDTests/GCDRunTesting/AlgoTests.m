@@ -25,8 +25,11 @@
 	self.lattice = [[DNALattice1d alloc] initWithSideNumber:3 andChar:'0'];
 	self.patternMatcher = [[PatternMatcherSequential alloc] init];
 	
-	self.patternMatcher.lattice = self.lattice;
-	[self.patternMatcher.dictionaryToSearch addObject:@"abba"];
+	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.lattice andDictionaryToSearch:@[@"abba"]];
+//	self.patternMatcher.lattice = self.lattice;
+	
+//	NSMutableArray *dictionaryToSearch = (NSMutableArray *)self.patternMatcher.dictionaryToSearch;
+//	[dictionaryToSearch addObject:@"abba"];
 	
 	
 	

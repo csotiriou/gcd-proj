@@ -13,7 +13,21 @@
  CSWordList are of equal length. In this wordlist, there are no duplicates.
  */
 @interface CSWordList : NSObject <NSFastEnumeration>
+
+/**
+ The unique words that are contained into the wordlist
+ */
 @property (nonatomic, readonly) NSOrderedSet *words;
+
+/**
+ The number of objects added into the wordlist
+ */
+@property (nonatomic, readonly) NSInteger count;
+
+/**
+ Gets the length of the words inside the word list. All words have the same length
+ */
+@property (nonatomic, readonly) NSInteger wordLength;
 
 
 /**
@@ -22,7 +36,6 @@
  
  @param filePath The path of the .wdl file to load the words from.
  */
-
 - (void)addWord:(NSString *)word;
 
 /**
@@ -33,7 +46,7 @@
 - (void)loadWordListFromFile:(NSString *)filePath;
 
 /*
- Add support for literals
+ Add support for the new Obejctive C literals (allowing c array-style access to objects in collections, and other stuff)
  */
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
 - (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx;

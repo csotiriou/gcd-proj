@@ -12,6 +12,7 @@
 @property (nonatomic, strong) NSMutableArray *dictionaryToSearchReverse;
 @property (nonatomic, strong) NSMutableArray *dictionaryToSearchNormal;
 
+//@property (nonatomic, strong) NSMutableArray *actualDictionaryToSearch;
 @end
 
 @implementation PatternMatcherBase
@@ -19,7 +20,7 @@
 - (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords
 {
 	if (self = [super init]) {
-		self.lattice = lattice;
+		_lattice = lattice;
 		[self initDefaults];
 		
 		//now trying to eliminate duplicate values to avoid multiple useless operations
@@ -32,20 +33,17 @@
 
 - (void)initDefaults
 {
-	self.dictionaryToSearch = [NSMutableArray array];
+	self.dictionaryToSearchNormal = [NSMutableArray array];
 	self.dictionaryToSearchReverse = [NSMutableArray array];
 	_latticeExtractor = [[LatticeLineExtractor alloc] init];
 }
 
-- (void)initPhase2
-{
-	
-}
+- (void)initPhase2{/* awaiting to be subclassed */}
 
 - (id)initWithLattice:(id<LatticeCommon>)lattice andWordList:(CSWordList *)wordList
 {
 	if (self = [super init]) {
-		self.lattice = lattice;
+		_lattice = lattice;
 		[self initDefaults];
 		[self preProcessWordDictionary:wordList.words.array];
 		[self initPhase2];
@@ -57,19 +55,19 @@
 - (void)preProcessWordDictionary:(NSArray *)wordDictionary
 {
 
-	[self.dictionaryToSearch addObjectsFromArray:wordDictionary];
+	[self.dictionaryToSearchNormal addObjectsFromArray:wordDictionary];
 	
 	
 	//add the reversed words to the array to search. instead of reversing
 	//each of the found strings in order to search for a direction, we can just pre-calculate
 	//the reversed search strings from the start, and search for them instead.
-	for (NSString *word in self.dictionaryToSearch) {
+	for (NSString *word in self.dictionaryToSearchNormal) {
 		[self.dictionaryToSearchReverse addObject:[word reversedString]];
 	}
 	
 	//associate the words with a flag indicating if we have found them
-	self.wordsProcessedAndResults = [NSMutableDictionary dictionaryWithCapacity:self.dictionaryToSearch.count];
-	for (NSString *word in self.dictionaryToSearch) {
+	_wordsProcessedAndResults = [NSMutableDictionary dictionaryWithCapacity:self.dictionaryToSearchNormal.count];
+	for (NSString *word in self.dictionaryToSearchNormal) {
 		[self.wordsProcessedAndResults setValue:@NO forKey:word];
 	}
 
@@ -79,8 +77,8 @@
 
 - (void)matchStringsForLine:(NSString *)line withFoundBlock:(void(^)(NSString *wordFound))foundBlock
 {
-	for (int i = 0; i < self.dictionaryToSearch.count; i++) {
-		NSString *word = [self.dictionaryToSearch objectAtIndex:i];
+	for (int i = 0; i < self.dictionaryToSearchNormal.count; i++) {
+		NSString *word = [self.dictionaryToSearchNormal objectAtIndex:i];
 		if ([[self.wordsProcessedAndResults valueForKey:word] boolValue] == NO) { //only check if we have not found it already.
 			NSString *reversedWord = [self.reversedDictionaryToSearch objectAtIndex:i];
 			
@@ -96,7 +94,7 @@
 
 - (void)signalComplete
 {
-	self.hasAlreadyRan = YES;
+	_hasAlreadyRan = YES;
 	if ([self.delegate respondsToSelector:@selector(patternMatcher:didFinishWithResults:)]) {
 		[self.delegate patternMatcher:self didFinishWithResults:self.wordsProcessedAndResults];
 	}
@@ -105,6 +103,11 @@
 - (NSArray *)reversedDictionaryToSearch
 {
 	return _dictionaryToSearchReverse;
+}
+
+- (NSArray *)dictionaryToSearch
+{
+	return _dictionaryToSearchNormal;
 }
 
 - (void)startScanningWithCompletionBlock:(void (^)())completionBlock

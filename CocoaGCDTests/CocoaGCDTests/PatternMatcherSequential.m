@@ -15,18 +15,18 @@
 
 @implementation PatternMatcherSequential
 
-- (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords
-{
-    self = [super initWithLattice:lattice andDictionaryToSearch:dictionaryOfWords];
-    if (self) {
-		self.wordsProcessedAndResults = [NSMutableDictionary dictionaryWithCapacity:self.dictionaryToSearch.count];
-		self.hasAlreadyRan = NO;
-		for (NSString *word in self.dictionaryToSearch) {
-			[self.wordsProcessedAndResults setValue:@NO forKey:word];
-		}
-    }
-    return self;
-}
+//- (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords
+//{
+//    self = [super initWithLattice:lattice andDictionaryToSearch:dictionaryOfWords];
+//    if (self) {
+//		self.wordsProcessedAndResults = [NSMutableDictionary dictionaryWithCapacity:self.dictionaryToSearch.count];
+//		self.hasAlreadyRan = NO;
+//		for (NSString *word in self.dictionaryToSearch) {
+//			[self.wordsProcessedAndResults setValue:@NO forKey:word];
+//		}
+//    }
+//    return self;
+//}
 
 
 - (void)startScanning
@@ -93,7 +93,6 @@
 	
 	[self signalComplete];
 	
-	self.hasAlreadyRan = YES;
 }
 
 - (void)startScanningWithCompletionBlock:(void (^)())completionBlock

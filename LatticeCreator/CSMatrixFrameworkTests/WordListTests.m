@@ -18,12 +18,10 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
@@ -53,6 +51,48 @@
 	}
 }
 
+- (void)testCount
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	expect(wordList.count).to.equal(0);
+	
+	NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
+	NSString *filePath = [mainBundle pathForResource:@"wordlist1" ofType:@"wdl"];
+	[wordList loadWordListFromFile:filePath];
+	
+	expect(wordList.count).to.equal(6);
+	[wordList addWord:@"word7"];
+	expect(wordList.count).to.equal(7);
+	
+	[wordList loadWordListFromFile:filePath];
+	expect(wordList.count).to.equal(6);
+}
+
+- (void)testWordLength
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	expect(wordList.wordLength).to.equal(0); //empty wordlist returns 0 as the word length
+	
+	NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
+	NSString *filePath = [mainBundle pathForResource:@"wordlist1" ofType:@"wdl"];
+	[wordList loadWordListFromFile:filePath];
+	expect(wordList.wordLength).to.equal(5);
+}
+
+- (void)testAddNewWordInvalid
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	
+	NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
+	NSString *filePath = [mainBundle pathForResource:@"wordlist1" ofType:@"wdl"];
+	[wordList loadWordListFromFile:filePath];
+	
+	//should throw an exception if ee try to add a word with different letter counts than the rest
+	//of them.
+	XCTAssertThrows([wordList addWord:@"a word that doesn't fit"], @"error: no exception thrown when adding a word that has different letter count from the other ones inside the list");
+	XCTAssertThrows([wordList addWord:@"word"], @"error: no exception thrown when adding a word that has different letter count from the other ones inside the list");
+
+}
 
 - (void)testFastEnumeration
 {
