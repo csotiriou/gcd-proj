@@ -38,6 +38,29 @@
 	}
 }
 
+- (void)testSavingAndLoading
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
+	NSString *filePath = [mainBundle pathForResource:@"wordlist1" ofType:@"wdl"];
+	
+	[wordList loadWordListFromFile:filePath];
+	
+	NSString *testFile = [@"~/.testFile" stringByStandardizingPath];
+	[wordList extractListToFileAtPath:testFile];
+	
+	CSWordList *loadedWordList = [[CSWordList alloc] init];
+	[loadedWordList loadWordListFromFile:testFile];
+	
+	for (int i=0; i<loadedWordList.count; i++) {
+		expect(loadedWordList[i]).to.equal(wordList[i]);
+	}
+
+	if ([[NSFileManager defaultManager] fileExistsAtPath:testFile]) {
+		[[NSFileManager defaultManager] removeItemAtPath:testFile error:NULL];
+	}
+}
+
 - (void)testNewLiteralSyntax
 {
 	CSWordList *wordList = [[CSWordList alloc] init];
