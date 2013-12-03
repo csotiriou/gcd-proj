@@ -56,6 +56,21 @@
 }
 
 
+- (void)extractListToFileAtPath:(NSString *)filePath
+{
+	NSFileManager *fm = [NSFileManager defaultManager];
+	if (![fm fileExistsAtPath:filePath]) {
+		[fm createFileAtPath:filePath contents:nil attributes:nil];
+	}
+	NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
+	if (fileHandle) {
+		for (NSString *str  in self.wordList) {
+			[fileHandle writeData:[[NSString stringWithFormat:@"%@\n", str] dataUsingEncoding:NSUTF8StringEncoding]];
+		}
+	}
+	[fileHandle closeFile];
+}
+
 - (void)fileReader:(CSFileReader *)reader didEncounterLine:(NSString *)line
 {
 	[self addWord:line];

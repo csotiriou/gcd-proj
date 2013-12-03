@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+/**
+ The GUI of the application 
+ */
 @interface MasterViewController : NSViewController
 @property (strong) IBOutlet NSTextField *progressLabel;
 @property (strong) IBOutlet NSProgressIndicator *progressActivityIndicator;

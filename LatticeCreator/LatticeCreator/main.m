@@ -15,17 +15,17 @@ int main(int argc, const char * argv[])
 	@autoreleasepool {
 		NSString *fileDescriptor = [@"~/Desktop/output.desc" stringByStandardizingPath];
 
-		
-		/*CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
+		CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
 		__block DNALattice1d *lat = [[DNALattice1d alloc] initWithSideNumber:10 andChar:'a'];
-		[importer loadLatticeAtLocation:fileDescriptor completionBlock:^(DNALattice1d *lattice) {
-			NSLog(@"completed.");
-			lat = lattice;
-		}];
+//		[importer loadLatticeAtLocation:fileDescriptor completionBlock:^(DNALattice1d *lattice) {
+//			NSLog(@"completed.");
+//			lat = lattice;
+//		}];
+		
 		
 		CSMatrixExporter *exporter = [[CSMatrixExporter alloc] init];
 		exporter.lattice = lat;
-		[exporter exportToFile:fileDescriptor withDefaultCharacter:'k'];*/
+		[exporter exportToFile:fileDescriptor withDefaultCharacter:'k'];
 		
 		
 		CSWordList *list = [[CSWordList alloc] init];
@@ -50,6 +50,7 @@ int main(int argc, const char * argv[])
 		[list addWord:@"ok9"];
 		[list addWord:@"ok2"];
 		[list addWord:@"098"];
+		
 		for (int i = 100; i<999; i++) {
 			[list addWord:[NSString stringWithFormat:@"%i", i]];
 		}
@@ -59,6 +60,9 @@ int main(int argc, const char * argv[])
 			[str appendFormat:@"%@", [NSString stringWithFormat:@"%@\n", str1]];
 		}
 		NSLog(@"%@", str);
+		
+		[list extractListToFileAtPath:@"/Users/soulstorm/Desktop/words.wdl"];
+		
 	}
     return 0;
 }

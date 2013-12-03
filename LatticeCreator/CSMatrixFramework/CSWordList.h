@@ -45,6 +45,14 @@
  */
 - (void)loadWordListFromFile:(NSString *)filePath;
 
+
+/**
+ @brief Extracts the words loaded to this list to a file at a specified path
+ 
+ @param filePath the file path to write the file.
+ */
+- (void)extractListToFileAtPath:(NSString *)filePath;
+
 /*
  Add support for the new Obejctive C literals (allowing c array-style access to objects in collections, and other stuff)
  */

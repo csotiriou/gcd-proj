@@ -94,10 +94,12 @@
 
 - (void)signalComplete
 {
-	_hasAlreadyRan = YES;
-	if ([self.delegate respondsToSelector:@selector(patternMatcher:didFinishWithResults:)]) {
-		[self.delegate patternMatcher:self didFinishWithResults:self.wordsProcessedAndResults];
-	}
+	dispatch_async(dispatch_get_main_queue(), ^{
+		_hasAlreadyRan = YES;
+		if ([self.delegate respondsToSelector:@selector(patternMatcher:didFinishWithResults:)]) {
+			[self.delegate patternMatcher:self didFinishWithResults:self.wordsProcessedAndResults];
+		}
+	});
 }
 
 - (NSArray *)reversedDictionaryToSearch

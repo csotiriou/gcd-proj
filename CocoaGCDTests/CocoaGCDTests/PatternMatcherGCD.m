@@ -106,6 +106,7 @@
 - (void)serialySearchForStringsInLine:(NSString *)line
 {
 	self.totalLinesProcessed++;
+//	NSLog(@"total lines processed: %llu", self.totalLinesProcessed);
 	[self matchStringsForLine:line withFoundBlock:^(NSString *wordFound) {
 		[self seriallyAccessResultsDictionaryWithValue:@YES forKey:wordFound];
 	}];
@@ -117,10 +118,6 @@
 {
 	DDLogVerbose(@"all tasks are done");
 	DDLogVerbose(@"total lines processed: %llu", self.totalLinesProcessed);
-	//	NSDate *endDate = [NSDate date];
-	//	NSTimeInterval timeInterval = [endDate timeIntervalSinceDate:self.startDate];
-	//	DDLogVerbose(@"time needed: %f", timeInterval);
-	
 	[self signalComplete];
 }
 
