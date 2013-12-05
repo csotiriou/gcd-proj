@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0603007D18440DE20056979F /* testWords.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 0603007C18440DE20056979F /* testWords.wdl */; };
-		0603008118440F5C0056979F /* TestCaseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603008018440F5C0056979F /* TestCaseCommon.m */; };
 		06030084184412090056979F /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 06030083184412090056979F /* TRVSMonitor.m */; };
+		060D2E2D18511079005E3597 /* UtilityInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E2C18511079005E3597 /* UtilityInitializer.m */; };
+		060D2E3218512F1D005E3597 /* UtilityInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E2C18511079005E3597 /* UtilityInitializer.m */; };
+		060D2E3518512FD2005E3597 /* TestCaseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3418512FD2005E3597 /* TestCaseCommon.m */; };
 		06535481184A497A00340BCE /* cube.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06535480184A497A00340BCE /* cube.desc */; };
 		067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C6F1837B6AE005D90EF /* MasterViewController.m */; };
 		067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067A9C701837B6AE005D90EF /* MasterViewController.xib */; };
@@ -109,10 +111,12 @@
 
 /* Begin PBXFileReference section */
 		0603007C18440DE20056979F /* testWords.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testWords.wdl; sourceTree = "<group>"; };
-		0603007E18440E910056979F /* TestCaseCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseCommon.h; sourceTree = "<group>"; };
-		0603008018440F5C0056979F /* TestCaseCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseCommon.m; sourceTree = "<group>"; };
 		06030082184412090056979F /* TRVSMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRVSMonitor.h; path = ../../Common/TRVS/TRVSMonitor.h; sourceTree = "<group>"; };
 		06030083184412090056979F /* TRVSMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRVSMonitor.m; path = ../../Common/TRVS/TRVSMonitor.m; sourceTree = "<group>"; };
+		060D2E2B18511079005E3597 /* UtilityInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilityInitializer.h; path = ../GCDRunTesting/UtilityInitializer.h; sourceTree = "<group>"; };
+		060D2E2C18511079005E3597 /* UtilityInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilityInitializer.m; path = ../GCDRunTesting/UtilityInitializer.m; sourceTree = "<group>"; };
+		060D2E3318512FD2005E3597 /* TestCaseCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseCommon.h; sourceTree = "<group>"; };
+		060D2E3418512FD2005E3597 /* TestCaseCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseCommon.m; sourceTree = "<group>"; };
 		06535480184A497A00340BCE /* cube.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.desc; sourceTree = "<group>"; };
 		067A9C6E1837B6AE005D90EF /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		067A9C6F1837B6AE005D90EF /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
@@ -230,6 +234,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		060D2E3118511947005E3597 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				067A9C7B18383FF5005D90EF /* Expecta */,
+				06030082184412090056979F /* TRVSMonitor.h */,
+				06030083184412090056979F /* TRVSMonitor.m */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		060D2E3618512FD8005E3597 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				060D2E3318512FD2005E3597 /* TestCaseCommon.h */,
+				060D2E3418512FD2005E3597 /* TestCaseCommon.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		067A9C6A1837B301005D90EF /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,7 +290,7 @@
 			name = "Actual Matchers";
 			sourceTree = "<group>";
 		};
-		067A9C7B18383FF5005D90EF /* External */ = {
+		067A9C7B18383FF5005D90EF /* Expecta */ = {
 			isa = PBXGroup;
 			children = (
 				067A9C7C18384002005D90EF /* EXPBackwardCompatibility.h */,
@@ -307,7 +330,7 @@
 				067A9C9E18384002005D90EF /* NSObject+Expecta.h */,
 				067A9C9F18384002005D90EF /* NSValue+Expecta.h */,
 			);
-			name = External;
+			name = Expecta;
 			path = ../CocoaGCDTestsTests;
 			sourceTree = "<group>";
 		};
@@ -411,6 +434,8 @@
 		06A9AAC7182AC8730066EE5B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				060D2E2B18511079005E3597 /* UtilityInitializer.h */,
+				060D2E2C18511079005E3597 /* UtilityInitializer.m */,
 				06A9AAC8182AC8810066EE5B /* Util.h */,
 				06A9AAC9182AC8810066EE5B /* Util.m */,
 				06D5DFCE18358F7200A7D320 /* CSAdditions.h */,
@@ -422,11 +447,8 @@
 		06D5DFBC183588DE00A7D320 /* TESTS */ = {
 			isa = PBXGroup;
 			children = (
-				06030082184412090056979F /* TRVSMonitor.h */,
-				06030083184412090056979F /* TRVSMonitor.m */,
-				067A9C7B18383FF5005D90EF /* External */,
-				0603007E18440E910056979F /* TestCaseCommon.h */,
-				0603008018440F5C0056979F /* TestCaseCommon.m */,
+				060D2E3118511947005E3597 /* External */,
+				060D2E3618512FD8005E3597 /* Common */,
 				068B791C183D6E7200557CB5 /* AlgoTests.m */,
 				068B791D183D6E7200557CB5 /* CocoaGCDTestsTests.m */,
 				068B791E183D6E7200557CB5 /* PatternTests.m */,
@@ -608,6 +630,7 @@
 				06D5DFD018358F7200A7D320 /* CSAdditions.m in Sources */,
 				069910201821C3FE00290809 /* main.m in Sources */,
 				0690D95C18283608000E8165 /* DDAbstractDatabaseLogger.m in Sources */,
+				060D2E3218512F1D005E3597 /* UtilityInitializer.m in Sources */,
 				068A86E0182D6F77003E03C5 /* LatticeLineExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,13 +639,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060D2E3518512FD2005E3597 /* TestCaseCommon.m in Sources */,
 				068B7920183D6E7200557CB5 /* CocoaGCDTestsTests.m in Sources */,
 				06D5DFD118358F7200A7D320 /* CSAdditions.m in Sources */,
 				06030084184412090056979F /* TRVSMonitor.m in Sources */,
 				06D5DFC3183588DE00A7D320 /* GCDRunTesting.m in Sources */,
-				0603008118440F5C0056979F /* TestCaseCommon.m in Sources */,
 				068B791F183D6E7200557CB5 /* AlgoTests.m in Sources */,
 				068B7921183D6E7200557CB5 /* PatternTests.m in Sources */,
+				060D2E2D18511079005E3597 /* UtilityInitializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

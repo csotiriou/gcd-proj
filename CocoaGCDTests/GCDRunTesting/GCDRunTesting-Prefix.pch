@@ -9,5 +9,7 @@
 	#import "Definitions.h"
 #endif
 
+#import "UtilityInitializer.h"
+
 #define EXP_SHORTHAND
 #define CS_SKIP_BOUNDARY_CHECKS

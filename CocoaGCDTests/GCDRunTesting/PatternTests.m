@@ -36,6 +36,7 @@
 
 - (void)testExample
 {
+	
 	[self.patternMatcher startScanning];
 	expect(self.patternMatcher.hasAlreadyRan).to.beTruthy();
 }

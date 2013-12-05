@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "TestCaseCommon.h"
-
+#import "UtilityInitializer.h"
 @interface TestCaseCommon ()
 
 @end
@@ -17,6 +17,7 @@
 - (void)setUp
 {
 	self.monitor = [[TRVSMonitor alloc] init];
+	[[UtilityInitializer sharedTestSingleton] initializeTestLogsIfNotInitialized];
 }
 - (NSBundle *)bundle
 {
@@ -32,5 +33,6 @@
 {
 	return [self.bundle pathForResource:name ofType:@"wdl"];
 }
+
 
 @end

@@ -52,6 +52,7 @@
 
 - (void)testSimpleAsynchronousType1
 {
+	CS_MACRO_BLOCKED_BEGIN_TIME(@"----------testSimpleAsynchronousType1");
 	CSWordList *wordList = [[CSWordList alloc] init];
 	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
 	
@@ -60,10 +61,11 @@
 	
 	[patternMatcher startScanningWithCompletionBlock:^{
 		[self.monitor signal];
+		CS_MACRO_BLOCKED_END_DISPLAY;
 	}];
 	
 	[self.monitor wait];
-	
+
 	expect(patternMatcher.hasAlreadyRan).will.beTruthy();
 	expect(patternMatcher.wordsProcessedAndResults[@"aaa"]).to.beTruthy();
 	expect(patternMatcher.wordsProcessedAndResults[@"bbb"]).to.beFalsy();
