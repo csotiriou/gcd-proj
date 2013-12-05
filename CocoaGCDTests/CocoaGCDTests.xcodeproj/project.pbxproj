@@ -12,6 +12,8 @@
 		060D2E2D18511079005E3597 /* UtilityInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E2C18511079005E3597 /* UtilityInitializer.m */; };
 		060D2E3218512F1D005E3597 /* UtilityInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E2C18511079005E3597 /* UtilityInitializer.m */; };
 		060D2E3518512FD2005E3597 /* TestCaseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3418512FD2005E3597 /* TestCaseCommon.m */; };
+		060D2E3B1851352F005E3597 /* PatternTestsSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3A1851352F005E3597 /* PatternTestsSequential.m */; };
+		060D2E3D185135A5005E3597 /* PatternTestsGCDType1.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3C185135A5005E3597 /* PatternTestsGCDType1.m */; };
 		06535481184A497A00340BCE /* cube.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06535480184A497A00340BCE /* cube.desc */; };
 		067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C6F1837B6AE005D90EF /* MasterViewController.m */; };
 		067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067A9C701837B6AE005D90EF /* MasterViewController.xib */; };
@@ -43,7 +45,7 @@
 		06D5DFB51835878800A7D320 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
 		06D5DFBB183588DE00A7D320 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910321821C3FE00290809 /* XCTest.framework */; };
 		06D5DFC1183588DE00A7D320 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06D5DFBF183588DE00A7D320 /* InfoPlist.strings */; };
-		06D5DFC3183588DE00A7D320 /* GCDRunTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D5DFC2183588DE00A7D320 /* GCDRunTesting.m */; };
+		06D5DFC3183588DE00A7D320 /* PatternTestsGCDType2.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D5DFC2183588DE00A7D320 /* PatternTestsGCDType2.m */; };
 		06D5DFCD1835891700A7D320 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
 		06D5DFD018358F7200A7D320 /* CSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D5DFCF18358F7200A7D320 /* CSAdditions.m */; };
 		06D5DFD118358F7200A7D320 /* CSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D5DFCF18358F7200A7D320 /* CSAdditions.m */; };
@@ -117,6 +119,8 @@
 		060D2E2C18511079005E3597 /* UtilityInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilityInitializer.m; path = ../GCDRunTesting/UtilityInitializer.m; sourceTree = "<group>"; };
 		060D2E3318512FD2005E3597 /* TestCaseCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseCommon.h; sourceTree = "<group>"; };
 		060D2E3418512FD2005E3597 /* TestCaseCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseCommon.m; sourceTree = "<group>"; };
+		060D2E3A1851352F005E3597 /* PatternTestsSequential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTestsSequential.m; sourceTree = "<group>"; };
+		060D2E3C185135A5005E3597 /* PatternTestsGCDType1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTestsGCDType1.m; sourceTree = "<group>"; };
 		06535480184A497A00340BCE /* cube.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.desc; sourceTree = "<group>"; };
 		067A9C6E1837B6AE005D90EF /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		067A9C6F1837B6AE005D90EF /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
@@ -204,7 +208,7 @@
 		06D5DFBA183588DE00A7D320 /* GCDRunTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCDRunTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D5DFBE183588DE00A7D320 /* GCDRunTesting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GCDRunTesting-Info.plist"; sourceTree = "<group>"; };
 		06D5DFC0183588DE00A7D320 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		06D5DFC2183588DE00A7D320 /* GCDRunTesting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDRunTesting.m; sourceTree = "<group>"; };
+		06D5DFC2183588DE00A7D320 /* PatternTestsGCDType2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatternTestsGCDType2.m; sourceTree = "<group>"; };
 		06D5DFC4183588DE00A7D320 /* GCDRunTesting-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCDRunTesting-Prefix.pch"; sourceTree = "<group>"; };
 		06D5DFCE18358F7200A7D320 /* CSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAdditions.h; sourceTree = "<group>"; };
 		06D5DFCF18358F7200A7D320 /* CSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAdditions.m; sourceTree = "<group>"; };
@@ -452,7 +456,9 @@
 				068B791C183D6E7200557CB5 /* AlgoTests.m */,
 				068B791D183D6E7200557CB5 /* CocoaGCDTestsTests.m */,
 				068B791E183D6E7200557CB5 /* PatternTests.m */,
-				06D5DFC2183588DE00A7D320 /* GCDRunTesting.m */,
+				060D2E3A1851352F005E3597 /* PatternTestsSequential.m */,
+				060D2E3C185135A5005E3597 /* PatternTestsGCDType1.m */,
+				06D5DFC2183588DE00A7D320 /* PatternTestsGCDType2.m */,
 				06D5DFBD183588DE00A7D320 /* Supporting Files */,
 			);
 			name = TESTS;
@@ -639,11 +645,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060D2E3B1851352F005E3597 /* PatternTestsSequential.m in Sources */,
 				060D2E3518512FD2005E3597 /* TestCaseCommon.m in Sources */,
 				068B7920183D6E7200557CB5 /* CocoaGCDTestsTests.m in Sources */,
 				06D5DFD118358F7200A7D320 /* CSAdditions.m in Sources */,
 				06030084184412090056979F /* TRVSMonitor.m in Sources */,
-				06D5DFC3183588DE00A7D320 /* GCDRunTesting.m in Sources */,
+				060D2E3D185135A5005E3597 /* PatternTestsGCDType1.m in Sources */,
+				06D5DFC3183588DE00A7D320 /* PatternTestsGCDType2.m in Sources */,
 				068B791F183D6E7200557CB5 /* AlgoTests.m in Sources */,
 				068B7921183D6E7200557CB5 /* PatternTests.m in Sources */,
 				060D2E2D18511079005E3597 /* UtilityInitializer.m in Sources */,
@@ -806,6 +814,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GCDRunTesting/GCDRunTesting-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					DEBUG_LOGGING,
+					TEST_LOGGING,
+				);
 				INFOPLIST_FILE = "GCDRunTesting/GCDRunTesting-Info.plist";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Common/Expecta\"";
 				OTHER_CFLAGS = "-DUSE_XCTEST";

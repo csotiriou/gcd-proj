@@ -28,7 +28,9 @@
 	
 	self.window.contentView = self.masterViewController.view;
 	[[UtilityInitializer sharedTestSingleton] initializeLNormalLogsIfNotAlreadyInitialized];
-	
+#ifndef TEST_LOGGING
+	[[UtilityInitializer sharedTestSingleton] initializeLNormalLogsIfNotAlreadyInitialized];
+#endif
 }
 
 

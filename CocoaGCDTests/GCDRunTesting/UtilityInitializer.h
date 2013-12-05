@@ -19,6 +19,16 @@
 
 + (UtilityInitializer *)sharedTestSingleton;
 
+/**
+ Initialize the normal loggers, that are being used throughout the normal application. These include the
+ TTY logger for displaying information on the terminal, and a file logger, for logging output to the normal
+ output file used by the normal application. NOTE: if you call this function more than once, it will have no
+ effect.
+ */
 - (void)initializeLNormalLogsIfNotAlreadyInitialized;
+
+/**
+ Initializes the loggers used for testing the application. These include a logger that writes to external files specific to the unit testing procedure. NOTE: if you call this function more than once, it will have no effect.
+ */
 - (void)initializeTestLogsIfNotInitialized;
 @end

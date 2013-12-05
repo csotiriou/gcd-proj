@@ -15,6 +15,7 @@
 
 @interface UtilityInitializer ()
 @property (nonatomic) BOOL hasInitializedNormalLoggers;
+@property (nonatomic) BOOL hasInitializedNormalFileLogger;
 @property (nonatomic) BOOL hasInitializedTestLoggers;
 @end
 
@@ -43,13 +44,20 @@
 {
 	if (!self.hasInitializedNormalLoggers) {
 		[DDLog addLogger:[DDTTYLogger sharedInstance]];
+		self.hasInitializedNormalLoggers = YES;
+	}
+}
+
+- (void)initializeNormalFileLoggerIfNotAlreadyInitialized
+{
+	if (!self.hasInitializedNormalFileLogger) {
 		DDLogFileManagerDefault *defaultManager = [[DDLogFileManagerDefault alloc] initWithLogsDirectory:[Util logDirectoryPath]];
 		DDFileLogger *fileLogger = [[DDFileLogger alloc] initWithLogFileManager:defaultManager];
 		[fileLogger setMaximumFileSize:(10 * 1024 * 1024)]; //1 mbytes
 		[fileLogger setRollingFrequency:(3600.0 * 24.0)];
 		[[fileLogger logFileManager] setMaximumNumberOfLogFiles:10];
 		[DDLog addLogger:fileLogger];
-		self.hasInitializedNormalLoggers = YES;
+		self.hasInitializedNormalFileLogger = YES;
 	}
 }
 
