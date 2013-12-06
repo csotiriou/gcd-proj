@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "TestCaseCommon.h"
 #import "UtilityInitializer.h"
+#import <CSMatrixFramework/CSMatrixFramework.h>
 @interface TestCaseCommon ()
 
 @end
@@ -32,6 +33,27 @@
 - (NSString *)pathForWDLResourceOfName:(NSString *)name
 {
 	return [self.bundle pathForResource:name ofType:@"wdl"];
+}
+
+
+- (CSWordList *)createWordListWithNumberOfLetters:(int)numberOfLetters andSize:(int)size defaultCharacter:(char)c
+{
+	CSWordList *result = [[CSWordList alloc] init];
+	for (int i = 0; i<size; i++) {
+		NSMutableString *string = [self createStringWithNumberOfLetters:numberOfLetters defaultCharacter:c prefix:[NSString stringWithFormat:@"%i", i]];
+		[result addWord:string];
+	}
+	return result;
+}
+
+- (NSMutableString *)createStringWithNumberOfLetters:(int)letternNum defaultCharacter:(char)c prefix:(NSString *)prefix
+{
+	NSMutableString *str = [NSMutableString string];
+	[str appendString:prefix];
+	while (str.length < letternNum) {
+		[str appendFormat:@"%c", c];
+	}
+	return str;
 }
 
 

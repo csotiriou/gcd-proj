@@ -15,6 +15,7 @@
 		060D2E3B1851352F005E3597 /* PatternTestsSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3A1851352F005E3597 /* PatternTestsSequential.m */; };
 		060D2E3D185135A5005E3597 /* PatternTestsGCDType1.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3C185135A5005E3597 /* PatternTestsGCDType1.m */; };
 		06535481184A497A00340BCE /* cube.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06535480184A497A00340BCE /* cube.desc */; };
+		06586F4B18526D0600C18997 /* LatticeLineExtractorSmart.m in Sources */ = {isa = PBXBuildFile; fileRef = 06586F4A18526D0600C18997 /* LatticeLineExtractorSmart.m */; };
 		067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C6F1837B6AE005D90EF /* MasterViewController.m */; };
 		067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067A9C701837B6AE005D90EF /* MasterViewController.xib */; };
 		067A9C751838165A005D90EF /* PatternMatcherAsynchronous.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */; };
@@ -122,6 +123,9 @@
 		060D2E3A1851352F005E3597 /* PatternTestsSequential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTestsSequential.m; sourceTree = "<group>"; };
 		060D2E3C185135A5005E3597 /* PatternTestsGCDType1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTestsGCDType1.m; sourceTree = "<group>"; };
 		06535480184A497A00340BCE /* cube.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.desc; sourceTree = "<group>"; };
+		06586F461852694200C18997 /* LatticeLineExtractorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractorProtocol.h; sourceTree = "<group>"; };
+		06586F4918526D0600C18997 /* LatticeLineExtractorSmart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractorSmart.h; sourceTree = "<group>"; };
+		06586F4A18526D0600C18997 /* LatticeLineExtractorSmart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatticeLineExtractorSmart.m; sourceTree = "<group>"; };
 		067A9C6E1837B6AE005D90EF /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		067A9C6F1837B6AE005D90EF /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		067A9C701837B6AE005D90EF /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
@@ -275,8 +279,11 @@
 				0690D94C18280FD1000E8165 /* PatternMatcherBase.m */,
 				067A9C731838165A005D90EF /* PatternMatcherAsynchronous.h */,
 				067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */,
+				06586F461852694200C18997 /* LatticeLineExtractorProtocol.h */,
 				068A86DE182D6F77003E03C5 /* LatticeLineExtractor.h */,
 				068A86DF182D6F77003E03C5 /* LatticeLineExtractor.m */,
+				06586F4918526D0600C18997 /* LatticeLineExtractorSmart.h */,
+				06586F4A18526D0600C18997 /* LatticeLineExtractorSmart.m */,
 			);
 			name = "Base Components";
 			sourceTree = "<group>";
@@ -622,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0690D94D18280FD1000E8165 /* PatternMatcherBase.m in Sources */,
+				06586F4B18526D0600C18997 /* LatticeLineExtractorSmart.m in Sources */,
 				067A9C7A18382030005D90EF /* PatternMatcherGCD2.m in Sources */,
 				069910271821C3FE00290809 /* AppDelegate.m in Sources */,
 				0690D95E18283608000E8165 /* DDASLLogger.m in Sources */,

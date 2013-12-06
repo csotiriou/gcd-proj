@@ -10,7 +10,7 @@
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "LatticeLineExtractor.h"
 #import "CSAdditions.h"
-
+#import "LatticeLineExtractorProtocol.h"
 
 @class PatternMatcherBase;
 
@@ -47,7 +47,7 @@
 /**
  Helper class that extracts components from lattices in order to be processed. Use it, but don't change it.
  */
-@property (nonatomic, readonly) LatticeLineExtractor *latticeExtractor;
+@property (nonatomic, readonly) id<LatticeLineExtractorProtocol> latticeExtractor;
 
 /**
  Resulting dictionary for the given words. Each key represents a word given in the 'dictionaryToSearch'. Each value is

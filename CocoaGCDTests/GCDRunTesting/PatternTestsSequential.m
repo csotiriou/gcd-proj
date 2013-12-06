@@ -98,23 +98,19 @@
 	}
 }
 
-- (CSWordList *)createWordListWithNumberOfLetters:(int)numberOfLetters andSize:(int)size defaultCharacter:(char)c
+- (void)testScalabilityWordSizeIncrement
 {
-	CSWordList *result = [[CSWordList alloc] init];
-	for (int i = 0; i<size; i++) {
-		NSMutableString *string = [self createStringWithNumberOfLetters:numberOfLetters defaultCharacter:c prefix:[NSString stringWithFormat:@"%i", i]];
-		[result addWord:string];
+	for (int i = 0; i<1000; i+= 100) {
+		CSWordList *wordList = [self createWordListWithNumberOfLetters:(i == 0? 5 : i) andSize:10 defaultCharacter:'a'];
+		DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
+		PatternMatcherSequential *patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:lattice andWordList:wordList];
+		
+		NSString *currentString = [NSString stringWithFormat:@"letter_count %i", i];
+		CS_MACRO_BLOCKED_FORTESTS_BEGIN_TIME(currentString);
+		[patternMatcher startScanning];
+		CS_MACRO_BLOCKED_FORTESTS_END_DISPLAY;
 	}
-	return result;
 }
 
-- (NSMutableString *)createStringWithNumberOfLetters:(int)letternNum defaultCharacter:(char)c prefix:(NSString *)prefix
-{
-	NSMutableString *str = [NSMutableString string];
-	[str appendString:prefix];
-	while (str.length < letternNum) {
-		[str appendFormat:@"%c", c];
-	}
-	return str;
-}
+
 @end
