@@ -11,7 +11,8 @@
 #import "PatternMatcherBase.h"
 
 /**
-Class that aims at finding patterns into a given lattice. To be implemented
+Class that aims at finding patterns into a given lattice. It sequentially constructs lines from the cube
+ according to the direction processed, and then finds patterns to these lines, one by one. Uses only one thread.
 */
 @interface PatternMatcherSequential : PatternMatcherBase
 @end
