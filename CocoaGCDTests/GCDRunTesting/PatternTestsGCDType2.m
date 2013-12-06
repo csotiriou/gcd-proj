@@ -15,11 +15,11 @@
 #import "Expecta.h"
 #import "TRVSMonitor.h"
 
-@interface GCDRunTesting : TestCaseCommon
+@interface PatternTestsGCDType2 : TestCaseCommon
 
 @end
 
-@implementation GCDRunTesting
+@implementation PatternTestsGCDType2
 
 - (void)setUp
 {
@@ -34,32 +34,19 @@
 }
 
 
-- (void)testSimpleSynchronous
-{
-	CSWordList *wordList = [[CSWordList alloc] init];
-	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
-	
-	[wordList loadWordListFromFile:[self.bundle pathForResource:@"testWords" ofType:@"wdl"]];
-	PatternMatcherSequential *patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:lattice andWordList:wordList];
-	[patternMatcher startScanning];
-	
-	expect(patternMatcher.hasAlreadyRan).will.beTruthy();
-	expect(patternMatcher.wordsProcessedAndResults[@"aaa"]).to.beTruthy();
-	expect(patternMatcher.wordsProcessedAndResults[@"bbb"]).to.beFalsy();
-	expect(patternMatcher.wordsProcessedAndResults[@"abc"]).to.beFalsy();
-	expect(patternMatcher.wordsProcessedAndResults[@"cba"]).to.beFalsy();
-}
 
-- (void)testSimpleAsynchronousType1
+- (void)testSimpleAsynchronousType2_50
 {
+	CS_MACRO_BLOCKED_FORTESTS_BEGIN_TIME(@"");
 	CSWordList *wordList = [[CSWordList alloc] init];
-	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:50 andChar:'a'];
 	
 	[wordList loadWordListFromFile:[self.bundle pathForResource:@"testWords" ofType:@"wdl"]];
-	PatternMatcherGCD *patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:lattice andWordList:wordList];
+	PatternMatcherGCD2 *patternMatcher = [[PatternMatcherGCD2 alloc] initWithLattice:lattice andWordList:wordList];
 	
 	[patternMatcher startScanningWithCompletionBlock:^{
 		[self.monitor signal];
+		CS_MACRO_BLOCKED_FORTESTS_END_DISPLAY;
 	}];
 	
 	[self.monitor wait];
@@ -71,8 +58,10 @@
 	expect(patternMatcher.wordsProcessedAndResults[@"cba"]).to.beFalsy();
 }
 
-- (void)testSimpleAsynchronousType2
+
+- (void)testSimpleAsynchronousType2_100
 {
+	CS_MACRO_BLOCKED_FORTESTS_BEGIN_TIME(@"");
 	CSWordList *wordList = [[CSWordList alloc] init];
 	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
 	
@@ -81,6 +70,7 @@
 	
 	[patternMatcher startScanningWithCompletionBlock:^{
 		[self.monitor signal];
+		CS_MACRO_BLOCKED_FORTESTS_END_DISPLAY;
 	}];
 	
 	[self.monitor wait];
