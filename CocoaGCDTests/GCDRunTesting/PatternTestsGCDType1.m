@@ -52,4 +52,6 @@
 	expect(patternMatcher.wordsProcessedAndResults[@"abc"]).to.beFalsy();
 	expect(patternMatcher.wordsProcessedAndResults[@"cba"]).to.beFalsy();
 }
+
+
 @end

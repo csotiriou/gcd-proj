@@ -55,8 +55,9 @@
 	
 	CSWordList *wordList = [[CSWordList alloc] init];
 	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
-	
 	[wordList loadWordListFromFile:[self.bundle pathForResource:@"testWords" ofType:@"wdl"]];
+
+	
 	PatternMatcherSequential *patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:lattice andWordList:wordList];
 	[patternMatcher startScanning];
 	
@@ -68,4 +69,52 @@
 	CS_MACRO_BLOCKED_FORTESTS_END_DISPLAY;
 }
 
+- (void)testScalabilityCubeSizeIncrement
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	[wordList loadWordListFromFile:[self.bundle pathForResource:@"testWords" ofType:@"wdl"]];
+	
+	for (int i = 0; i<300; i+=50) {
+		NSString *currentString = [NSString stringWithFormat:@"cube_side %i", i];
+		CS_MACRO_BLOCKED_FORTESTS_BEGIN_TIME(currentString);
+		DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:(i == 0? 5 : i) andChar:'a'];
+		PatternMatcherSequential *patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:lattice andWordList:wordList];
+		[patternMatcher startScanning];
+		CS_MACRO_BLOCKED_FORTESTS_END_DISPLAY;
+	}
+}
+
+- (void)testScalabilityWordCountIncrement
+{
+	for (int i = 0; i<300; i+=50) {
+		CSWordList *wordList = [self createWordListWithNumberOfLetters:30 andSize:i defaultCharacter:'a'];
+		NSString *currentString = [NSString stringWithFormat:@"letter_side %i", i];
+		CS_MACRO_BLOCKED_FORTESTS_BEGIN_TIME(currentString);
+		
+		DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
+		PatternMatcherSequential *patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:lattice andWordList:wordList];
+		[patternMatcher startScanning];
+		CS_MACRO_BLOCKED_FORTESTS_END_DISPLAY;
+	}
+}
+
+- (CSWordList *)createWordListWithNumberOfLetters:(int)numberOfLetters andSize:(int)size defaultCharacter:(char)c
+{
+	CSWordList *result = [[CSWordList alloc] init];
+	for (int i = 0; i<size; i++) {
+		NSMutableString *string = [self createStringWithNumberOfLetters:numberOfLetters defaultCharacter:c prefix:[NSString stringWithFormat:@"%i", i]];
+		[result addWord:string];
+	}
+	return result;
+}
+
+- (NSMutableString *)createStringWithNumberOfLetters:(int)letternNum defaultCharacter:(char)c prefix:(NSString *)prefix
+{
+	NSMutableString *str = [NSMutableString string];
+	[str appendString:prefix];
+	while (str.length < letternNum) {
+		[str appendFormat:@"%c", c];
+	}
+	return str;
+}
 @end
