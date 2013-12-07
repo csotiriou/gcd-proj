@@ -34,6 +34,7 @@
 	expect(wordList.words).to.notTo.beNil();
 }
 
+
 - (void)testLoading
 {
 	CSWordList *wordList = [[CSWordList alloc] init];
