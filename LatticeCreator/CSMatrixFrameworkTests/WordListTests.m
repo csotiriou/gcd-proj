@@ -112,7 +112,31 @@
 	expect(wordList.wordLength).to.equal(5);
 }
 
-- (void)testAddNewWordInvalid
+
+- (void)testAddWord
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	expect(wordList.wordLength).to.equal(0); //empty wordlist returns 0 as the word length
+	expect(wordList.count).to.equal(0);
+	
+	[wordList addWord:@"word1"];
+	expect(wordList.count).to.equal(1);
+	expect(wordList.words.lastObject).to.equal(@"word1");
+	expect(wordList.wordLength).to.equal(5);
+}
+
+- (void)testAddManyWords
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	expect(wordList.wordLength).to.equal(0); //empty wordlist returns 0 as the word length
+
+	[wordList addWords:@[@"word1", @"word2", @"word3"]];
+	expect(wordList.count).to.equal(3);
+	expect(wordList.wordLength).to.equal(5);
+}
+
+
+- (void)testAddNewWordsInvalid
 {
 	CSWordList *wordList = [[CSWordList alloc] init];
 	
@@ -124,8 +148,9 @@
 	//of them.
 	XCTAssertThrows([wordList addWord:@"a word that doesn't fit"], @"error: no exception thrown when adding a word that has different letter count from the other ones inside the list");
 	XCTAssertThrows([wordList addWord:@"word"], @"error: no exception thrown when adding a word that has different letter count from the other ones inside the list");
-
+	XCTAssertThrows([wordList addWord:@"word\n"], @"error: should throw exception when adding a character that is not supported (newline)");
 }
+
 
 - (void)testFastEnumeration
 {

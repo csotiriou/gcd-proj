@@ -12,6 +12,8 @@
 @interface CSWordList () <CSFileReaderDelegate>
 @property (nonatomic, strong) NSMutableOrderedSet *wordList;
 @property (nonatomic, strong) CSFileReader *reader;
+
+@property (nonatomic, strong) NSCharacterSet *acceptableCharacterSet;
 @end
 
 
@@ -20,30 +22,56 @@
 {
     self = [super init];
     if (self) {
-        self.wordList = [NSMutableOrderedSet orderedSet];
+		[self initdefaults];
     }
     return self;
 }
 
+- (id)initWithWords:(NSArray *)words
+{
+    self = [super init];
+    if (self) {
+        [self initdefaults];
+		[self addWords:words];
+    }
+    return self;
+}
 
+- (void)initdefaults
+{
+	self.wordList = [NSMutableOrderedSet orderedSet];
+	self.acceptableCharacterSet = [NSCharacterSet characterSetWithCharactersInString:kWordListAcceptableCharacters];
+}
+
+#pragma mark - Functions
 
 - (void)addWord:(NSString *)word
 {
 	NSString *actualWord = [word stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+	if (![self.acceptableCharacterSet isSupersetOfSet:[NSCharacterSet characterSetWithCharactersInString:actualWord]]) {
+		@throw [NSException exceptionWithName:@"Invalid Word" reason:@"Tried to add a word to the list with different length than the other words" userInfo:nil];
+		return;
+	}
 	
 	if (self.wordList.count > 0) {
 		NSString *randomWord = [self.wordList lastObject];
 		if (randomWord.length != actualWord.length) {
 			@throw [NSException exceptionWithName:@"Invalid Word" reason:@"Tried to add a word to the list with different length than the other words" userInfo:nil];
-		}else{
-			[self.wordList addObject:actualWord];
 		}
 	}else if (self.wordList.count == 0){
 		if (actualWord.length < 2) {
 			@throw [NSException exceptionWithName:@"Invalid Word" reason:@"Tried to add a word to the list size less than 2" userInfo:nil];
-		}else{
-			[self.wordList addObject:actualWord];
 		}
+	}
+	
+	[self.wordList addObject:actualWord];
+}
+
+- (void)addWords:(NSArray *)array
+{
+	for (NSString *word in array) {
+		[self addWord:word];
 	}
 }
 
@@ -71,6 +99,8 @@
 	[fileHandle closeFile];
 }
 
+
+#pragma mark - File reader delegate
 - (void)fileReader:(CSFileReader *)reader didEncounterLine:(NSString *)line
 {
 	[self addWord:line];
@@ -80,6 +110,13 @@
 {
 	
 }
+
+#pragma mark - Getters / Setters, conforming to common protocols
+- (NSString *)acceptableCharacters
+{
+	return kWordListAcceptableCharacters;
+}
+
 
 - (NSInteger)count
 {

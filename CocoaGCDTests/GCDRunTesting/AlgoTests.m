@@ -22,10 +22,13 @@
 - (void)setUp
 {
     [super setUp];
+	CSWordList *list = [[CSWordList alloc] init];
+	[list addWord:@"abba"];
+	
 	self.lattice = [[DNALattice1d alloc] initWithSideNumber:3 andChar:'0'];
 	self.patternMatcher = [[PatternMatcherSequential alloc] init];
 	
-	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.lattice andDictionaryToSearch:@[@"abba"]];
+	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.lattice andWordList:list];
 //	self.patternMatcher.lattice = self.lattice;
 	
 //	NSMutableArray *dictionaryToSearch = (NSMutableArray *)self.patternMatcher.dictionaryToSearch;

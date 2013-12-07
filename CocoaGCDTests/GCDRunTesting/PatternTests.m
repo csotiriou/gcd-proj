@@ -24,7 +24,7 @@
 {
     [super setUp];
 	self.lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];
-	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.lattice andDictionaryToSearch:@[@"aa",@"bb", @"cc"]];
+	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.lattice andWordList:[[CSWordList alloc] initWithWords:@[@"aa",@"bb", @"cc"]]];
 }
 
 - (void)tearDown

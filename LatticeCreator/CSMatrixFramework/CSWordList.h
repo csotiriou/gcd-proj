@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define kWordListAcceptableCharacters @"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~©§¦±£¢"
+
 /**
  CSWordList is a wordlist maker. It creates word lists to be used with the pattern matchers. All strings to be inserted into
  CSWordList are of equal length. In this wordlist, there are no duplicates.
@@ -31,12 +34,32 @@
 
 
 /**
+ Gets the acceptable characters for this word list. Readonly, since for this project only words containing
+ specific characters are accepted
+ */
+@property (nonatomic, readonly) NSString *acceptableCharacters;
+
+
+/**
+ Initialises the wordlist with some words. Words are being checked and being treated as if they were added one by one.
+ */
+- (id)initWithWords:(NSArray *)words;
+
+/**
  @brief Adds a word to the list. The word must be of length equal to the rest of the other ones. In case where the
  word already exists, it is discarded.
  
  @param filePath The path of the .wdl file to load the words from.
  */
 - (void)addWord:(NSString *)word;
+
+/**
+ @brief Adds many words to the list. The words must be of length equal to the rest of the other ones. In case where a
+ word already exists, it is discarded.
+ 
+ @param filePath The path of the .wdl file to load the words from.
+ */
+- (void)addWords:(NSArray *)array;
 
 /**
  @brief Loads a wordlist from a file in the specified path

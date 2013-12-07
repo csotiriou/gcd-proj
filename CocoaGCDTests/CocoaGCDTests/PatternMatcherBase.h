@@ -68,7 +68,7 @@
  @param lattice a lattice
  @param dictionaryOfWords an array of words to search in the lattice.
  */
-- (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords;
+//- (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords;
 
 
 /**
