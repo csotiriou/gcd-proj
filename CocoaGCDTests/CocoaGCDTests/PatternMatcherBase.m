@@ -93,7 +93,7 @@
 		if ([[self.wordsProcessedAndResults valueForKey:word] boolValue] == NO) { //only check if we have not found it already.
 			NSString *reversedWord = [self.reversedDictionaryToSearch objectAtIndex:i];
 			
-			if ([line rangeOfString:word].location != NSNotFound || [line rangeOfString:reversedWord].location != NSNotFound) {
+			if ([line rangeOfString:word options:NSLiteralSearch].location != NSNotFound || [line rangeOfString:reversedWord options:NSLiteralSearch].location != NSNotFound) {
 				foundBlock(word);
 			}
 		}
