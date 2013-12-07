@@ -1,6 +1,6 @@
 //
-//  CSMatrixFrameworkTests.m
-//  CSMatrixFrameworkTests
+//  LatticeCreatorTests.m
+//  LatticeCreatorTests
 //
 //  Created by Christos Sotiriou on 7/12/13.
 //  Copyright (c) 2013 Oramind. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface CSMatrixFrameworkTests : XCTestCase
+@interface LatticeCreatorTests : XCTestCase
 
 @end
 
-@implementation CSMatrixFrameworkTests
+@implementation LatticeCreatorTests
 
 - (void)setUp
 {

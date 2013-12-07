@@ -12,7 +12,10 @@
 @property (nonatomic, strong) NSMutableArray *dictionaryToSearchReverse;
 @property (nonatomic, strong) NSMutableArray *dictionaryToSearchNormal;
 
-//@property (nonatomic, strong) NSMutableArray *actualDictionaryToSearch;
+/**
+ associates the reversed strings to be searched with their normal ones.
+ */
+@property (nonatomic, strong) NSMutableDictionary *dictionaryFromReverseToNormal;
 @end
 
 @implementation PatternMatcherBase
@@ -35,6 +38,8 @@
 {
 	self.dictionaryToSearchNormal = [NSMutableArray array];
 	self.dictionaryToSearchReverse = [NSMutableArray array];
+	self.dictionaryFromReverseToNormal = [NSMutableDictionary dictionary];
+	
 	_latticeExtractor = [[LatticeLineExtractor alloc] init];
 }
 
@@ -70,6 +75,12 @@
 	for (NSString *word in self.dictionaryToSearchNormal) {
 		[self.wordsProcessedAndResults setValue:@NO forKey:word];
 	}
+	
+	//associate each word with its reverse, so that when we have the reverse word we can easily
+	//find the normal one.
+	for (int i=0; i<self.dictionaryToSearchNormal.count; i++) {
+		self.dictionaryFromReverseToNormal[self.dictionaryToSearchNormal[i]] = self.dictionaryToSearchReverse[i];
+	}
 
 }
 
@@ -87,8 +98,30 @@
 			}
 		}
 	}
-
 }
+
+//-----------------THIS WAS ACTUALLY TWICE AS SLOW THAN PLAIN STRING ITERATION!!-------------------------
+//- (void)matchStringsFastForLine:(NSString *)line withFoundBlock:(void(^)(NSString *wordFound))foundBlock
+//{
+//	CS_MACRO_BEGIN_TIME(@"------------------------------");
+//	{//searching for strings normally
+////		self.regularExpressionStraight = [[NSRegularExpression alloc] initWithPattern:[NSString stringWithFormat:@"\\b%@\\b", [self.dictionaryToSearchNormal componentsJoinedByString:@"|"]] options:0 error:NULL];
+//		[self.regularExpressionStraight enumerateMatchesInString:line options:0 range:NSMakeRange(0, line.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+//			NSString *currentMatch = [line substringWithRange:result.range];
+//			foundBlock(currentMatch);
+//		}];
+//	}
+//
+//	{//searching for reversed strings
+////		NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:[NSString stringWithFormat:@"\\b%@\\b", [self.dictionaryToSearchReverse componentsJoinedByString:@"|"]] options:0 error:NULL];
+//		[self.regularExpressionReverse enumerateMatchesInString:line options:0 range:NSMakeRange(0, line.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+//			NSString *currentMatch = [line substringWithRange:result.range];
+//			foundBlock(self.dictionaryFromReverseToNormal[currentMatch]); //tell johny that we have found the string!
+//		}];
+//	}
+//	CS_MACRO_END_DISPLAY;
+//
+//}
 
 
 

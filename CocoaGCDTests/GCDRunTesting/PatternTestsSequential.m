@@ -30,14 +30,70 @@
     [super tearDown];
 }
 
+- (void)testCreationWithWordList
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	[wordList loadWordListFromFile:[self.bundle pathForResource:@"testWords" ofType:@"wdl"]];
+
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:50 andChar:'a'];
+	PatternMatcherSequential *patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:lattice andWordList:wordList];
+	
+	expect(patternMatcher).to.notTo.beNil();
+	expect(patternMatcher.hasAlreadyRan).to.beFalsy();
+	expect(patternMatcher.lattice).to.notTo.beNil();
+	expect(patternMatcher.latticeExtractor).to.notTo.beNil();
+	expect(patternMatcher.delegate).to.beNil();
+	expect(patternMatcher.dictionaryToSearch).toNot.beNil();
+	expect(patternMatcher.reversedDictionaryToSearch).toNot.beNil();
+	expect(patternMatcher.reversedDictionaryToSearch.count).to.beGreaterThan(0);
+	expect(patternMatcher.dictionaryToSearch.count).to.beGreaterThan(0);
+	
+	expect(patternMatcher.wordsProcessedAndResults).toNot.beNil();
+	expect(patternMatcher.wordsProcessedAndResults.count).to.equal(patternMatcher.dictionaryToSearch.count);
+	expect(patternMatcher.reversedDictionaryToSearch.count).to.equal(patternMatcher.dictionaryToSearch.count);
+	
+	for (NSString *str in patternMatcher.wordsProcessedAndResults.allKeys) {
+		expect([patternMatcher.dictionaryToSearch containsObject:str]).to.beTruthy();
+		expect([patternMatcher.reversedDictionaryToSearch containsObject:[str reversedString]]);
+		expect([patternMatcher.wordsProcessedAndResults[str] boolValue]).to.beFalsy();
+	}
+}
+
+- (void)testCreationWithDictionary
+{
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:50 andChar:'a'];
+	PatternMatcherSequential *patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:lattice andDictionaryToSearch:@[@"empty"]];
+	
+	expect(patternMatcher).to.notTo.beNil();
+	expect(patternMatcher.hasAlreadyRan).to.beFalsy();
+	expect(patternMatcher.lattice).to.notTo.beNil();
+	expect(patternMatcher.latticeExtractor).to.notTo.beNil();
+	expect(patternMatcher.delegate).to.beNil();
+	expect(patternMatcher.dictionaryToSearch).toNot.beNil();
+	expect(patternMatcher.reversedDictionaryToSearch).toNot.beNil();
+	expect(patternMatcher.reversedDictionaryToSearch.count).to.beGreaterThan(0);
+	expect(patternMatcher.dictionaryToSearch.count).to.beGreaterThan(0);
+	
+	expect(patternMatcher.wordsProcessedAndResults).toNot.beNil();
+	expect(patternMatcher.wordsProcessedAndResults.count).to.equal(patternMatcher.dictionaryToSearch.count);
+	expect(patternMatcher.reversedDictionaryToSearch.count).to.equal(patternMatcher.dictionaryToSearch.count);
+	
+	for (NSString *str in patternMatcher.wordsProcessedAndResults.allKeys) {
+		expect([patternMatcher.dictionaryToSearch containsObject:str]).to.beTruthy();
+		expect([patternMatcher.reversedDictionaryToSearch containsObject:[str reversedString]]);
+		expect([patternMatcher.wordsProcessedAndResults[str] boolValue]).to.beFalsy();
+	}
+
+}
+
 - (void)testSimpleSynchronous50
 {
 	CS_MACRO_BLOCKED_FORTESTS_BEGIN_TIME(@"");
 	
 	CSWordList *wordList = [[CSWordList alloc] init];
-	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:50 andChar:'a'];
-	
 	[wordList loadWordListFromFile:[self.bundle pathForResource:@"testWords" ofType:@"wdl"]];
+	
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:50 andChar:'a'];
 	PatternMatcherSequential *patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:lattice andWordList:wordList];
 	[patternMatcher startScanning];
 	
@@ -87,8 +143,8 @@
 - (void)testScalabilityWordCountIncrement
 {
 	for (int i = 0; i<300; i+=50) {
-		CSWordList *wordList = [self createWordListWithNumberOfLetters:30 andSize:i defaultCharacter:'a'];
-		NSString *currentString = [NSString stringWithFormat:@"letter_side %i", i];
+		CSWordList *wordList = [self createWordListWithNumberOfLetters:30 andSize:(i==0? 10:i) defaultCharacter:'a'];
+		NSString *currentString = [NSString stringWithFormat:@"word_count %i", i];
 		CS_MACRO_BLOCKED_FORTESTS_BEGIN_TIME(currentString);
 		
 		DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'a'];

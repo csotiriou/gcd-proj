@@ -9,8 +9,6 @@
 #import <XCTest/XCTest.h>
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "TestCaseCommon.h"
-#import "PatternMatcherGCD.h"
-#import "PatternMatcherSequential.h"
 #import "PatternMatcherGCD2.h"
 #import "Expecta.h"
 #import "TRVSMonitor.h"
@@ -29,11 +27,65 @@
 
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
 
+- (void)testCreationWithWordList
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	[wordList loadWordListFromFile:[self.bundle pathForResource:@"testWords" ofType:@"wdl"]];
+	
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:50 andChar:'a'];
+	PatternMatcherGCD2 *patternMatcher = [[PatternMatcherGCD2 alloc] initWithLattice:lattice andWordList:wordList];
+	
+	expect(patternMatcher).to.notTo.beNil();
+	expect(patternMatcher.hasAlreadyRan).to.beFalsy();
+	expect(patternMatcher.lattice).to.notTo.beNil();
+	expect(patternMatcher.latticeExtractor).to.notTo.beNil();
+	expect(patternMatcher.delegate).to.beNil();
+	expect(patternMatcher.dictionaryToSearch).toNot.beNil();
+	expect(patternMatcher.reversedDictionaryToSearch).toNot.beNil();
+	expect(patternMatcher.reversedDictionaryToSearch.count).to.beGreaterThan(0);
+	expect(patternMatcher.dictionaryToSearch.count).to.beGreaterThan(0);
+	
+	expect(patternMatcher.wordsProcessedAndResults).toNot.beNil();
+	expect(patternMatcher.wordsProcessedAndResults.count).to.equal(patternMatcher.dictionaryToSearch.count);
+	expect(patternMatcher.reversedDictionaryToSearch.count).to.equal(patternMatcher.dictionaryToSearch.count);
+	
+	for (NSString *str in patternMatcher.wordsProcessedAndResults.allKeys) {
+		expect([patternMatcher.dictionaryToSearch containsObject:str]).to.beTruthy();
+		expect([patternMatcher.reversedDictionaryToSearch containsObject:[str reversedString]]);
+		expect([patternMatcher.wordsProcessedAndResults[str] boolValue]).to.beFalsy();
+	}
+}
+
+- (void)testCreationWithDictionary
+{
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:50 andChar:'a'];
+	PatternMatcherGCD2 *patternMatcher = [[PatternMatcherGCD2 alloc] initWithLattice:lattice andDictionaryToSearch:@[@"empty"]];
+	
+	expect(patternMatcher).to.notTo.beNil();
+	expect(patternMatcher.hasAlreadyRan).to.beFalsy();
+	expect(patternMatcher.lattice).to.notTo.beNil();
+	expect(patternMatcher.latticeExtractor).to.notTo.beNil();
+	expect(patternMatcher.delegate).to.beNil();
+	expect(patternMatcher.dictionaryToSearch).toNot.beNil();
+	expect(patternMatcher.reversedDictionaryToSearch).toNot.beNil();
+	expect(patternMatcher.reversedDictionaryToSearch.count).to.beGreaterThan(0);
+	expect(patternMatcher.dictionaryToSearch.count).to.beGreaterThan(0);
+	
+	expect(patternMatcher.wordsProcessedAndResults).toNot.beNil();
+	expect(patternMatcher.wordsProcessedAndResults.count).to.equal(patternMatcher.dictionaryToSearch.count);
+	expect(patternMatcher.reversedDictionaryToSearch.count).to.equal(patternMatcher.dictionaryToSearch.count);
+	
+	for (NSString *str in patternMatcher.wordsProcessedAndResults.allKeys) {
+		expect([patternMatcher.dictionaryToSearch containsObject:str]).to.beTruthy();
+		expect([patternMatcher.reversedDictionaryToSearch containsObject:[str reversedString]]);
+		expect([patternMatcher.wordsProcessedAndResults[str] boolValue]).to.beFalsy();
+	}
+	
+}
 
 - (void)testSimpleAsynchronousType2_50
 {

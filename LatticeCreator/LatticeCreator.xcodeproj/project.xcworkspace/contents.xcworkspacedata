@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:CocoaGCDTests/CocoaGCDTests.xcodeproj">
+      location = "self:LatticeCreator.xcodeproj">
    </FileRef>
 </Workspace>

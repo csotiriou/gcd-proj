@@ -25,6 +25,15 @@
     [super tearDown];
 }
 
+
+- (void)testCreation
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	expect(wordList).to.notTo.beNil();
+	expect(wordList.wordLength).to.equal(0);
+	expect(wordList.words).to.notTo.beNil();
+}
+
 - (void)testLoading
 {
 	CSWordList *wordList = [[CSWordList alloc] init];

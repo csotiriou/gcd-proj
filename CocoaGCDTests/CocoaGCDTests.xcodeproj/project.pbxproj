@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		0603007D18440DE20056979F /* testWords.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 0603007C18440DE20056979F /* testWords.wdl */; };
 		06030084184412090056979F /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 06030083184412090056979F /* TRVSMonitor.m */; };
-		060D2E2D18511079005E3597 /* UtilityInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E2C18511079005E3597 /* UtilityInitializer.m */; };
 		060D2E3218512F1D005E3597 /* UtilityInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E2C18511079005E3597 /* UtilityInitializer.m */; };
 		060D2E3518512FD2005E3597 /* TestCaseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3418512FD2005E3597 /* TestCaseCommon.m */; };
 		060D2E3B1851352F005E3597 /* PatternTestsSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3A1851352F005E3597 /* PatternTestsSequential.m */; };
 		060D2E3D185135A5005E3597 /* PatternTestsGCDType1.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3C185135A5005E3597 /* PatternTestsGCDType1.m */; };
 		06535481184A497A00340BCE /* cube.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06535480184A497A00340BCE /* cube.desc */; };
 		06586F4B18526D0600C18997 /* LatticeLineExtractorSmart.m in Sources */ = {isa = PBXBuildFile; fileRef = 06586F4A18526D0600C18997 /* LatticeLineExtractorSmart.m */; };
+		06586F4E185291D000C18997 /* WordListBig.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 06586F4C185291B600C18997 /* WordListBig.wdl */; };
 		067A9C711837B6AE005D90EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C6F1837B6AE005D90EF /* MasterViewController.m */; };
 		067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 067A9C701837B6AE005D90EF /* MasterViewController.xib */; };
 		067A9C751838165A005D90EF /* PatternMatcherAsynchronous.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A9C741838165A005D90EF /* PatternMatcherAsynchronous.m */; };
@@ -126,6 +126,7 @@
 		06586F461852694200C18997 /* LatticeLineExtractorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractorProtocol.h; sourceTree = "<group>"; };
 		06586F4918526D0600C18997 /* LatticeLineExtractorSmart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractorSmart.h; sourceTree = "<group>"; };
 		06586F4A18526D0600C18997 /* LatticeLineExtractorSmart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatticeLineExtractorSmart.m; sourceTree = "<group>"; };
+		06586F4C185291B600C18997 /* WordListBig.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WordListBig.wdl; sourceTree = "<group>"; };
 		067A9C6E1837B6AE005D90EF /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		067A9C6F1837B6AE005D90EF /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		067A9C701837B6AE005D90EF /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
@@ -479,6 +480,7 @@
 				06D5DFBF183588DE00A7D320 /* InfoPlist.strings */,
 				06D5DFC4183588DE00A7D320 /* GCDRunTesting-Prefix.pch */,
 				0603007C18440DE20056979F /* testWords.wdl */,
+				06586F4C185291B600C18997 /* WordListBig.wdl */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -618,6 +620,7 @@
 			files = (
 				06D5DFC1183588DE00A7D320 /* InfoPlist.strings in Resources */,
 				0603007D18440DE20056979F /* testWords.wdl in Resources */,
+				06586F4E185291D000C18997 /* WordListBig.wdl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +665,6 @@
 				06D5DFC3183588DE00A7D320 /* PatternTestsGCDType2.m in Sources */,
 				068B791F183D6E7200557CB5 /* AlgoTests.m in Sources */,
 				068B7921183D6E7200557CB5 /* PatternTests.m in Sources */,
-				060D2E2D18511079005E3597 /* UtilityInitializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

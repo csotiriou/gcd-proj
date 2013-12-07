@@ -117,6 +117,23 @@
 - (void)matchStringsForLine:(NSString *)line withFoundBlock:(void(^)(NSString *wordFound))foundBlock;
 
 
+//
+///**
+// @brief Searches a line for strings that are included in the dictionary to search. performs search in both directions. In case
+// where a line indeed contains a word, this word is passed as the argument in the 'found' block. In case where no word is found
+// inside the line, the 'foundBlock' is not even called. Avoids searching words that have already been found. This algorithm is supposed
+// to be faster than the plain matchStringsForLine:withFoundBlock method
+// 
+// @discussion Since subclasses use the same algorihm for searching but do different actions when a word is found, the 'foundBlock'
+// will allow them to specify different behaviors when a line is found to contain a word.
+// 
+// @param line the line to search the strings into
+// @param foundBlock the block to be called if a word is found inside a line
+// */
+//
+//- (void)matchStringsFastForLine:(NSString *)line withFoundBlock:(void(^)(NSString *wordFound))foundBlock;
+
+
 /**
  Performs additional initializations. Override this method to perform initializations that happen after the initial ones.
  If you override this method, you MUST call [super initPhase2] before your initialisation, to avoid overriding default behaviors.
