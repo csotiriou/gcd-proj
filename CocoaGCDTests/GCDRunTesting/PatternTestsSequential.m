@@ -7,12 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TestCaseMatcherCommon.h"
+#import "TestCaseCommon.h"
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "PatternMatcherSequential.h"
 #import "Expecta.h"
 
-@interface PatternTestsSequential : TestCaseMatcherCommon
+@interface PatternTestsSequential : TestCaseCommon
 
 @end
 

@@ -43,7 +43,6 @@
 		0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcherSequential.m */; };
 		06A9AAC4182AA3590066EE5B /* PatternMatcherGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */; };
 		06A9AACA182AC8810066EE5B /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC9182AC8810066EE5B /* Util.m */; };
-		06BECBF4185768B0006E5A50 /* TestCaseMatcherCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BECBF3185768B0006E5A50 /* TestCaseMatcherCommon.m */; };
 		06D5DFB51835878800A7D320 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
 		06D5DFBB183588DE00A7D320 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069910321821C3FE00290809 /* XCTest.framework */; };
 		06D5DFC1183588DE00A7D320 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06D5DFBF183588DE00A7D320 /* InfoPlist.strings */; };
@@ -211,8 +210,6 @@
 		06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherGCD.m; sourceTree = "<group>"; };
 		06A9AAC8182AC8810066EE5B /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		06A9AAC9182AC8810066EE5B /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
-		06BECBF2185768B0006E5A50 /* TestCaseMatcherCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseMatcherCommon.h; sourceTree = "<group>"; };
-		06BECBF3185768B0006E5A50 /* TestCaseMatcherCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseMatcherCommon.m; sourceTree = "<group>"; };
 		06D5DFBA183588DE00A7D320 /* GCDRunTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCDRunTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D5DFBE183588DE00A7D320 /* GCDRunTesting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GCDRunTesting-Info.plist"; sourceTree = "<group>"; };
 		06D5DFC0183588DE00A7D320 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -261,8 +258,6 @@
 			children = (
 				060D2E3318512FD2005E3597 /* TestCaseCommon.h */,
 				060D2E3418512FD2005E3597 /* TestCaseCommon.m */,
-				06BECBF2185768B0006E5A50 /* TestCaseMatcherCommon.h */,
-				06BECBF3185768B0006E5A50 /* TestCaseMatcherCommon.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -672,7 +667,6 @@
 				060D2E3B1851352F005E3597 /* PatternTestsSequential.m in Sources */,
 				060D2E3518512FD2005E3597 /* TestCaseCommon.m in Sources */,
 				068B7920183D6E7200557CB5 /* CocoaGCDTestsTests.m in Sources */,
-				06BECBF4185768B0006E5A50 /* TestCaseMatcherCommon.m in Sources */,
 				06D5DFD118358F7200A7D320 /* CSAdditions.m in Sources */,
 				06030084184412090056979F /* TRVSMonitor.m in Sources */,
 				060D2E3D185135A5005E3597 /* PatternTestsGCDType1.m in Sources */,

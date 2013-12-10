@@ -8,14 +8,14 @@
 
 #import <XCTest/XCTest.h>
 #import <CSMatrixFramework/CSMatrixFramework.h>
-#import "TestCaseMatcherCommon.h"
+#import "TestCaseCommon.h"
 #import "PatternMatcherGCD2.h"
 #import "Expecta.h"
 #import "TRVSMonitor.h"
 
 //#define GET_CLASS(X) NSStringFromClass(self.classToTest)
 
-@interface PatternTestsGCDType2 : TestCaseMatcherCommon
+@interface PatternTestsGCDType2 : TestCaseCommon
 
 @end
 
