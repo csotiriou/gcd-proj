@@ -7,12 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TestCaseCommon.h"
+#import "TestCaseMatcherCommon.h"
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "PatternMatcherGCD.h"
 #import "Expecta.h"
 
-@interface PatternTestsGCDType1 : TestCaseCommon
+@interface PatternTestsGCDType1 : TestCaseMatcherCommon
 
 @end
 
@@ -59,31 +59,6 @@
 	}
 }
 
-//- (void)testCreationWithDictionary
-//{
-//	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:50 andChar:'a'];
-//	PatternMatcherGCD *patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:lattice andDictionaryToSearch:@[@"empty"]];
-//	
-//	expect(patternMatcher).to.notTo.beNil();
-//	expect(patternMatcher.hasAlreadyRan).to.beFalsy();
-//	expect(patternMatcher.lattice).to.notTo.beNil();
-//	expect(patternMatcher.latticeExtractor).to.notTo.beNil();
-//	expect(patternMatcher.delegate).to.beNil();
-//	expect(patternMatcher.dictionaryToSearch).toNot.beNil();
-//	expect(patternMatcher.reversedDictionaryToSearch).toNot.beNil();
-//	expect(patternMatcher.reversedDictionaryToSearch.count).to.beGreaterThan(0);
-//	expect(patternMatcher.dictionaryToSearch.count).to.beGreaterThan(0);
-//	
-//	expect(patternMatcher.wordsProcessedAndResults).toNot.beNil();
-//	expect(patternMatcher.wordsProcessedAndResults.count).to.equal(patternMatcher.dictionaryToSearch.count);
-//	expect(patternMatcher.reversedDictionaryToSearch.count).to.equal(patternMatcher.dictionaryToSearch.count);
-//	
-//	for (NSString *str in patternMatcher.wordsProcessedAndResults.allKeys) {
-//		expect([patternMatcher.dictionaryToSearch containsObject:str]).to.beTruthy();
-//		expect([patternMatcher.reversedDictionaryToSearch containsObject:[str reversedString]]);
-//		expect([patternMatcher.wordsProcessedAndResults[str] boolValue]).to.beFalsy();
-//	}
-//}
 
 - (void)testSimpleAsynchronousType1
 {

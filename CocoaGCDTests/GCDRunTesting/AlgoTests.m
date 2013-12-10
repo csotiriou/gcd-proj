@@ -430,8 +430,6 @@
 
 
 
-
-
 - (BOOL)arrayWithStrings:(NSArray *)arr isEqualToArrayWithStrings:(NSArray *)arr2
 {
 	for (int i=0; i<arr.count; i++) {

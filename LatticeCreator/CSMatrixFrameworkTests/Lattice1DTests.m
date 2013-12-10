@@ -64,7 +64,7 @@
 - (void)testRaiseException
 {
 	XCTAssertThrows(self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:10000 andChar:'a'], @"something's wrong with boundary check"); //that's too  much, will throw exception
-	XCTAssertThrows(self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:2 andChar:'a'], @"something's wrong with boundary check"); //that's too  little, will throw
+	XCTAssertThrows(self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:2 andChar:'a'], @"something's wrong with boundary check"); //that's too  little, will throw exception
 }
 
 - (void)testCopyLattice

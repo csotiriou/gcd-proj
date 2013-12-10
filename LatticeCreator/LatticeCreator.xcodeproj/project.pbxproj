@@ -22,8 +22,6 @@
 		0682C49B182707B200F6D5F4 /* CSMatrixFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C45E182704D500F6D5F4 /* CSMatrixFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0682C4C118270B7100F6D5F4 /* DNALattice1d.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C4BC18270B7100F6D5F4 /* DNALattice1d.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0682C4C318270B7100F6D5F4 /* DNALattice1d.m in Sources */ = {isa = PBXBuildFile; fileRef = 0682C4BD18270B7100F6D5F4 /* DNALattice1d.m */; };
-		0682C4C518270B7100F6D5F4 /* DNALattice3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C4BE18270B7100F6D5F4 /* DNALattice3D.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0682C4C718270B7100F6D5F4 /* DNALattice3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 0682C4BF18270B7100F6D5F4 /* DNALattice3D.m */; };
 		0682C4C918270B7100F6D5F4 /* LatticeCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C4C018270B7100F6D5F4 /* LatticeCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0682C4CE1827202F00F6D5F4 /* CSFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C4CC1827202F00F6D5F4 /* CSFileReader.h */; };
 		0682C4CF1827202F00F6D5F4 /* CSFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0682C4CD1827202F00F6D5F4 /* CSFileReader.m */; };
@@ -92,8 +90,6 @@
 		0682C47C1827052800F6D5F4 /* CSMatrixExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMatrixExporter.m; sourceTree = "<group>"; };
 		0682C4BC18270B7100F6D5F4 /* DNALattice1d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNALattice1d.h; sourceTree = "<group>"; };
 		0682C4BD18270B7100F6D5F4 /* DNALattice1d.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNALattice1d.m; sourceTree = "<group>"; };
-		0682C4BE18270B7100F6D5F4 /* DNALattice3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNALattice3D.h; sourceTree = "<group>"; };
-		0682C4BF18270B7100F6D5F4 /* DNALattice3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNALattice3D.m; sourceTree = "<group>"; };
 		0682C4C018270B7100F6D5F4 /* LatticeCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeCommon.h; sourceTree = "<group>"; };
 		0682C4CC1827202F00F6D5F4 /* CSFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFileReader.h; sourceTree = "<group>"; };
 		0682C4CD1827202F00F6D5F4 /* CSFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFileReader.m; sourceTree = "<group>"; };
@@ -283,8 +279,6 @@
 			children = (
 				0682C4BC18270B7100F6D5F4 /* DNALattice1d.h */,
 				0682C4BD18270B7100F6D5F4 /* DNALattice1d.m */,
-				0682C4BE18270B7100F6D5F4 /* DNALattice3D.h */,
-				0682C4BF18270B7100F6D5F4 /* DNALattice3D.m */,
 				0682C4C018270B7100F6D5F4 /* LatticeCommon.h */,
 			);
 			name = Lattices;
@@ -365,7 +359,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0682C49B182707B200F6D5F4 /* CSMatrixFramework.h in Headers */,
-				0682C4C518270B7100F6D5F4 /* DNALattice3D.h in Headers */,
 				0682C4C918270B7100F6D5F4 /* LatticeCommon.h in Headers */,
 				0682C4CE1827202F00F6D5F4 /* CSFileReader.h in Headers */,
 				06A9AACE182ACCA80066EE5B /* CSMatrixImporter.h in Headers */,
@@ -501,7 +494,6 @@
 			files = (
 				0682C47E1827052800F6D5F4 /* CSMatrixExporter.m in Sources */,
 				068B7928183D745600557CB5 /* CSWordList.m in Sources */,
-				0682C4C718270B7100F6D5F4 /* DNALattice3D.m in Sources */,
 				0682C4CF1827202F00F6D5F4 /* CSFileReader.m in Sources */,
 				0682C4C318270B7100F6D5F4 /* DNALattice1d.m in Sources */,
 				06A9AAD2182AD4720066EE5B /* CSMatrixImporter.m in Sources */,

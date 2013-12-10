@@ -13,12 +13,21 @@
 
 /**
  This is an implementation of a 3d-dimensional array based on
- a one-dimensional array, to facilitate efficient data copying
+ a one-dimensional array, to facilitate efficient data copying and access
  */
 @interface DNALattice1d : NSObject <LatticeCommon>
 
 @property (nonatomic, readonly) int sideNumber;
+
+/**
+ The total number of elements in this lattice. This will be (sideNumber * sideNumber * sideNumber)
+ */
 @property (nonatomic, readonly) int numberOfElements;
+
+
+/**
+ Wether the lattice is initialised (if the memory has been allocated)
+ */
 @property (nonatomic, readonly) BOOL isInitialized;
 
 /**
@@ -34,7 +43,5 @@
  @param character the character to fill the internal data
  */
 - (void)fillArrayWithCharacter:(char)character;
-
-
 
 @end
