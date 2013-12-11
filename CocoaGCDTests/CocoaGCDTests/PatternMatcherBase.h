@@ -14,9 +14,33 @@
 
 @class PatternMatcherBase;
 
+
+#pragma mark PatternMatcherBaseDelegate
+/**
+ Delegate protocol, that serves as an interface for notifying classes about important situations, like the
+ start and finish of a pattern matching process.
+ */
 @protocol PatternMatcherBaseDelegate <NSObject>
+/**
+ @brief Notifies the delegate that the pattern matcher finished processing. A dictionary with results in the
+ form NSDictionary<WordToFind, BOOL> indicating found words is returned.
+ 
+ @param matcher the pattern matcher that sent this message
+ @param the results if the process in a dictionary
+ */
 - (void)patternMatcher:(PatternMatcherBase *)matcher didFinishWithResults:(NSDictionary *)results;
+@optional
+
+/**
+ @brief Notifies the delegate that the pattern matcher started scanning. Optional, and some pattern matchers may ignore it
+ (although it's best practice to implement it).
+ 
+ @param matcher the pattern matcher that sent this message
+ */
+- (void)patternMatcherDidStartScanning:(PatternMatcherBase *)matcher;
 @end
+
+#pragma mark PatternMatcherBase
 
 /**
  Abstract class implementing the basic functionality, helpful functions, and patterns
@@ -116,22 +140,6 @@
  */
 - (void)matchStringsForLine:(NSString *)line withFoundBlock:(void(^)(NSString *wordFound))foundBlock;
 
-
-//
-///**
-// @brief Searches a line for strings that are included in the dictionary to search. performs search in both directions. In case
-// where a line indeed contains a word, this word is passed as the argument in the 'found' block. In case where no word is found
-// inside the line, the 'foundBlock' is not even called. Avoids searching words that have already been found. This algorithm is supposed
-// to be faster than the plain matchStringsForLine:withFoundBlock method
-// 
-// @discussion Since subclasses use the same algorihm for searching but do different actions when a word is found, the 'foundBlock'
-// will allow them to specify different behaviors when a line is found to contain a word.
-// 
-// @param line the line to search the strings into
-// @param foundBlock the block to be called if a word is found inside a line
-// */
-//
-//- (void)matchStringsFastForLine:(NSString *)line withFoundBlock:(void(^)(NSString *wordFound))foundBlock;
 
 
 /**

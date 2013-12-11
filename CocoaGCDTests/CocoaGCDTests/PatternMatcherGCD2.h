@@ -19,6 +19,11 @@
 
 
 #pragma mark - Searchable word
+
+/**
+ Helper class to separate and categorise the words to be searched and their reverses. It is used to separate the words
+ to be processed by the processors.
+ */
 @interface SearchableWord : NSObject
 @property (nonatomic, strong) NSString *wordToSearch;
 @property (nonatomic, strong) NSString *reverseWord;

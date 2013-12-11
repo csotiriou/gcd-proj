@@ -12,6 +12,22 @@
 #import "PatternMatcherSequential.h"
 #import "PatternMatcherGCD2.h"
 
+typedef enum {
+	kLatticePreset10 = 1,
+	kLatticePreset100,
+	kLatticePreset200,
+	kLatticePreset500
+} LATTICE_PRESET;
+
+typedef enum {
+	kWordlistPreset10x10 = 1,
+	kWordlistPreset100x10,
+	kWordlistPreset300x10,
+	kWordlistPreset10x100,
+	kWordlistPreset10x1000
+} WORDLIST_PRESET;
+
+
 @interface MasterViewController () <PatternMatcherBaseDelegate>
 @property (nonatomic, strong) PatternMatcherBase *patternMatcher;
 @property (nonatomic, strong) id<LatticeCommon> dnaLattice;
@@ -28,6 +44,7 @@
     if (self) {
 		self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'a'];
 		self.wordList = [[CSWordList alloc] init];
+		self.matrixImporter = [[CSMatrixImporter alloc] init];
 		[self.wordList loadWordListFromFile:[[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"wdl"]];
     }
     return self;
@@ -46,7 +63,7 @@
 	[self setupProcessIndicatorWithLabelString:@"running sequential pattern matcher."];
 	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.dnaLattice andWordList:self.wordList];
 	self.patternMatcher.delegate = self;
-	[self.patternMatcher startScanning];
+	[self.patternMatcher performSelector:@selector(startScanning) withObject:nil afterDelay:0.1]; //delay to cope with a small bug that will run the pattern matcher before we are able to refresh the UI, although we have explicitly told to update the UI before the process starts.
 }
 
 - (IBAction)runTestsGCDButtonPressed:(id)sender {
@@ -80,6 +97,11 @@
 	[self.progressActivityIndicator stopAnimation:self];
 }
 
+- (void)patternMatcherDidStartScanning:(PatternMatcherBase *)matcher
+{
+	[self disableAllButtons];
+}
+
 - (void)patternMatcher:(PatternMatcherBase *)matcher didFinishWithResults:(NSDictionary *)results
 {
 	DDLogVerbose(@"task was done.");
@@ -90,6 +112,7 @@
 	NSTimeInterval timeInterval = [endDate timeIntervalSinceDate:self.startDate];
 	NSString *resultStr = [NSString stringWithFormat:@"Finished running %@. Time taken: %f seconds.", NSStringFromClass([matcher class]), timeInterval];
 	self.resultsTextView.string = resultStr;
+	[self enableAllButtons];
 }
 
 
@@ -103,6 +126,78 @@
 
 
 
+- (void)disableAllButtons
+{
+	for (NSView *subView in self.view.subviews) {
+		if ([subView isKindOfClass:[NSButton class]]) {
+			[((NSButton *)subView) setEnabled:NO];
+		}
+	}
+}
+
+- (void)enableAllButtons
+{
+	for (NSView *subView in self.view.subviews) {
+		if ([subView isKindOfClass:[NSButton class]]) {
+			[((NSButton *)subView) setEnabled:YES];
+		}
+	}
+}
+
+
+- (IBAction)latticePresetOptionChanged:(NSPopUpButton *)sender {
+	if (sender.selectedItem.tag == 0) {
+		return;
+	}
+	NSString *fileName = nil;
+	switch (sender.selectedItem.tag) {
+		case kLatticePreset10:
+			fileName = @"cube10";
+			break;
+		case kLatticePreset100:
+			fileName = @"cube100";
+			break;
+		case kLatticePreset200:
+			fileName = @"cube200";
+			break;
+		case kLatticePreset500:
+			fileName = @"cube500";
+			break;
+		default:
+			break;
+	}
+	self.matrixImporter = [[CSMatrixImporter alloc] init];
+	[self loadDNAFileFromPath:[[NSBundle mainBundle] pathForResource:fileName ofType:@"desc"]];
+
+
+	[self refreshInfoLabel];
+}
+
+- (IBAction)wordListPresetOptionChanged:(NSPopUpButton *)sender {
+	if (sender.selectedItem.tag == 0) {
+		return;
+	}
+	NSString *fileName = nil;
+	switch (sender.selectedItem.tag) {
+		case kWordlistPreset10x10:
+			fileName = @"w10l10";
+			break;
+		case kWordlistPreset100x10:
+			fileName = @"w100l10";
+			break;
+		case kWordlistPreset300x10:
+			fileName = @"w300l10";
+			break;
+		case kWordlistPreset10x100:
+			fileName = @"w10l100";
+			break;
+		default:
+			break;
+	}
+	
+	[self loadWDLFromPath:[[NSBundle mainBundle] pathForResource:fileName ofType:@"wdl"]];
+	[self refreshInfoLabel];
+}
 
 - (IBAction)loadDNAFile:(id)sender {
 	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
@@ -115,13 +210,12 @@
 	if (result == NSOKButton) {
 		NSURL *fileName = [openPanel URLs][0];
 		DDLogVerbose(@"loading file from file url: %@", fileName.absoluteString);
-		self.matrixImporter = [[CSMatrixImporter alloc] init];
-		[self.matrixImporter loadLatticeAtLocation:fileName.path completionBlock:^(DNALattice1d *lattice) {
-			self.dnaLattice = lattice;
-		}];
+		[self loadDNAFileFromPath:fileName.path];
 		DDLogVerbose(@"loading done");
 	}
 	[self refreshInfoLabel];
+	
+	[self.latticePresetPopUpButton selectItem:self.latticePresetPopUpButton.itemArray[0]];
 }
 
 - (IBAction)loadWDL:(id)sender {
@@ -139,5 +233,19 @@
 		DDLogVerbose(@"loading done");
 	}
 	[self refreshInfoLabel];
+	[self.wordListPresetPopupButton selectItem:self.wordListPresetPopupButton.itemArray[0]];
+}
+
+- (void)loadDNAFileFromPath:(NSString *)path
+{
+
+	[self.matrixImporter loadLatticeAtLocation:path completionBlock:^(DNALattice1d *lattice) {
+		self.dnaLattice = lattice;
+	}];
+}
+
+- (void)loadWDLFromPath:(NSString *)path
+{
+	[self.wordList loadWordListFromFile:path];
 }
 @end

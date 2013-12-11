@@ -14,7 +14,7 @@
 /**
  CSWordList is a wordlist maker. It creates word lists to be used with the pattern matchers. All strings to be inserted into
  CSWordList are of equal length. In this wordlist, there are no duplicates. The wordlist was created to ensure validity of the
- words inserted into a pattern matcher for beginning the process.
+ words inserted into a pattern matcher for beginning the process. The maximum words that a CSWordList can hold are 1000 distinct ones
  */
 @interface CSWordList : NSObject <NSFastEnumeration>
 

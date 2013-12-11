@@ -18,7 +18,12 @@
 @property (strong) IBOutlet NSTextField *latticeSideLabel;
 @property (strong) IBOutlet NSTextField *wordCountLabel;
 @property (strong) IBOutlet NSTextField *wordLengthLabel;
+@property (strong) IBOutlet NSPopUpButton *latticePresetPopUpButton;
+@property (strong) IBOutlet NSPopUpButton *wordListPresetPopupButton;
 
+
+- (IBAction)latticePresetOptionChanged:(NSPopUpButton *)sender;
+- (IBAction)wordListPresetOptionChanged:(NSPopUpButton *)sender;
 
 
 - (IBAction)loadDNAFile:(id)sender;

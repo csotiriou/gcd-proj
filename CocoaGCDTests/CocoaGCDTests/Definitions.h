@@ -38,6 +38,17 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 														float diff = (((float)t2 - (float)t1) / CLOCKS_PER_SEC ) * 1000; \
 														DDLogVerbose(@"----->%@ -- %@ -- %@ : ended. time taken: %f miliseconds (%f seconds)<---------", NSStringFromClass([self class]), NSStringFromSelector(_cmd), functionName, diff, diff / 1000.0f);
 
+//NSDate *date = [NSDate date];
+
+//#define CS_MACRO_BLOCKED_FORTESTS_BEGIN_TIME(X)			__block NSDate *date = [NSDate date]; \
+//														__block NSString *functionName = X; \
+//														DDLogVerbose(@"------>%@ -- %@ -- %@ : started.<---------", NSStringFromClass([self class]), NSStringFromSelector(_cmd), functionName);
+//
+//
+//
+//#define CS_MACRO_BLOCKED_FORTESTS_END_DISPLAY			NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:date]; \
+//														DDLogVerbose(@"----->%@ -- %@ -- %@ : ended. time taken: %f miliseconds (%f seconds)<---------", NSStringFromClass([self class]), NSStringFromSelector(_cmd), functionName, interval * 1000.0f, interval);
+
 
 
 #else

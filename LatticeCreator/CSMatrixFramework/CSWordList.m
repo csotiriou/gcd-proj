@@ -48,16 +48,20 @@
 - (void)addWord:(NSString *)word
 {
 	NSString *actualWord = [word stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
+	
 	if (![self.acceptableCharacterSet isSupersetOfSet:[NSCharacterSet characterSetWithCharactersInString:actualWord]]) {
 		@throw [NSException exceptionWithName:@"Invalid Word" reason:@"Tried to add a word to the list with different length than the other words" userInfo:nil];
 		return;
 	}
 	
 	if (self.wordList.count > 0) {
-		NSString *randomWord = [self.wordList lastObject];
-		if (randomWord.length != actualWord.length) {
-			@throw [NSException exceptionWithName:@"Invalid Word" reason:@"Tried to add a word to the list with different length than the other words" userInfo:nil];
+		if (self.wordList.count == 1000) {
+			@throw [NSException exceptionWithName:@"Could not add word" reason:@"Tried to add a word to the list which will make the list exceed the maximum (1000)" userInfo:nil];
+		}else{
+			NSString *randomWord = [self.wordList lastObject];
+			if (randomWord.length != actualWord.length) {
+				@throw [NSException exceptionWithName:@"Invalid Word" reason:@"Tried to add a word to the list with different length than the other words" userInfo:nil];
+			}
 		}
 	}else if (self.wordList.count == 0){
 		if (actualWord.length < 2) {

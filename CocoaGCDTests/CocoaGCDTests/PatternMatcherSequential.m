@@ -18,14 +18,20 @@
 
 - (void)startScanning
 {
-	CS_MACRO_BEGIN_TIME(@"scanning entire cube");
+	if ([self.delegate respondsToSelector:@selector(patternMatcherDidStartScanning:)]) {
+		[self.delegate patternMatcherDidStartScanning:self];
+	}
 	
+	CS_MACRO_BEGIN_TIME(@"scanning entire cube");
 	{
+	NSDate *date = [NSDate date];
 	CS_MACRO_BEGIN_TIME(@"obtainDiagonalLinesBottomLeftTopRightForLattice");
 	[self.latticeExtractor obtainDiagonalLinesBottomLeftTopRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 		[self serialySearchForStringsInLine:line];
 	}];
-	CS_MACRO_END_DISPLAY;
+	NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:date];
+	NSLog(@"time interval: %f", interval);
+	CS_MACRO_END_DISPLAY
 	}
 	
 	{
@@ -33,15 +39,15 @@
 	[self.latticeExtractor obtainDiagonalLinesTopLeftBottomRightForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 		[self serialySearchForStringsInLine:line];
 	}];
-	CS_MACRO_END_DISPLAY;
+	CS_MACRO_END_DISPLAY
 	}
 	
 	{
-	CS_MACRO_BEGIN_TIME(@"obtainDiagonalLinesBottomLeftTopRightForLattice");
+	CS_MACRO_BEGIN_TIME(@"obtainDiagonalLinesBottomLeftTopRightForLattice")
 	[self.latticeExtractor obtainHorizontallLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 		[self serialySearchForStringsInLine:line];
 	}];
-	CS_MACRO_END_DISPLAY;
+	CS_MACRO_END_DISPLAY
 	}
 	
 	{
@@ -49,7 +55,7 @@
 	[self.latticeExtractor obtainLinesInIntraLatticeForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 		[self serialySearchForStringsInLine:line];
 	}];
-	CS_MACRO_END_DISPLAY;
+	CS_MACRO_END_DISPLAY
 	}
 	
 	{
@@ -57,15 +63,15 @@
 	[self.latticeExtractor obtainVerticalLinesForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 		[self serialySearchForStringsInLine:line];
 	}];
-	CS_MACRO_END_DISPLAY;
+	CS_MACRO_END_DISPLAY
 	}
 	
 	{
-	CS_MACRO_BEGIN_TIME(@"obtainDiagonalHeightConstantZ1ForLattice");
+	CS_MACRO_BEGIN_TIME(@"obtainDiagonalHeightConstantZ1ForLattice")
 	[self.latticeExtractor obtainDiagonalHeightConstantZ1ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 		[self serialySearchForStringsInLine:line];
 	}];
-	CS_MACRO_END_DISPLAY;
+	CS_MACRO_END_DISPLAY
 	}
 	
 	{
@@ -73,10 +79,10 @@
 	[self.latticeExtractor obtainDiagonalHeightConstantZ2ForLattice:self.lattice withLineCompletionBlock:^(NSString *line) {
 		[self serialySearchForStringsInLine:line];
 	}];
-	CS_MACRO_END_DISPLAY;
+	CS_MACRO_END_DISPLAY
 	}
 	
-	CS_MACRO_END_DISPLAY;
+	CS_MACRO_END_DISPLAY
 	
 	[self signalComplete];
 	

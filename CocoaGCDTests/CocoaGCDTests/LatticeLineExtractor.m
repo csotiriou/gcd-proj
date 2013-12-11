@@ -83,42 +83,32 @@
 		while (currentHorizontal < sideCount) {
 			[currentString appendFormat:@"%c", [lattice getItemAti:constantDimension andJ:currentHorizontal andK:currentVertical]];
 			
-//			NSLog(@"examining: %i, %i, %i", constantDimension, currentHorizontal, currentVertical);
-			
 			currentVertical++;
 			currentHorizontal++;
 			if (currentHorizontal >= sideCount) {
-//				[currentString appendFormat:@"\n"];
 				block(currentString);
 				[currentString setString:@""];
 				currentHorizontal = sideCount - (currentVertical -1 /*undo last step */);//since this is a square matrix
 				currentVertical = 0;
 			}
 		}
-		
-//		[currentString appendFormat:@"\n"];
-//		block(currentString);
-//		[currentString setString:@""];
+
 		
 		currentHorizontal = 0;
 		currentVertical = 0;
 		
 		while (currentVertical < sideCount) {
 			[currentString appendFormat:@"%c", [lattice getItemAti:constantDimension andJ:currentHorizontal andK:currentVertical]];
-//			NSLog(@"examining: %i, %i, %i", constantDimension, currentHorizontal, currentVertical);
 			currentVertical++;
 			currentHorizontal++;
 			
 			if (currentVertical >= sideCount) {
-//				[currentString appendFormat:@"\n"];
 				block(currentString);
 				[currentString setString:@""];
 				currentVertical = sideCount - (currentHorizontal -1);
 				currentHorizontal = 0;
 			}
 		}
-
-//		block(currentString);
 	}
 	
 }
@@ -138,7 +128,6 @@
 				
 				while (currentVertical >= 0) {
 					[currentString appendFormat:@"%c", [lattice getItemAti:lat andJ:currentHorizontal andK:currentVertical]];
-					//				NSLog(@"examining: %i, %i, %i", lattice, currentHorizontal, currentVertical);
 					currentVertical--;
 					currentHorizontal++;
 					if (currentVertical<0) {
@@ -148,8 +137,6 @@
 						currentHorizontal = 0;
 					}
 				}
-//				[currentString appendFormat:@"\n"];
-//				block(currentString);
 				[currentString setString:@""];
 				
 				currentHorizontal = sideCount-1;
@@ -161,15 +148,12 @@
 					currentHorizontal++;
 					
 					if (currentHorizontal>=sideCount) {
-//						[currentString appendFormat:@"\n"];
 						block(currentString);
 						[currentString setString:@""];
 						currentHorizontal = currentVertical;
 						currentVertical = sideCount-1;
 					}
 				}
-				
-//				block(currentString);
 			}
 		}
 	}
@@ -189,20 +173,15 @@
 		
 		while (currentVertical >= 0) {
 			[currentString appendFormat:@"%c", [lattice getItemAti:currentVertical andJ:currentHorizontal andK:constantDimension]];
-			//			NSLog(@"examining: %i, %i, %i", lattice, currentHorizontal, currentVertical);
 			currentVertical--;
 			currentHorizontal++;
 			if (currentVertical<0) {
-//				[currentString appendFormat:@"\n"];
 				block(currentString);
 				[currentString setString:@""];
 				currentVertical = currentHorizontal-2;//since this is a square matrix
 				currentHorizontal = 0;
 			}
 		}
-//		[currentString appendFormat:@"\n"];
-//		block(currentString);
-//		[currentString setString:@""];
 		currentHorizontal = sideCount-1;
 		currentVertical = sideCount-1;
 		
@@ -212,14 +191,12 @@
 			currentHorizontal++;
 			
 			if (currentHorizontal>=sideCount) {
-//				[currentString appendFormat:@"\n"];
 				block(currentString);
 				[currentString setString:@""];
 				currentHorizontal = currentVertical;
 				currentVertical = sideCount-1;
 			}
 		}
-//		block(currentString);
 	}
 }
 
@@ -240,7 +217,6 @@
 			currentVertical++;
 			currentHorizontal++;
 			if (currentHorizontal >= sideCount) {
-//				[currentString appendFormat:@"\n"];
 				block(currentString);
 				[currentString setString:@""];
 				currentHorizontal = sideCount - (currentVertical -1 /*undo last step */);//since this is a square matrix
@@ -248,9 +224,6 @@
 			}
 		}
 		
-//		[currentString appendFormat:@"\n"];
-//		block(currentString);
-//		[currentString setString:@""];
 		currentHorizontal = 0;
 		currentVertical = 0;
 		
@@ -260,14 +233,12 @@
 			currentHorizontal++;
 			
 			if (currentVertical >= sideCount) {
-//				[currentString appendFormat:@"\n"];
 				block(currentString);
 				[currentString setString:@""];
 				currentVertical = sideCount - (currentHorizontal -1);
 				currentHorizontal = 0;
 			}
 		}
-//		block(currentString);
 	}
 }
 

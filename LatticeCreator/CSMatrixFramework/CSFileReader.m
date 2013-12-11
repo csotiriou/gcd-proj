@@ -56,7 +56,7 @@
 			}
 		}
 	}else{
-		@throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"File could not be opened for reading" userInfo:nil];
+		@throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"File %@ could not be opened for reading", filePath] userInfo:nil];
 	}
 	
 	if ([self.delegate respondsToSelector:@selector(fileReaderDidEndProcessingFile:)]) {

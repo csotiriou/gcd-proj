@@ -35,7 +35,11 @@
 
 - (void)startInternalThreads
 {
-//	__block __weak PatternMatcherGCD *weakSelf = self; //avoid circular references
+
+	if ([self.delegate respondsToSelector:@selector(patternMatcherDidStartScanning:)]) {
+		[self.delegate patternMatcherDidStartScanning:self];
+	}
+	
 	self.totalLinesProcessed = 0;
 	
 	
@@ -106,7 +110,6 @@
 - (void)serialySearchForStringsInLine:(NSString *)line
 {
 	self.totalLinesProcessed++;
-//	NSLog(@"total lines processed: %llu", self.totalLinesProcessed);
 	[self matchStringsForLine:line withFoundBlock:^(NSString *wordFound) {
 		[self seriallyAccessResultsDictionaryWithValue:@YES forKey:wordFound];
 	}];

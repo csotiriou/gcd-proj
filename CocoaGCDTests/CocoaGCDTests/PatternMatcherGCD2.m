@@ -48,6 +48,10 @@
 
 - (void)startInternalThreads
 {
+	if ([self.delegate respondsToSelector:@selector(patternMatcherDidStartScanning:)]) {
+		[self.delegate patternMatcherDidStartScanning:self];
+	}
+	
 	[self.arrayOfArraysWithWordDictionaries removeAllObjects];
 	[self divideDictionariesBy:self.numberOfCores];
 	

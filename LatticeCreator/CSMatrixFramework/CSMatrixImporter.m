@@ -31,12 +31,14 @@
 
 - (void)loadLatticeAtLocation:(NSString *)location completionBlock:(void (^)(DNALattice1d *lattice))completionBlock;
 {
+	[self reset];
 	[self.reader startReadingLineByLineFileAtPath:location encoding:NSUTF8StringEncoding];
 	completionBlock(_resultLattice);
 }
 
 - (DNALattice1d *)dnaLatticeFromFileAtLocation:(NSString *)location
 {
+	[self reset];
 	[self.reader startReadingLineByLineFileAtPath:location encoding:NSUTF8StringEncoding];
 	return self.resultLattice;
 }
@@ -86,6 +88,10 @@
 	}
 }
 
+- (void)reset
+{
+	self.resultLattice = nil;
+}
 
 - (void)fileReaderDidEndProcessingFile:(CSFileReader *)reader
 {

@@ -51,6 +51,14 @@
 		06D5DFCD1835891700A7D320 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
 		06D5DFD018358F7200A7D320 /* CSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D5DFCF18358F7200A7D320 /* CSAdditions.m */; };
 		06D5DFD118358F7200A7D320 /* CSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D5DFCF18358F7200A7D320 /* CSAdditions.m */; };
+		06F58C681859123D00485065 /* cube10.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06F58C671859123D00485065 /* cube10.desc */; };
+		06F58C6A1859128800485065 /* cube100.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06F58C691859128800485065 /* cube100.desc */; };
+		06F58C6C185912C400485065 /* cube200.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06F58C6B185912C400485065 /* cube200.desc */; };
+		06F58C6E185912DB00485065 /* cube500.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06F58C6D185912DB00485065 /* cube500.desc */; };
+		06F58C701859139F00485065 /* w10l10.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 06F58C6F1859139F00485065 /* w10l10.wdl */; };
+		06F58C721859158400485065 /* w100l10.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 06F58C711859158400485065 /* w100l10.wdl */; };
+		06F58C741859174200485065 /* w300l10.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 06F58C731859174200485065 /* w300l10.wdl */; };
+		06F58C7818591DF700485065 /* w10l100.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 06F58C7718591DF700485065 /* w10l100.wdl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +228,14 @@
 		06D5DFCE18358F7200A7D320 /* CSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAdditions.h; sourceTree = "<group>"; };
 		06D5DFCF18358F7200A7D320 /* CSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAdditions.m; sourceTree = "<group>"; };
 		06E0F2AC182CEF3100227AC2 /* LatticeCreator.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LatticeCreator.xcodeproj; path = ../LatticeCreator/LatticeCreator.xcodeproj; sourceTree = "<group>"; };
+		06F58C671859123D00485065 /* cube10.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube10.desc; sourceTree = "<group>"; };
+		06F58C691859128800485065 /* cube100.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube100.desc; sourceTree = "<group>"; };
+		06F58C6B185912C400485065 /* cube200.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube200.desc; sourceTree = "<group>"; };
+		06F58C6D185912DB00485065 /* cube500.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube500.desc; sourceTree = "<group>"; };
+		06F58C6F1859139F00485065 /* w10l10.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = w10l10.wdl; sourceTree = "<group>"; };
+		06F58C711859158400485065 /* w100l10.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = w100l10.wdl; sourceTree = "<group>"; };
+		06F58C731859174200485065 /* w300l10.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = w300l10.wdl; sourceTree = "<group>"; };
+		06F58C7718591DF700485065 /* w10l100.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = w10l100.wdl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +441,7 @@
 		0699101A1821C3FE00290809 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				06F58C641859121C00485065 /* UI Preset Files */,
 				06535480184A497A00340BCE /* cube.desc */,
 				068B7929183D954F00557CB5 /* wordlist.wdl */,
 				0699101B1821C3FE00290809 /* CocoaGCDTests-Info.plist */,
@@ -504,6 +521,21 @@
 				06E0F2B7182CEF3100227AC2 /* CSMatrixFrameworkTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		06F58C641859121C00485065 /* UI Preset Files */ = {
+			isa = PBXGroup;
+			children = (
+				06F58C671859123D00485065 /* cube10.desc */,
+				06F58C691859128800485065 /* cube100.desc */,
+				06F58C6B185912C400485065 /* cube200.desc */,
+				06F58C6D185912DB00485065 /* cube500.desc */,
+				06F58C6F1859139F00485065 /* w10l10.wdl */,
+				06F58C711859158400485065 /* w100l10.wdl */,
+				06F58C731859174200485065 /* w300l10.wdl */,
+				06F58C7718591DF700485065 /* w10l100.wdl */,
+			);
+			name = "UI Preset Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -618,10 +650,18 @@
 				06535481184A497A00340BCE /* cube.desc in Resources */,
 				068B792A183D954F00557CB5 /* wordlist.wdl in Resources */,
 				067A9C721837B6AE005D90EF /* MasterViewController.xib in Resources */,
+				06F58C6E185912DB00485065 /* cube500.desc in Resources */,
 				0699101E1821C3FE00290809 /* InfoPlist.strings in Resources */,
+				06F58C7818591DF700485065 /* w10l100.wdl in Resources */,
+				06F58C6C185912C400485065 /* cube200.desc in Resources */,
+				06F58C681859123D00485065 /* cube10.desc in Resources */,
+				06F58C741859174200485065 /* w300l10.wdl in Resources */,
+				06F58C721859158400485065 /* w100l10.wdl in Resources */,
 				0699102C1821C3FE00290809 /* Images.xcassets in Resources */,
+				06F58C701859139F00485065 /* w10l10.wdl in Resources */,
 				069910241821C3FE00290809 /* Credits.rtf in Resources */,
 				0699102A1821C3FE00290809 /* MainMenu.xib in Resources */,
+				06F58C6A1859128800485065 /* cube100.desc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
