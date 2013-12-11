@@ -13,4 +13,3 @@
 #import "LatticeCommon.h"
 #import "DNALattice1d.h"
 #import "CSWordList.h"
-#import "DNALattice3D.h"

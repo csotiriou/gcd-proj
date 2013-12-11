@@ -88,13 +88,18 @@
 			currentVertical++;
 			currentHorizontal++;
 			if (currentHorizontal >= sideCount) {
-				[currentString appendFormat:@"\n"];
+//				[currentString appendFormat:@"\n"];
+				block(currentString);
+				[currentString setString:@""];
 				currentHorizontal = sideCount - (currentVertical -1 /*undo last step */);//since this is a square matrix
 				currentVertical = 0;
 			}
 		}
 		
-		[currentString appendFormat:@"\n"];
+//		[currentString appendFormat:@"\n"];
+//		block(currentString);
+//		[currentString setString:@""];
+		
 		currentHorizontal = 0;
 		currentVertical = 0;
 		
@@ -105,13 +110,15 @@
 			currentHorizontal++;
 			
 			if (currentVertical >= sideCount) {
-				[currentString appendFormat:@"\n"];
+//				[currentString appendFormat:@"\n"];
+				block(currentString);
+				[currentString setString:@""];
 				currentVertical = sideCount - (currentHorizontal -1);
 				currentHorizontal = 0;
 			}
 		}
 
-		block(currentString);
+//		block(currentString);
 	}
 	
 }
@@ -135,13 +142,17 @@
 					currentVertical--;
 					currentHorizontal++;
 					if (currentVertical<0) {
-						[currentString appendFormat:@"\n"];
+						block(currentString);
+						[currentString setString:@""];
 						currentVertical = currentHorizontal-2;//since this is a square matrix
 						currentHorizontal = 0;
 					}
 				}
-				[currentString appendFormat:@"\n"];
-				currentHorizontal = sideCount-2;
+//				[currentString appendFormat:@"\n"];
+//				block(currentString);
+				[currentString setString:@""];
+				
+				currentHorizontal = sideCount-1;
 				currentVertical = sideCount-1;
 				
 				while (currentHorizontal >= 0) {
@@ -150,14 +161,15 @@
 					currentHorizontal++;
 					
 					if (currentHorizontal>=sideCount) {
-						[currentString appendFormat:@"\n"];
+//						[currentString appendFormat:@"\n"];
+						block(currentString);
+						[currentString setString:@""];
 						currentHorizontal = currentVertical;
 						currentVertical = sideCount-1;
 					}
 				}
 				
-				//			[linesArray addObject:currentString];
-				block(currentString);
+//				block(currentString);
 			}
 		}
 	}
@@ -181,13 +193,17 @@
 			currentVertical--;
 			currentHorizontal++;
 			if (currentVertical<0) {
-				[currentString appendFormat:@"\n"];
+//				[currentString appendFormat:@"\n"];
+				block(currentString);
+				[currentString setString:@""];
 				currentVertical = currentHorizontal-2;//since this is a square matrix
 				currentHorizontal = 0;
 			}
 		}
-		[currentString appendFormat:@"\n"];
-		currentHorizontal = sideCount-2;
+//		[currentString appendFormat:@"\n"];
+//		block(currentString);
+//		[currentString setString:@""];
+		currentHorizontal = sideCount-1;
 		currentVertical = sideCount-1;
 		
 		while (currentHorizontal >= 0) {
@@ -196,12 +212,14 @@
 			currentHorizontal++;
 			
 			if (currentHorizontal>=sideCount) {
-				[currentString appendFormat:@"\n"];
+//				[currentString appendFormat:@"\n"];
+				block(currentString);
+				[currentString setString:@""];
 				currentHorizontal = currentVertical;
 				currentVertical = sideCount-1;
 			}
 		}
-		block(currentString);
+//		block(currentString);
 	}
 }
 
@@ -219,17 +237,20 @@
 		while (currentHorizontal < sideCount) {
 			[currentString appendFormat:@"%c", [lattice getItemAti:currentVertical andJ:currentHorizontal andK:constantDimension]];
 			
-			
 			currentVertical++;
 			currentHorizontal++;
 			if (currentHorizontal >= sideCount) {
-				[currentString appendFormat:@"\n"];
+//				[currentString appendFormat:@"\n"];
+				block(currentString);
+				[currentString setString:@""];
 				currentHorizontal = sideCount - (currentVertical -1 /*undo last step */);//since this is a square matrix
 				currentVertical = 0;
 			}
 		}
 		
-		[currentString appendFormat:@"\n"];
+//		[currentString appendFormat:@"\n"];
+//		block(currentString);
+//		[currentString setString:@""];
 		currentHorizontal = 0;
 		currentVertical = 0;
 		
@@ -239,12 +260,14 @@
 			currentHorizontal++;
 			
 			if (currentVertical >= sideCount) {
-				[currentString appendFormat:@"\n"];
+//				[currentString appendFormat:@"\n"];
+				block(currentString);
+				[currentString setString:@""];
 				currentVertical = sideCount - (currentHorizontal -1);
 				currentHorizontal = 0;
 			}
 		}
-		block(currentString);
+//		block(currentString);
 	}
 }
 
