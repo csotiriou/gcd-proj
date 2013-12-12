@@ -11,6 +11,7 @@
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "PatternMatcherSequential.h"
 #import "Expecta.h"
+#import "Definitions.h"
 
 @interface PatternTestsSequential : TestCaseCommon
 

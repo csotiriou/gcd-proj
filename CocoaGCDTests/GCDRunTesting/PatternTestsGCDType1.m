@@ -11,6 +11,7 @@
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "PatternMatcherGCD.h"
 #import "Expecta.h"
+#import "Definitions.h"
 
 @interface PatternTestsGCDType1 : TestCaseCommon
 

@@ -12,6 +12,7 @@
 #import "PatternMatcherGCD2.h"
 #import "Expecta.h"
 #import "TRVSMonitor.h"
+#import "Definitions.h"
 
 //#define GET_CLASS(X) NSStringFromClass(self.classToTest)
 
