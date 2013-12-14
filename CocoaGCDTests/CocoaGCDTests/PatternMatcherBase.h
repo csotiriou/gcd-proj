@@ -102,8 +102,13 @@
  */
 - (id)initWithLattice:(id<LatticeCommon>)lattice andWordList:(CSWordList *)wordList;
 
+
+
 /**
- Starts scanning the lattice. After scanning ends, the delegate will be called.
+ Starts scanning the lattice. After scanning ends, the delegate will be called. 
+ NOTE: By definition this function will start the pattern matching process even if
+ there is no way of actually returning results. Use the 'startScanningIfEfficientXXXX' family
+ of functions to avoid unnecessary work.
  */
 - (void)startScanning;
 
@@ -111,11 +116,32 @@
 /**
  @brief Starts the scanning process. On completion, it runs the completion block. NOTICE:
  Upon finishing the tasks, the completion block will be called in addition to the delegate
- functions.
+ functions. NOTE: By definition this function will start the pattern matching process even if
+ there is no way of actually returning results. Use the 'startScanningIfEfficientXXXX' family
+ of functions to avoid unnecessary work.
  
  @param completionBlock the block to call upon completion.
  */
 - (void)startScanningWithCompletionBlock:(void (^)())completionBlock;
+
+
+
+/**
+ @brief Starts the scan procedure, if it would be efficient to do so. Consults the 'isWorthStartingScanning'
+ function to determine if it makes sense to start scanning. If not, then the process will exit immediately.
+ */
+- (void)startScanningIfefficient;
+
+
+
+/**
+ @brief Starts the scan procedure, if it would be efficient to do so. Consults the 'isWorthStartingScanning'
+ function to determine if it makes sense to start scanning. If not, then the process will immediately call the
+ completion block. If not, the completionBlock is called after the results have been collected.
+ 
+ @param completionBlock the block to call upon completion.
+ */
+- (void)startScanningIfEfficientWithCompletionBlock:(void (^)())completionBlock;
 
 
 /**
@@ -141,10 +167,21 @@
 - (void)matchStringsForLine:(NSString *)line withFoundBlock:(void(^)(NSString *wordFound))foundBlock;
 
 
-
 /**
- Performs additional initializations. Override this method to perform initializations that happen after the initial ones.
+ @brief Performs additional initializations. Override this method to perform initializations that happen after the initial ones.
  If you override this method, you MUST call [super initPhase2] before your initialisation, to avoid overriding default behaviors.
  */
 - (void)initPhase2;
+
+
+
+/**
+ @brief Indicates wether a scan process would actually be possible to return results. A scan process would make sense if there are more than 0
+ words to search, and if the length of the words to search is less than the size of the cube's side.
+ @return a BOOL indicating wether a scan would make sense in this case.
+ */
+- (BOOL)isWorthStartingScanning;
 @end
+
+
+

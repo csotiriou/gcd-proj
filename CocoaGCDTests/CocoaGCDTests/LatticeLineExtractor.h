@@ -16,7 +16,7 @@
 /**
  Class used to extract the lines from a 3D lattice cube. The method of extracting and returning lines is still not completely documented.
  The lines returned by the methods are meant to be processed by string matchers. This is the plain-dumb version of finding lines to be processed
- by a pattern matcher. No checks are made, no optimizations, apart from taking care of some memory optimizations.
+ by a pattern matcher. No checks are made, no optimizations, apart from taking some memory considerations.
  */
 @interface LatticeLineExtractor : NSObject <LatticeLineExtractorProtocol>
 

@@ -124,6 +124,20 @@
 //}
 
 
+- (BOOL)isWorthStartingScanning
+{
+	//If there are not any words to seach, then there is no reason to start processing any lines.
+	if (self.dictionaryToSearch.count == 0) {
+		return NO;
+	}
+	
+	//If the length of the words is greater than the side of the lattice, it's not worth proceeding.
+	if ([self.dictionaryToSearch.lastObject length] > self.lattice.sideNumber) {
+		return NO;
+	}
+	return YES;
+}
+
 
 - (void)signalComplete
 {
@@ -154,6 +168,26 @@
 - (void)startScanning
 {
 	@throw [NSException exceptionWithName:@"You must implement this function to subclasses" reason:@"Method Not implemented" userInfo:nil];
+}
+
+- (void)startScanningIfefficient
+{
+	if ([self isWorthStartingScanning]) { //if it's logical to do all the process, start the process
+		[self startScanning];
+	}else{ //if not, then do not start anything, set appropriate flags and callbacks to 'finished' state
+		_hasAlreadyRan = YES;
+		[self signalComplete];
+	}
+}
+
+- (void)startScanningIfEfficientWithCompletionBlock:(void (^)())completionBlock
+{
+	if ([self isWorthStartingScanning]) {//if it's logical to do all the process, start the process
+		[self startScanningWithCompletionBlock:completionBlock];
+	}else{//if not, then do not start anything, set appropriate flags and callbacks to 'finished' state
+		_hasAlreadyRan = YES;
+		completionBlock();
+	}
 }
 
 @end

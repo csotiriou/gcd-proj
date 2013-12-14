@@ -219,10 +219,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="437" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="223" height="128"/>
+                                <size key="minSize" width="437" height="128"/>
                                 <size key="maxSize" width="470" height="10000000"/>
                                 <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="223" height="128"/>
+                                <size key="minSize" width="437" height="128"/>
                                 <size key="maxSize" width="470" height="10000000"/>
                             </textView>
                         </subviews>
@@ -246,7 +246,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="roundTextured" title="-- Select lattice preset" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="5gx-iH-aHA" id="1Wd-sm-XQD">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="uI7-jT-FhY">
                             <items>
                                 <menuItem title="-- Select lattice preset" state="on" id="5gx-iH-aHA"/>
@@ -264,16 +264,16 @@
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UfD-Ou-PLv">
                     <rect key="frame" x="217" y="47" width="202" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="roundTextured" title="10x100 (words, word length)" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" tag="4" imageScaling="proportionallyDown" inset="2" selectedItem="SIQ-OP-OtD" id="LUe-oX-CY5">
+                    <popUpButtonCell key="cell" type="roundTextured" title="-- Select WordList Preset" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="PAs-MY-OFB" id="LUe-oX-CY5">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="N1K-v1-hm0">
                             <items>
-                                <menuItem title="-- Select WordList Preset" id="PAs-MY-OFB"/>
+                                <menuItem title="-- Select WordList Preset" state="on" id="PAs-MY-OFB"/>
                                 <menuItem title="10x10 (words, word length)" tag="1" id="e38-w6-Hzx"/>
                                 <menuItem title="100x10 (words, word length)" tag="2" id="k6z-fP-Qp1"/>
                                 <menuItem title="300x10 (words, word length)" tag="3" id="rUp-ax-5TQ"/>
-                                <menuItem title="10x100 (words, word length)" state="on" tag="4" id="SIQ-OP-OtD"/>
+                                <menuItem title="10x100 (words, word length)" tag="4" id="SIQ-OP-OtD"/>
                             </items>
                         </menu>
                     </popUpButtonCell>

@@ -9,8 +9,19 @@
 #import "PatternMatcherAsynchronous.h"
 
 @interface PatternMatcherAsynchronous ()
+/**
+ Concurrent Grand Central Dispatch queue for performing multiple tasks in the background.
+ */
 @property (nonatomic, strong) dispatch_queue_t backgroundProcessQueue;
+
+/**
+ Serial queue, for serializing access to sensitive matrerial (like the resulting array).
+ */
 @property (nonatomic, strong) dispatch_queue_t serialQueue;
+
+/**
+ Operation group used for notifications of when all threads have finished processing.
+ */
 @property (nonatomic, strong) dispatch_group_t operationGrp;
 @end
 

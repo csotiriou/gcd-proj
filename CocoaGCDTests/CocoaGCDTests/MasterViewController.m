@@ -59,27 +59,32 @@ typedef enum {
 
 
 - (IBAction)runTestsSequentialButtonPressed:(id)sender {
+	[self disableAllButtons];
 	self.startDate = [NSDate date];
 	[self setupProcessIndicatorWithLabelString:@"running sequential pattern matcher."];
 	self.patternMatcher = [[PatternMatcherSequential alloc] initWithLattice:self.dnaLattice andWordList:self.wordList];
 	self.patternMatcher.delegate = self;
-	[self.patternMatcher performSelector:@selector(startScanning) withObject:nil afterDelay:0.1]; //delay to cope with a small bug that will run the pattern matcher before we are able to refresh the UI, although we have explicitly told to update the UI before the process starts.
+//	[self.patternMatcher startScanningIfefficient];
+	
+	[self.patternMatcher performSelector:@selector(startScanningIfefficient) withObject:nil afterDelay:0.1]; //delay to cope with a small bug that will run the pattern matcher before we are able to refresh the UI, although we have explicitly told to update the UI before the process starts.
 }
 
 - (IBAction)runTestsGCDButtonPressed:(id)sender {
+	[self disableAllButtons];
 	self.startDate = [NSDate date];
 	[self setupProcessIndicatorWithLabelString:@"running GCD pattern matcher tests."];
 	self.patternMatcher = [[PatternMatcherGCD alloc] initWithLattice:self.dnaLattice andWordList:self.wordList];
 	self.patternMatcher.delegate = self;
-	[self.patternMatcher startScanning];
+	[self.patternMatcher startScanningIfefficient];
 }
 
 - (IBAction)runTestsGCD2ButtonPressed:(id)sender {
+	[self disableAllButtons];
 	self.startDate = [NSDate date];
 	[self setupProcessIndicatorWithLabelString:@"running GCD 2 pattern matcher tests."];
 	self.patternMatcher = [[PatternMatcherGCD2 alloc] initWithLattice:self.dnaLattice andWordList:self.wordList];
 	self.patternMatcher.delegate = self;
-	[self.patternMatcher startScanning];
+	[self.patternMatcher startScanningIfefficient];
 
 }
 
@@ -95,11 +100,6 @@ typedef enum {
 	[self.progressLabel setStringValue:@"Idle"];
 	self.progressActivityIndicator.alphaValue = 0.0f;
 	[self.progressActivityIndicator stopAnimation:self];
-}
-
-- (void)patternMatcherDidStartScanning:(PatternMatcherBase *)matcher
-{
-	[self disableAllButtons];
 }
 
 - (void)patternMatcher:(PatternMatcherBase *)matcher didFinishWithResults:(NSDictionary *)results
