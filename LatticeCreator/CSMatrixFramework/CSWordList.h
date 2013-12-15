@@ -72,6 +72,15 @@
 
 
 /**
+ @brief Loads a wordlist from a file in the specified path, and limits the count of words that it will
+ add to the argument.
+ 
+ @param filePath The path of the file to load the words from.
+ @param maxWords the maximum amount of words to add to the word list.
+ */
+- (void)loadWordListFromFile:(NSString *)filePath maximumCountOfWordsToRead:(int)maxWords;
+
+/**
  @brief Extracts the words loaded to this list to a file at a specified path
  
  @param filePath the file path to write the file.

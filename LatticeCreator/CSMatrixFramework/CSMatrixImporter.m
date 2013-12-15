@@ -9,7 +9,7 @@
 #import "CSMatrixImporter.h"
 #import "CSFileReader.h"
 
-@interface CSMatrixImporter () <CSFileReaderDelegate>
+@interface CSMatrixImporter () <CSFileReaderDelegate, CSFileReaderDataSource>
 @property (nonatomic, strong) CSFileReader *reader;
 @property (nonatomic, strong) DNALattice1d *resultLattice;
 
@@ -24,6 +24,7 @@
     if (self) {
 		self.reader = [[CSFileReader alloc] init];
 		self.reader.delegate = self;
+		self.reader.dataSource = self;
 		self.defaultChar = '0';
     }
     return self;
@@ -96,6 +97,11 @@
 - (void)fileReaderDidEndProcessingFile:(CSFileReader *)reader
 {
 	
+}
+
+- (BOOL)fileReaderShouldContinueProcessing:(CSFileReader *)fileReader
+{
+	return YES;
 }
 
 - (BOOL)string:(NSString *)haystack containsString:(NSString *)needle

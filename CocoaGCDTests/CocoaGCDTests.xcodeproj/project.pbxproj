@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0603007D18440DE20056979F /* testWords.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 0603007C18440DE20056979F /* testWords.wdl */; };
 		06030084184412090056979F /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 06030083184412090056979F /* TRVSMonitor.m */; };
+		0607B90B185E253D00D9F3FB /* perm1000x10.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 0607B90A185E253D00D9F3FB /* perm1000x10.wdl */; };
 		060BB37F1858E29B00AB1AC2 /* LatticeExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 060BB37E1858E29B00AB1AC2 /* LatticeExtractorTests.m */; };
 		060D2E3218512F1D005E3597 /* UtilityInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E2C18511079005E3597 /* UtilityInitializer.m */; };
 		060D2E3518512FD2005E3597 /* TestCaseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3418512FD2005E3597 /* TestCaseCommon.m */; };
@@ -131,6 +132,7 @@
 		0603007C18440DE20056979F /* testWords.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testWords.wdl; sourceTree = "<group>"; };
 		06030082184412090056979F /* TRVSMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRVSMonitor.h; path = ../../Common/TRVS/TRVSMonitor.h; sourceTree = "<group>"; };
 		06030083184412090056979F /* TRVSMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRVSMonitor.m; path = ../../Common/TRVS/TRVSMonitor.m; sourceTree = "<group>"; };
+		0607B90A185E253D00D9F3FB /* perm1000x10.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = perm1000x10.wdl; sourceTree = "<group>"; };
 		060BB37E1858E29B00AB1AC2 /* LatticeExtractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatticeExtractorTests.m; sourceTree = "<group>"; };
 		060D2E2B18511079005E3597 /* UtilityInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilityInitializer.h; path = ../GCDRunTesting/UtilityInitializer.h; sourceTree = "<group>"; };
 		060D2E2C18511079005E3597 /* UtilityInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilityInitializer.m; path = ../GCDRunTesting/UtilityInitializer.m; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				0603007C18440DE20056979F /* testWords.wdl */,
+				0607B90A185E253D00D9F3FB /* perm1000x10.wdl */,
 				06586F4C185291B600C18997 /* WordListBig.wdl */,
 			);
 			name = wordlists;
@@ -700,6 +703,7 @@
 				06A6B1FE185D1970002380F9 /* testcube.spec in Resources */,
 				06D5DFC1183588DE00A7D320 /* InfoPlist.strings in Resources */,
 				06A6B204185D244B002380F9 /* tempcube.spec in Resources */,
+				0607B90B185E253D00D9F3FB /* perm1000x10.wdl in Resources */,
 				06A6B202185D2439002380F9 /* tempWordList.wdl in Resources */,
 				0603007D18440DE20056979F /* testWords.wdl in Resources */,
 				06586F4E185291D000C18997 /* WordListBig.wdl in Resources */,

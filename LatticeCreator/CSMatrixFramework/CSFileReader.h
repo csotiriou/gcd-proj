@@ -38,9 +38,23 @@
 - (void)fileReaderDidEndProcessingFile:(CSFileReader *)reader;
 @end
 
+@protocol CSFileReaderDataSource <NSObject>
+
+/**
+ @brief Should be implemented by datasources. Indicates wether the file reader should stop processing in this step
+ or not. Called before processing of each line starts.
+ 
+ @param fileReader the file reader in question
+ @return YES if you want to continue processing, otherwise NO
+ */
+- (BOOL)fileReaderShouldContinueProcessing:(CSFileReader *)fileReader;
+
+@end
+
 
 @interface CSFileReader : NSObject
 @property (nonatomic, weak) id<CSFileReaderDelegate> delegate;
+@property (nonatomic, weak) id<CSFileReaderDataSource> dataSource;
 
 
 /**

@@ -146,4 +146,52 @@
 		expect([asynchronous1.wordsProcessedAndResults[str] boolValue]).to.beTruthy();
 	}
 }
+
+- (void)testsGeneral
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	NSString *filePath = [self pathForWDLResourceOfName:@"perm1000x10"];
+	[wordList loadWordListFromFile:filePath maximumCountOfWordsToRead:10];
+	
+	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'l'];
+	PatternMatcherBase *sequential = [[PatternMatcherSequential alloc] initWithLattice:l andWordList:wordList];
+	
+	[sequential startScanningIfefficient];
+	
+}
+
+- (void)testsGeneralAsynchronous1
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	NSString *filePath = [self pathForWDLResourceOfName:@"perm1000x10"];
+	[wordList loadWordListFromFile:filePath maximumCountOfWordsToRead:10];
+	
+	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'l'];
+	PatternMatcherBase *async1 = [[PatternMatcherGCD alloc] initWithLattice:l andWordList:wordList];
+	
+
+	[async1 startScanningIfEfficientWithCompletionBlock:^{
+		[self.monitor signal];
+	}];
+	[self.monitor wait];
+}
+
+- (void)testsGeneralAsynchronous2
+{
+	CSWordList *wordList = [[CSWordList alloc] init];
+	NSString *filePath = [self pathForWDLResourceOfName:@"perm1000x10"];
+	[wordList loadWordListFromFile:filePath maximumCountOfWordsToRead:10];
+	
+	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'l'];
+	PatternMatcherBase *async2 = [[PatternMatcherGCD alloc] initWithLattice:l andWordList:wordList];
+	
+	
+	[async2 startScanningIfEfficientWithCompletionBlock:^{
+		[self.monitor signal];
+	}];
+	[self.monitor wait];
+}
+
+
+
 @end

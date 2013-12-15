@@ -49,8 +49,12 @@
 			@autoreleasepool {
 				NSString *currentLine = [[NSString alloc] initWithBytes:line length:read encoding:encoding];
 				if (currentLine) {
-					if ([self.delegate respondsToSelector:@selector(fileReader:didEncounterLine:)]) {
-						[self.delegate fileReader:self didEncounterLine:currentLine];
+					if ([self.dataSource fileReaderShouldContinueProcessing:self]) {
+						if ([self.delegate respondsToSelector:@selector(fileReader:didEncounterLine:)]) {
+							[self.delegate fileReader:self didEncounterLine:currentLine];
+						}
+					}else{
+						break;
 					}
 				}
 			}

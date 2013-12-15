@@ -47,6 +47,9 @@
 - (void)initThreads
 {
 	self.backgroundProcessQueue = dispatch_queue_create("com.oramind.concurrent", DISPATCH_QUEUE_CONCURRENT);
+	dispatch_queue_t sampleQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+	dispatch_set_target_queue(self.backgroundProcessQueue, sampleQueue); //method for setting the priority of our queue to that of the second argument.
+	
 	self.serialQueue = dispatch_queue_create("com.oramind.serial", DISPATCH_QUEUE_SERIAL);
 	self.operationGrp = dispatch_group_create();
 }
