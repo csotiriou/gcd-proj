@@ -25,10 +25,11 @@
 		0682C4C918270B7100F6D5F4 /* LatticeCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C4C018270B7100F6D5F4 /* LatticeCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0682C4CE1827202F00F6D5F4 /* CSFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682C4CC1827202F00F6D5F4 /* CSFileReader.h */; };
 		0682C4CF1827202F00F6D5F4 /* CSFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0682C4CD1827202F00F6D5F4 /* CSFileReader.m */; };
+		068789BE185E20E700F8D267 /* RRPermutation.m in Sources */ = {isa = PBXBuildFile; fileRef = 068789BC185E20E700F8D267 /* RRPermutation.m */; };
+		068789C1185E218C00F8D267 /* RRFactorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 068789C0185E218C00F8D267 /* RRFactorial.m */; };
 		068B791B183D6E0C00557CB5 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 068B7918183D6E0C00557CB5 /* libExpecta.a */; };
 		068B7923183D702400557CB5 /* Lattice1DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B7922183D702400557CB5 /* Lattice1DTests.m */; };
 		068B7926183D745600557CB5 /* CSWordList.h in Headers */ = {isa = PBXBuildFile; fileRef = 068B7924183D745600557CB5 /* CSWordList.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		068B7927183D745600557CB5 /* CSWordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B7925183D745600557CB5 /* CSWordList.m */; };
 		068B7928183D745600557CB5 /* CSWordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 068B7925183D745600557CB5 /* CSWordList.m */; };
 		06A9AACE182ACCA80066EE5B /* CSMatrixImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 06A9AACC182ACCA80066EE5B /* CSMatrixImporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06A9AAD2182AD4720066EE5B /* CSMatrixImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AACD182ACCA80066EE5B /* CSMatrixImporter.m */; };
@@ -93,6 +94,10 @@
 		0682C4C018270B7100F6D5F4 /* LatticeCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeCommon.h; sourceTree = "<group>"; };
 		0682C4CC1827202F00F6D5F4 /* CSFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFileReader.h; sourceTree = "<group>"; };
 		0682C4CD1827202F00F6D5F4 /* CSFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFileReader.m; sourceTree = "<group>"; };
+		068789BC185E20E700F8D267 /* RRPermutation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRPermutation.m; sourceTree = "<group>"; };
+		068789BD185E20E700F8D267 /* RRPermutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRPermutation.h; sourceTree = "<group>"; };
+		068789BF185E218C00F8D267 /* RRFactorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRFactorial.h; sourceTree = "<group>"; };
+		068789C0185E218C00F8D267 /* RRFactorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRFactorial.m; sourceTree = "<group>"; };
 		068B78F7183D6E0C00557CB5 /* EXPBackwardCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPBackwardCompatibility.h; sourceTree = "<group>"; };
 		068B78F8183D6E0C00557CB5 /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		068B78F9183D6E0C00557CB5 /* EXPDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPDefines.h; sourceTree = "<group>"; };
@@ -205,6 +210,10 @@
 		0682C439182703F200F6D5F4 /* LatticeCreator */ = {
 			isa = PBXGroup;
 			children = (
+				068789BC185E20E700F8D267 /* RRPermutation.m */,
+				068789BD185E20E700F8D267 /* RRPermutation.h */,
+				068789BF185E218C00F8D267 /* RRFactorial.h */,
+				068789C0185E218C00F8D267 /* RRFactorial.m */,
 				0682C43A182703F200F6D5F4 /* main.m */,
 				0682C43E182703F200F6D5F4 /* LatticeCreator.1 */,
 				0682C43C182703F200F6D5F4 /* Supporting Files */,
@@ -484,7 +493,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0682C43B182703F200F6D5F4 /* main.m in Sources */,
-				068B7927183D745600557CB5 /* CSWordList.m in Sources */,
+				068789C1185E218C00F8D267 /* RRFactorial.m in Sources */,
+				068789BE185E20E700F8D267 /* RRPermutation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -87,6 +87,17 @@
 	for (NSString *str in list) {
 		expect([sequential.wordsProcessedAndResults[str] boolValue]).to.beTruthy();
 	}
+	
+	NSCharacterSet *characterSet = [NSCharacterSet characterSetWithCharactersInString:kWordListAcceptableCharacters];
+	
+	for (int i=0; i<l.sideNumber; i++) {
+		for (int j=0; j<l.sideNumber; j++) {
+			for (int k=0; k<l.sideNumber; k++) {
+				NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%c", [l getItemAti:i andJ:j andK:k]]];
+				expect([characterSet isSupersetOfSet:set]).to.beTruthy();
+			}
+		}
+	}
 
 }
 

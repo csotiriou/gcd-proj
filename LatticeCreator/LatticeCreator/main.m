@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "CSMatrixFramework.h"
+#import "RRPermutation.h"
+
+
 
 void produceWords()
 {
@@ -75,14 +78,39 @@ void produceRandomCube(int side, char defaultChar){
 	
 	CSMatrixExporter *exporter = [[CSMatrixExporter alloc] initWithLattice:lattice];
 	[exporter exportToFile:@"/Users/soulstorm/Desktop/randomCube.spec"];
-	
 }
+
+
+
+void createPermutations(int targetWordCount, int letterCount){
+	CSWordList *wordList = [[CSWordList alloc] init];
+	
+	RRPermutation *permutation = [[RRPermutation alloc] initWithSize:letterCount];
+	int currentCount = 0;
+	for (id indices in permutation) {
+		currentCount++;
+		if (currentCount > targetWordCount) {
+			NSLog(@"reached limit. exiting...");
+			break;
+		}
+		NSMutableString *str = [[NSMutableString alloc] init];
+		for (id i in indices){
+			[str appendString:[@"abcdefghijklmnopqrstuvwxyz" substringWithRange:NSMakeRange([i unsignedIntegerValue], 1)]];
+		}
+		NSLog(@"%@", str);
+		[wordList addWord:str];
+	}
+	
+	[wordList extractListToFileAtPath:@"/Users/soulstorm/Desktop/result.wdl"];
+}
+
+
 int main(int argc, const char * argv[])
 {
 
 	@autoreleasepool {
-//		produceWords();
-		produceRandomCube(10, '0');
+		createPermutations(1000, 10);
+		
 	}
     return 0;
 }
