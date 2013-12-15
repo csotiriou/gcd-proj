@@ -43,6 +43,7 @@
 				NSMutableString *bigChunk = [NSMutableString string];
 				for (int j=0; j< self.lattice.sideNumber; j++) {
 					for (int k = 0; k<self.lattice.sideNumber; k++) {
+						NSLog(@"d:%i,%i,%i=%c\n", i,j,k, [self.lattice getItemAti:i andJ:j andK:k]);
 						[bigChunk appendFormat:@"d:%i,%i,%i=%c\n", i,j,k, [self.lattice getItemAti:i andJ:j andK:k]];
 					}
 				}

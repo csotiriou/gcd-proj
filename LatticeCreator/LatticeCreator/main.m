@@ -9,56 +9,80 @@
 #import <Foundation/Foundation.h>
 #import "CSMatrixFramework.h"
 
+void produceWords()
+{
+	NSString *fileDescriptor = [@"~/Desktop/output.desc" stringByStandardizingPath];
+	
+	CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
+	__block DNALattice1d *lat = [[DNALattice1d alloc] initWithSideNumber:10 andChar:'a'];
+	
+	
+	CSMatrixExporter *exporter = [[CSMatrixExporter alloc] init];
+	exporter.lattice = lat;
+	[exporter exportToFile:fileDescriptor withDefaultCharacter:'k'];
+	
+	
+	CSWordList *list = [[CSWordList alloc] init];
+	[list addWord:@"ok1"];
+	[list addWord:@"oka"];
+	[list addWord:@"ok1"];
+	[list addWord:@"ok2"];
+	[list addWord:@"ok2"];
+	[list addWord:@"ok2"];
+	[list addWord:@"ok5"];
+	[list addWord:@"ok4"];
+	[list addWord:@"ok3"];
+	[list addWord:@"ok2"];
+	[list addWord:@"ok1"];
+	[list addWord:@"okw"];
+	[list addWord:@"okq"];
+	[list addWord:@"okj"];
+	[list addWord:@"ok2"];
+	[list addWord:@"oka"];
+	[list addWord:@"oks"];
+	[list addWord:@"okf"];
+	[list addWord:@"ok9"];
+	[list addWord:@"ok2"];
+	[list addWord:@"098"];
+	
+	for (int i = 100; i<999; i++) {
+		[list addWord:[NSString stringWithFormat:@"%i", i]];
+	}
+	
+	NSMutableString *str = [NSMutableString string];
+	for (NSString *str1 in list) {
+		[str appendFormat:@"%@", [NSString stringWithFormat:@"%@\n", str1]];
+	}
+	NSLog(@"%@", str);
+	
+	[list extractListToFileAtPath:@"/Users/soulstorm/Desktop/words.wdl"];
+}
+
+
+void produceRandomCube(int side, char defaultChar){
+	DNALattice1d *lattice = [[DNALattice1d alloc] initWithSideNumber:side andChar:defaultChar];
+	int acceptableCharacterCount = (int)kWordListAcceptableCharacters.length;
+	
+	for (int i=0; i<lattice.sideNumber; i++) {
+		for (int j=0; j<lattice.sideNumber; j++) {
+			for (int k=0; k<lattice.sideNumber; k++) {
+				int characterIndex = arc4random() % (acceptableCharacterCount-1);
+//				NSLog(@"character at d:%i,%i,%i char index %i is: %c",i,j,j, characterIndex, [kWordListAcceptableCharacters characterAtIndex:characterIndex]);
+				[lattice setItemAti:i andJ:j andK:k value:[kWordListAcceptableCharacters characterAtIndex:characterIndex]];
+			}
+		}
+	}
+	
+	CSMatrixExporter *exporter = [[CSMatrixExporter alloc] initWithLattice:lattice];
+	[exporter exportToFile:@"/Users/soulstorm/Desktop/randomCube.spec"];
+	
+}
 int main(int argc, const char * argv[])
 {
 
 	@autoreleasepool {
-		NSString *fileDescriptor = [@"~/Desktop/output.desc" stringByStandardizingPath];
-
-		CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
-		__block DNALattice1d *lat = [[DNALattice1d alloc] initWithSideNumber:10 andChar:'a'];
-		
-		
-		CSMatrixExporter *exporter = [[CSMatrixExporter alloc] init];
-		exporter.lattice = lat;
-		[exporter exportToFile:fileDescriptor withDefaultCharacter:'k'];
-		
-		
-		CSWordList *list = [[CSWordList alloc] init];
-		[list addWord:@"ok1"];
-		[list addWord:@"oka"];
-		[list addWord:@"ok1"];
-		[list addWord:@"ok2"];
-		[list addWord:@"ok2"];
-		[list addWord:@"ok2"];
-		[list addWord:@"ok5"];
-		[list addWord:@"ok4"];
-		[list addWord:@"ok3"];
-		[list addWord:@"ok2"];
-		[list addWord:@"ok1"];
-		[list addWord:@"okw"];
-		[list addWord:@"okq"];
-		[list addWord:@"okj"];
-		[list addWord:@"ok2"];
-		[list addWord:@"oka"];
-		[list addWord:@"oks"];
-		[list addWord:@"okf"];
-		[list addWord:@"ok9"];
-		[list addWord:@"ok2"];
-		[list addWord:@"098"];
-		
-		for (int i = 100; i<999; i++) {
-			[list addWord:[NSString stringWithFormat:@"%i", i]];
-		}
-		
-		NSMutableString *str = [NSMutableString string];
-		for (NSString *str1 in list) {
-			[str appendFormat:@"%@", [NSString stringWithFormat:@"%@\n", str1]];
-		}
-		NSLog(@"%@", str);
-		
-		[list extractListToFileAtPath:@"/Users/soulstorm/Desktop/words.wdl"];
-		
+//		produceWords();
+		produceRandomCube(10, '0');
 	}
     return 0;
 }

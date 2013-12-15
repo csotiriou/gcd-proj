@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "TRVSMonitor.h"
+#import <CSMatrixFramework/CSMatrixFramework.h>
+
 
 @class CSWordList;
 @interface TestCaseCommon : XCTestCase
@@ -20,6 +22,8 @@
 - (CSWordList *)createWordListWithNumberOfLetters:(int)numberOfLetters andSize:(int)size defaultCharacter:(char)c;
 - (NSMutableString *)createStringWithNumberOfLetters:(int)letternNum defaultCharacter:(char)c prefix:(NSString *)prefix;
 
+- (CSWordList *)wordListFromThisBundleWithName:(NSString *)name;
+- (id<LatticeCommon>)cubeFromFileInThisBundleWithName:(NSString *)path;
 
 @end
 

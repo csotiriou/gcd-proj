@@ -11,7 +11,11 @@
 @implementation NSString (CSAdditions)
 - (NSString *)reversedString
 {
-	const char *originalChars = [self cStringUsingEncoding:NSUTF8StringEncoding];
+	//although the commented string works well for normal strings with ascii characters, (and it is faster), it fails
+	//to handle strings with special characters, as we use here. That's why I chose the slower but more reliable approach,
+	//letting NSString to handle the special characters.
+	
+/*	const char *originalChars = [self cStringUsingEncoding:NSUTF8StringEncoding];
 	char reverseString[self.length];
 	
 	int i;
@@ -21,7 +25,16 @@
 	reverseString[self.length] = '\0'; //add the terminating character
 	
 	NSString *finalString = [NSString stringWithCString:reverseString encoding:NSUTF8StringEncoding];
-	return finalString;
+	return finalString;*/
+	
+	NSMutableString *reversedString = [NSMutableString string];
+	NSInteger charIndex = [self length];
+	while (charIndex > 0) {
+		charIndex--;
+		NSRange subStrRange = NSMakeRange(charIndex, 1);
+		[reversedString appendString:[self substringWithRange:subStrRange]];
+	}
+	return [reversedString copy];
 }
 
 

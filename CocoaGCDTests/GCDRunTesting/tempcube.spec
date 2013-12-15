@@ -1,0 +1,23 @@
+#File Descriptions
+#Legend:
+#—- ’s’ indicates the size of each side
+#   of the lattice. Do not change this value unless
+#   you really know what you are doing.
+#— ‘f’ indicates the default character. positions in
+#   the lattice that are not explicitly mentioned in
+#   this file will get this value
+#— ’d’ indicates a position in the lattice. always comes
+#   in the form ’d:<lattice>,<column>,<row>=<character>’
+#   change manually the values you need. Be careful, you
+#   must preserve proper format.
+#LATTICE--BEGINS
+s:10
+f:k
+#Data begins below this line
+########this is to test the edges#
+#########let's get moving...######
+##########################
+d:9,7,9=m
+d:9,8,9=a
+d:9,9,9=g
+

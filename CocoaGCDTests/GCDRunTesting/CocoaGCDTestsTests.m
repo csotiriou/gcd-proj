@@ -10,6 +10,8 @@
 #import <CSMatrixFramework/CSMatrixFramework.h>
 #import "TestCaseCommon.h"
 
+
+
 @interface DNALattice1d (ext)
 @property (nonatomic, readonly) char *cube3d;
 @end

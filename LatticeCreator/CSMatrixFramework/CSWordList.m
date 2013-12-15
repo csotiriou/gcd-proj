@@ -50,7 +50,7 @@
 	NSString *actualWord = [word stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	
 	if (![self.acceptableCharacterSet isSupersetOfSet:[NSCharacterSet characterSetWithCharactersInString:actualWord]]) {
-		@throw [NSException exceptionWithName:@"Invalid Word" reason:@"Tried to add a word to the list with different length than the other words" userInfo:nil];
+		@throw [NSException exceptionWithName:@"Invalid Word" reason:@"Tried to add a word to the list with characters other than the acceptable ones" userInfo:nil];
 		return;
 	}
 	

@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
-#define kWordListAcceptableCharacters @"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~©§¦±£¢"
+#define kWordListAcceptableCharacters @"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~©≥¢±£≤"
+//2013-12-15 01:59:04.075 LatticeCreator[12266:303] d:6,6,5=¬
 
 /**
  CSWordList is a wordlist maker. It creates word lists to be used with the pattern matchers. All strings to be inserted into

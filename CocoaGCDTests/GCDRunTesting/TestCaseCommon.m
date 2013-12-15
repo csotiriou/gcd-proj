@@ -56,8 +56,22 @@
 }
 
 
+- (CSWordList *)wordListFromThisBundleWithName:(NSString *)name
+{
+	CSWordList *result = [[CSWordList alloc] init];
+	[result loadWordListFromFile:[self pathForWDLResourceOfName:name]];
+	return result;
+}
 
-
-
+- (id<LatticeCommon>)cubeFromFileInThisBundleWithName:(NSString *)name
+{
+	CSMatrixImporter *importer = [[CSMatrixImporter alloc] init];
+	NSString *path = [self pathForSpecFileResource:name];
+	__block DNALattice1d *result = nil;
+	[importer loadLatticeAtLocation:path completionBlock:^(DNALattice1d *lattice) {
+		result = lattice;
+	}];
+	return result;
+}
 
 @end

@@ -42,6 +42,12 @@
 		0699102A1821C3FE00290809 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069910281821C3FE00290809 /* MainMenu.xib */; };
 		0699102C1821C3FE00290809 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0699102B1821C3FE00290809 /* Images.xcassets */; };
 		0699104B1821C41000290809 /* PatternMatcherSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 069910481821C41000290809 /* PatternMatcherSequential.m */; };
+		06A6B1F7185D1827002380F9 /* CorrectnessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A6B1F6185D1827002380F9 /* CorrectnessTests.m */; };
+		06A6B1FD185D1970002380F9 /* testWordList.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 06A6B1FB185D1970002380F9 /* testWordList.wdl */; };
+		06A6B1FE185D1970002380F9 /* testcube.spec in Resources */ = {isa = PBXBuildFile; fileRef = 06A6B1FC185D1970002380F9 /* testcube.spec */; };
+		06A6B202185D2439002380F9 /* tempWordList.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 06A6B201185D2439002380F9 /* tempWordList.wdl */; };
+		06A6B204185D244B002380F9 /* tempcube.spec in Resources */ = {isa = PBXBuildFile; fileRef = 06A6B203185D244B002380F9 /* tempcube.spec */; };
+		06A6B206185D2DA3002380F9 /* randomCube.spec in Resources */ = {isa = PBXBuildFile; fileRef = 06A6B205185D2DA3002380F9 /* randomCube.spec */; };
 		06A9AAC4182AA3590066EE5B /* PatternMatcherGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */; };
 		06A9AACA182AC8810066EE5B /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A9AAC9182AC8810066EE5B /* Util.m */; };
 		06D5DFB51835878800A7D320 /* CSMatrixFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E0F2B5182CEF3100227AC2 /* CSMatrixFramework.framework */; };
@@ -216,6 +222,12 @@
 		069910321821C3FE00290809 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		069910471821C41000290809 /* PatternMatcherSequential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherSequential.h; sourceTree = "<group>"; };
 		069910481821C41000290809 /* PatternMatcherSequential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherSequential.m; sourceTree = "<group>"; };
+		06A6B1F6185D1827002380F9 /* CorrectnessTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CorrectnessTests.m; path = GCDRunTesting/CorrectnessTests.m; sourceTree = SOURCE_ROOT; };
+		06A6B1FB185D1970002380F9 /* testWordList.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testWordList.wdl; sourceTree = "<group>"; };
+		06A6B1FC185D1970002380F9 /* testcube.spec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testcube.spec; sourceTree = "<group>"; };
+		06A6B201185D2439002380F9 /* tempWordList.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tempWordList.wdl; sourceTree = "<group>"; };
+		06A6B203185D244B002380F9 /* tempcube.spec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tempcube.spec; sourceTree = "<group>"; };
+		06A6B205185D2DA3002380F9 /* randomCube.spec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = randomCube.spec; sourceTree = "<group>"; };
 		06A9AAC2182AA3590066EE5B /* PatternMatcherGCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternMatcherGCD.h; sourceTree = "<group>"; };
 		06A9AAC3182AA3590066EE5B /* PatternMatcherGCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternMatcherGCD.m; sourceTree = "<group>"; };
 		06A9AAC8182AC8810066EE5B /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
@@ -453,6 +465,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		06A6B1FA185D1963002380F9 /* Other Concrete Tests */ = {
+			isa = PBXGroup;
+			children = (
+				06A6B205185D2DA3002380F9 /* randomCube.spec */,
+				06A6B1FB185D1970002380F9 /* testWordList.wdl */,
+				06A6B1FC185D1970002380F9 /* testcube.spec */,
+				06A6B203185D244B002380F9 /* tempcube.spec */,
+				06A6B201185D2439002380F9 /* tempWordList.wdl */,
+			);
+			name = "Other Concrete Tests";
+			sourceTree = "<group>";
+		};
 		06A9AAC1182AA26F0066EE5B /* Pattern Matchers */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +519,7 @@
 				060D2E3A1851352F005E3597 /* PatternTestsSequential.m */,
 				060D2E3C185135A5005E3597 /* PatternTestsGCDType1.m */,
 				06D5DFC2183588DE00A7D320 /* PatternTestsGCDType2.m */,
+				06A6B1F6185D1827002380F9 /* CorrectnessTests.m */,
 				060BB37E1858E29B00AB1AC2 /* LatticeExtractorTests.m */,
 				06D5DFBD183588DE00A7D320 /* Supporting Files */,
 			);
@@ -505,6 +530,7 @@
 		06D5DFBD183588DE00A7D320 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				06A6B1FA185D1963002380F9 /* Other Concrete Tests */,
 				06BECBEF18576705006E5A50 /* wordlists */,
 				06D5DFBE183588DE00A7D320 /* GCDRunTesting-Info.plist */,
 				06D5DFBF183588DE00A7D320 /* InfoPlist.strings */,
@@ -669,7 +695,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A6B206185D2DA3002380F9 /* randomCube.spec in Resources */,
+				06A6B1FD185D1970002380F9 /* testWordList.wdl in Resources */,
+				06A6B1FE185D1970002380F9 /* testcube.spec in Resources */,
 				06D5DFC1183588DE00A7D320 /* InfoPlist.strings in Resources */,
+				06A6B204185D244B002380F9 /* tempcube.spec in Resources */,
+				06A6B202185D2439002380F9 /* tempWordList.wdl in Resources */,
 				0603007D18440DE20056979F /* testWords.wdl in Resources */,
 				06586F4E185291D000C18997 /* WordListBig.wdl in Resources */,
 			);
@@ -716,6 +747,7 @@
 				060D2E3D185135A5005E3597 /* PatternTestsGCDType1.m in Sources */,
 				06D5DFC3183588DE00A7D320 /* PatternTestsGCDType2.m in Sources */,
 				068B791F183D6E7200557CB5 /* AlgoTests.m in Sources */,
+				06A6B1F7185D1827002380F9 /* CorrectnessTests.m in Sources */,
 				068B7921183D6E7200557CB5 /* PatternTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
