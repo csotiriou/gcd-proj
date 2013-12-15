@@ -9,11 +9,15 @@
 #import "CSWordList.h"
 #import "CSFileReader.h"
 
-@interface CSWordList () <CSFileReaderDelegate>
+@interface CSWordList () <CSFileReaderDelegate, CSFileReaderDataSource>
 @property (nonatomic, strong) NSMutableOrderedSet *wordList;
 @property (nonatomic, strong) CSFileReader *reader;
 
 @property (nonatomic, strong) NSCharacterSet *acceptableCharacterSet;
+
+@property (nonatomic) BOOL readingWithLimits;
+@property (nonatomic) int targetFileLinesToProcess;
+@property (nonatomic) int fileLinesProcessed;
 @end
 
 
@@ -41,6 +45,9 @@
 {
 	self.wordList = [NSMutableOrderedSet orderedSet];
 	self.acceptableCharacterSet = [NSCharacterSet characterSetWithCharactersInString:kWordListAcceptableCharacters];
+	self.fileLinesProcessed = 0;
+	self.targetFileLinesToProcess = 0;
+	self.readingWithLimits = NO;
 }
 
 #pragma mark - Functions
@@ -70,6 +77,7 @@
 	}
 	
 	[self.wordList addObject:actualWord];
+	self.fileLinesProcessed++;
 }
 
 - (void)addWords:(NSArray *)array
@@ -81,12 +89,26 @@
 
 - (void)loadWordListFromFile:(NSString *)filePath
 {
-	self.reader = [[CSFileReader alloc] init];
-	[self.wordList removeAllObjects];
-	self.reader.delegate = self;
-	[self.reader startReadingLineByLineFileAtPath:filePath encoding:NSUTF8StringEncoding];
+	self.readingWithLimits = NO;
+	[self startReadingAtPath:filePath];
 }
 
+- (void)startReadingAtPath:(NSString *)path
+{
+	[self.wordList removeAllObjects];
+	self.reader = [[CSFileReader alloc] init];
+	self.fileLinesProcessed = 0;
+	self.reader.delegate = self;
+	self.reader.dataSource = self;
+	[self.reader startReadingLineByLineFileAtPath:path encoding:NSUTF8StringEncoding];
+}
+
+- (void)loadWordListFromFile:(NSString *)filePath maximumCountOfWordsToRead:(int)maxWords
+{
+	self.targetFileLinesToProcess = maxWords;
+	self.readingWithLimits = YES;
+	[self startReadingAtPath:filePath];
+}
 
 - (void)extractListToFileAtPath:(NSString *)filePath
 {
@@ -104,7 +126,7 @@
 }
 
 
-#pragma mark - File reader delegate
+#pragma mark - File reader delegate / datasource
 - (void)fileReader:(CSFileReader *)reader didEncounterLine:(NSString *)line
 {
 	[self addWord:line];
@@ -113,6 +135,14 @@
 - (void)fileReaderDidEndProcessingFile:(CSFileReader *)reader
 {
 	
+}
+
+- (BOOL)fileReaderShouldContinueProcessing:(CSFileReader *)fileReader
+{
+	if (self.fileLinesProcessed >= self.targetFileLinesToProcess && self.readingWithLimits) {
+		return NO;
+	}
+	return YES;
 }
 
 #pragma mark - Getters / Setters, conforming to common protocols
