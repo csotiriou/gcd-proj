@@ -15,6 +15,9 @@
 		060D2E3518512FD2005E3597 /* TestCaseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3418512FD2005E3597 /* TestCaseCommon.m */; };
 		060D2E3B1851352F005E3597 /* PatternTestsSequential.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3A1851352F005E3597 /* PatternTestsSequential.m */; };
 		060D2E3D185135A5005E3597 /* PatternTestsGCDType1.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D2E3C185135A5005E3597 /* PatternTestsGCDType1.m */; };
+		0650CD34185F58540063D55B /* perm1000x30.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 0650CD33185F58540063D55B /* perm1000x30.wdl */; };
+		0650CD38185F586E0063D55B /* perm1000x70.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 0650CD37185F586E0063D55B /* perm1000x70.wdl */; };
+		0650CD3A185F58870063D55B /* perm1000x100.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 0650CD39185F58870063D55B /* perm1000x100.wdl */; };
 		06535481184A497A00340BCE /* cube.desc in Resources */ = {isa = PBXBuildFile; fileRef = 06535480184A497A00340BCE /* cube.desc */; };
 		06586F4B18526D0600C18997 /* LatticeLineExtractorSmart.m in Sources */ = {isa = PBXBuildFile; fileRef = 06586F4A18526D0600C18997 /* LatticeLineExtractorSmart.m */; };
 		06586F4E185291D000C18997 /* WordListBig.wdl in Resources */ = {isa = PBXBuildFile; fileRef = 06586F4C185291B600C18997 /* WordListBig.wdl */; };
@@ -140,6 +143,9 @@
 		060D2E3418512FD2005E3597 /* TestCaseCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseCommon.m; sourceTree = "<group>"; };
 		060D2E3A1851352F005E3597 /* PatternTestsSequential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTestsSequential.m; sourceTree = "<group>"; };
 		060D2E3C185135A5005E3597 /* PatternTestsGCDType1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternTestsGCDType1.m; sourceTree = "<group>"; };
+		0650CD33185F58540063D55B /* perm1000x30.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = perm1000x30.wdl; sourceTree = "<group>"; };
+		0650CD37185F586E0063D55B /* perm1000x70.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = perm1000x70.wdl; sourceTree = "<group>"; };
+		0650CD39185F58870063D55B /* perm1000x100.wdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = perm1000x100.wdl; sourceTree = "<group>"; };
 		06535480184A497A00340BCE /* cube.desc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.desc; sourceTree = "<group>"; };
 		06586F461852694200C18997 /* LatticeLineExtractorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractorProtocol.h; sourceTree = "<group>"; };
 		06586F4918526D0600C18997 /* LatticeLineExtractorSmart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatticeLineExtractorSmart.h; sourceTree = "<group>"; };
@@ -506,6 +512,9 @@
 			children = (
 				0603007C18440DE20056979F /* testWords.wdl */,
 				0607B90A185E253D00D9F3FB /* perm1000x10.wdl */,
+				0650CD33185F58540063D55B /* perm1000x30.wdl */,
+				0650CD37185F586E0063D55B /* perm1000x70.wdl */,
+				0650CD39185F58870063D55B /* perm1000x100.wdl */,
 				06586F4C185291B600C18997 /* WordListBig.wdl */,
 			);
 			name = wordlists;
@@ -702,10 +711,13 @@
 				06A6B1FD185D1970002380F9 /* testWordList.wdl in Resources */,
 				06A6B1FE185D1970002380F9 /* testcube.spec in Resources */,
 				06D5DFC1183588DE00A7D320 /* InfoPlist.strings in Resources */,
+				0650CD34185F58540063D55B /* perm1000x30.wdl in Resources */,
 				06A6B204185D244B002380F9 /* tempcube.spec in Resources */,
 				0607B90B185E253D00D9F3FB /* perm1000x10.wdl in Resources */,
 				06A6B202185D2439002380F9 /* tempWordList.wdl in Resources */,
+				0650CD38185F586E0063D55B /* perm1000x70.wdl in Resources */,
 				0603007D18440DE20056979F /* testWords.wdl in Resources */,
+				0650CD3A185F58870063D55B /* perm1000x100.wdl in Resources */,
 				06586F4E185291D000C18997 /* WordListBig.wdl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

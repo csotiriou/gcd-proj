@@ -95,7 +95,7 @@ void createPermutations(int targetWordCount, int letterCount){
 		}
 		NSMutableString *str = [[NSMutableString alloc] init];
 		for (id i in indices){
-			[str appendString:[@"abcdefghijklmnopqrstuvwxyz" substringWithRange:NSMakeRange([i unsignedIntegerValue], 1)]];
+			[str appendString:[kWordListAcceptableCharacters substringWithRange:NSMakeRange([i unsignedIntegerValue], 1)]];
 		}
 		NSLog(@"%@", str);
 		[wordList addWord:str];
@@ -109,7 +109,7 @@ int main(int argc, const char * argv[])
 {
 
 	@autoreleasepool {
-		createPermutations(1000, 10);
+		createPermutations(1000, 100);
 		
 	}
     return 0;
