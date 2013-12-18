@@ -9,6 +9,8 @@
 #import "DNALattice1d.h"
 #define CS_SKIP_BOUNDARY_CHECKS
 
+#define DNAcceptableChars @"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~©≥¢±£≤"
+
 
 @interface DNALattice1d ()
 @property (nonatomic) char *cube3D;
@@ -41,11 +43,18 @@
 	if (sideNumber > 1000 || sideNumber < 3) {
 		@throw [NSException exceptionWithName:@"Invalid Argument" reason:@"DNA Lattices must be constructed with a side number between 5 and 1000" userInfo:nil];
 	}else{
-		_isInitialized = YES;
-		_sideNumber = sideNumber;
-		_numberOfElements = sideNumber * sideNumber * sideNumber;
-		_cube3D = (char*)malloc(sideNumber * sideNumber * sideNumber);
-		[self fillArrayWithCharacter:c];
+		NSCharacterSet *acceptableCharacterSet = [NSCharacterSet characterSetWithCharactersInString:DNAcceptableChars];
+		if (![acceptableCharacterSet isSupersetOfSet:[NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%c", c]]]) {
+			@throw [NSException exceptionWithName:@"Invalid Word" reason:@"Tried to add a word to the list with characters other than the acceptable ones" userInfo:nil];
+			return;
+		}else{
+			_isInitialized = YES;
+			_sideNumber = sideNumber;
+			_numberOfElements = sideNumber * sideNumber * sideNumber;
+			_cube3D = (char*)malloc(sideNumber * sideNumber * sideNumber);
+			[self fillArrayWithCharacter:c];
+			
+		}
 	}
 }
 

@@ -55,7 +55,7 @@
 			scanner.scanLocation = 2;
 			int latticeSize = 0;
 			[scanner scanInt:&latticeSize];
-			NSLog(@"creating lattice if size: %i", latticeSize);
+			NSLog(@"creating lattice with size: %i", latticeSize);
 			self.numberOfVertices = latticeSize;
 		}
 			break;

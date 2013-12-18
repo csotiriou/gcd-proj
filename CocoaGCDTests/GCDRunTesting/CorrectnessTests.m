@@ -31,10 +31,11 @@
     [super tearDown];
 }
 
+
 - (void)testCorrectness1
 {
 	//set up
-	NSSet *expectedResults = [NSSet setWithObjects:@"aaa", @"ccc", @"ddd", @"naa", @"mag", @"adg", @"___", @"lgg", nil];
+	NSSet *expectedResults = [NSSet setWithObjects:@"aaa", @"ccc", @"ddd", @"naa", @"mag", @"adg", @"___", @"lgg", @"iom", @"fgz", @"%%%", nil];
 	id<LatticeCommon> l = [self cubeFromFileInThisBundleWithName:@"testcube"];
 	CSWordList *wordList = [self wordListFromThisBundleWithName:@"testWordList"];
 	
@@ -107,7 +108,7 @@
 - (void)testCorrectnessWithMultiplePatternMatchersRunning
 {
 	//set up
-	NSSet *expectedResults = [NSSet setWithObjects:@"aaa", @"ccc", @"ddd", @"naa", @"mag", @"adg", @"___", @"lgg", @"bfe", nil];
+	NSSet *expectedResults = [NSSet setWithObjects:@"aaa", @"ccc", @"ddd", @"naa", @"mag", @"adg", @"___", @"lgg", @"iom", @"fgz", @"%%%", nil];
 	id<LatticeCommon> l = [self cubeFromFileInThisBundleWithName:@"testcube"];
 	CSWordList *wordList = [self wordListFromThisBundleWithName:@"testWordList"];
 	

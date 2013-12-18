@@ -83,6 +83,11 @@
 			}
 		}
 	}
-	
+}
+
+- (void)testCreateLatticeWithInvalidCharactersThrowException
+{
+	XCTAssertThrows(self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:10000 andChar:'\n'], @"something's wrong with boundary check"); //that's too  much, will throw exception
+	XCTAssertThrows(self.dnaLattice = [[DNALattice1d alloc] initWithSideNumber:10000 andChar:'\t'], @"something's wrong with boundary check"); //that's too  much, will throw exception
 }
 @end
