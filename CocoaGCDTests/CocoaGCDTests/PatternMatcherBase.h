@@ -64,7 +64,9 @@
 @property (nonatomic, readonly) NSArray *dictionaryToSearch;
 
 /**
- The reversed words of the dictionary to be searched. An Array of strings.
+ The reversed words of the dictionary to be searched. An Array of strings. The words contained in this array
+ are matched in 1-1 in terms of index with the words in 'dictionaryToSearch' Example: The word at index 1
+ of the dictionaryToSearch has as a reverse the word at index 1 in 'reversedDictionaryToSearch'.
  */
 @property (nonatomic, readonly) NSArray *reversedDictionaryToSearch;
 
@@ -107,7 +109,7 @@
 /**
  Starts scanning the lattice. After scanning ends, the delegate will be called. 
  NOTE: By definition this function will start the pattern matching process even if
- there is no way of actually returning results. Use the 'startScanningIfEfficientXXXX' family
+ there is no way of actually finding any word. Use the 'startScanningIfEfficientXXXX' family
  of functions to avoid unnecessary work.
  */
 - (void)startScanning;
@@ -117,7 +119,7 @@
  @brief Starts the scanning process. On completion, it runs the completion block. NOTICE:
  Upon finishing the tasks, the completion block will be called in addition to the delegate
  functions. NOTE: By definition this function will start the pattern matching process even if
- there is no way of actually returning results. Use the 'startScanningIfEfficientXXXX' family
+ there is no way of actually finding any word. Use the 'startScanningIfEfficientXXXX' family
  of functions to avoid unnecessary work.
  
  @param completionBlock the block to call upon completion.

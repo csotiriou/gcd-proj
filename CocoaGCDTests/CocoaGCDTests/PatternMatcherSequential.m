@@ -16,12 +16,15 @@
 @implementation PatternMatcherSequential
 
 
+
 - (void)startScanning
 {
+	//notify the delegate that we are starting the proces...
 	if ([self.delegate respondsToSelector:@selector(patternMatcherDidStartScanning:)]) {
 		[self.delegate patternMatcherDidStartScanning:self];
 	}
 	
+	//Now, for each direction, get the lines sequentially and process them.
 	CS_MACRO_BEGIN_TIME(@"scanning entire cube");
 	{
 	NSDate *date = [NSDate date];
@@ -84,6 +87,7 @@
 	
 	CS_MACRO_END_DISPLAY
 	
+	//notify everyone that the operation is complete.
 	[self signalComplete];
 	
 }

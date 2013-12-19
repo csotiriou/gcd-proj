@@ -42,6 +42,8 @@
 	
 	self.totalLinesProcessed = 0;
 	
+	//start creating threads for each operations, and add each one to the operation group,
+	//so that when they are finished, we can notify the delegates that we are finished.
 	
 	dispatch_group_async(self.operationGroup, self.concurrentQ, ^{
 		CS_MACRO_BEGIN_TIME(@"obtainHorizontallLinesForLattice");

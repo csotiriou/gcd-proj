@@ -13,7 +13,8 @@
 @property (nonatomic) int numberOfCores;
 
 /**
- An array
+ An array holding arrays of searchable words, intended to be distributed between threads so that each thread
+ only searches for this word.
  */
 @property (nonatomic, strong) NSMutableArray *arrayOfArraysWithWordDictionaries;
 @end

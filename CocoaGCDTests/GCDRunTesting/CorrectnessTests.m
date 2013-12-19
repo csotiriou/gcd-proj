@@ -148,13 +148,17 @@
 	}
 }
 
+/*
+ Everything below this line is used to make measurements, and it is not actually a validity test. Feel free to change some values and see the results.
+ */
+
 - (void)testsSequential
 {
 	CSWordList *wordList = [[CSWordList alloc] init];
 	NSString *filePath = [self pathForWDLResourceOfName:@"perm1000x10"];
 	[wordList loadWordListFromFile:filePath maximumCountOfWordsToRead:10];
 	
-	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:1000 andChar:'l'];
+	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'l'];
 	PatternMatcherBase *sequential = [[PatternMatcherSequential alloc] initWithLattice:l andWordList:wordList];
 	
 	[sequential startScanningIfefficient];
@@ -167,7 +171,7 @@
 	NSString *filePath = [self pathForWDLResourceOfName:@"perm1000x10"];
 	[wordList loadWordListFromFile:filePath maximumCountOfWordsToRead:10];
 	
-	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:1000 andChar:'l'];
+	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'l'];
 	PatternMatcherBase *async1 = [[PatternMatcherGCD alloc] initWithLattice:l andWordList:wordList];
 	
 
@@ -183,7 +187,7 @@
 	NSString *filePath = [self pathForWDLResourceOfName:@"perm1000x10"];
 	[wordList loadWordListFromFile:filePath maximumCountOfWordsToRead:10];
 	
-	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:1000 andChar:'l'];
+	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:100 andChar:'l'];
 	PatternMatcherBase *async2 = [[PatternMatcherGCD alloc] initWithLattice:l andWordList:wordList];
 	
 	
