@@ -154,7 +154,7 @@
 	NSString *filePath = [self pathForWDLResourceOfName:@"perm1000x10"];
 	[wordList loadWordListFromFile:filePath maximumCountOfWordsToRead:10];
 	
-	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'l'];
+	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:1000 andChar:'l'];
 	PatternMatcherBase *sequential = [[PatternMatcherSequential alloc] initWithLattice:l andWordList:wordList];
 	
 	[sequential startScanningIfefficient];
@@ -167,7 +167,7 @@
 	NSString *filePath = [self pathForWDLResourceOfName:@"perm1000x10"];
 	[wordList loadWordListFromFile:filePath maximumCountOfWordsToRead:10];
 	
-	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'l'];
+	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:1000 andChar:'l'];
 	PatternMatcherBase *async1 = [[PatternMatcherGCD alloc] initWithLattice:l andWordList:wordList];
 	
 
@@ -183,7 +183,7 @@
 	NSString *filePath = [self pathForWDLResourceOfName:@"perm1000x10"];
 	[wordList loadWordListFromFile:filePath maximumCountOfWordsToRead:10];
 	
-	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:500 andChar:'l'];
+	id<LatticeCommon> l = [[DNALattice1d alloc] initWithSideNumber:1000 andChar:'l'];
 	PatternMatcherBase *async2 = [[PatternMatcherGCD alloc] initWithLattice:l andWordList:wordList];
 	
 	
