@@ -48,10 +48,14 @@
 - (id)initWithLattice:(id<LatticeCommon>)lattice andWordList:(CSWordList *)wordList
 {
 	if (self = [super init]) {
-		_lattice = lattice;
-		[self initDefaults];
-		[self preProcessWordDictionary:wordList.words.array];
-		[self initPhase2];
+		if (wordList == nil || wordList.words.count < 3) {
+			@throw [NSException exceptionWithName:@"NSInvalidArgumentException" reason:@"Wordlist should not be nil and should contain 3 words or more in order to start the scanning process" userInfo:nil];
+		}else{
+			_lattice = lattice;
+			[self initDefaults];
+			[self preProcessWordDictionary:wordList.words.array];
+			[self initPhase2];
+		}
 	}
 	return self;
 }
