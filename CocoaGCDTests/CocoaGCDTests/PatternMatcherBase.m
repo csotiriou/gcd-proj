@@ -19,32 +19,6 @@
 @end
 
 @implementation PatternMatcherBase
-
-- (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords
-{
-	if (self = [super init]) {
-		_lattice = lattice;
-		[self initDefaults];
-		
-		//now trying to eliminate duplicate values to avoid multiple useless operations
-		NSSet *uniques = [NSSet setWithArray:dictionaryOfWords];
-		[self preProcessWordDictionary:uniques.allObjects];
-		[self initPhase2];
-	}
-	return self;
-}
-
-- (void)initDefaults
-{
-	self.dictionaryToSearchNormal = [NSMutableArray array];
-	self.dictionaryToSearchReverse = [NSMutableArray array];
-	self.dictionaryFromReverseToNormal = [NSMutableDictionary dictionary];
-	
-	_latticeExtractor = [[LatticeLineExtractor alloc] init];
-}
-
-- (void)initPhase2{/* awaiting to be subclassed */}
-
 - (id)initWithLattice:(id<LatticeCommon>)lattice andWordList:(CSWordList *)wordList
 {
 	if (self = [super init]) {
@@ -60,9 +34,24 @@
 	return self;
 }
 
+- (void)initDefaults
+{
+	self.dictionaryToSearchNormal = [NSMutableArray array];
+	self.dictionaryToSearchReverse = [NSMutableArray array];
+	self.dictionaryFromReverseToNormal = [NSMutableDictionary dictionary];
+	
+	_latticeExtractor = [[LatticeLineExtractor alloc] init];
+}
+
+- (void)initPhase2{/* awaiting to be subclassed */}
+
+
+
 /**
  Pre-process the word dictionary given. Find the unique words, get their reversed ones, store them
  into the internal array, and associate them, so that if we found one, we have found the other.
+ 
+ @param wordDictionary the array of words to search in the cube.
  */
 - (void)preProcessWordDictionary:(NSArray *)wordDictionary
 {

@@ -41,7 +41,7 @@
 - (void)initWithSize:(int)sideNumber andChar:(char)c
 {
 	if (sideNumber > 1000 || sideNumber < 3) {
-		@throw [NSException exceptionWithName:@"Invalid Argument" reason:@"DNA Lattices must be constructed with a side number between 5 and 1000" userInfo:nil];
+		@throw [NSException exceptionWithName:@"Invalid Argument" reason:@"DNA Lattices must be constructed with a side number between 3 and 1000" userInfo:nil];
 	}else{
 		NSCharacterSet *acceptableCharacterSet = [NSCharacterSet characterSetWithCharactersInString:DNAcceptableChars];
 		if (![acceptableCharacterSet isSupersetOfSet:[NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%c", c]]]) {

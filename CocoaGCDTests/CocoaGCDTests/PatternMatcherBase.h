@@ -89,16 +89,11 @@
 
 
 
-/**
- @brief Inits the pattern matcher with a lattice and a dictionary of words
- @param lattice a lattice
- @param dictionaryOfWords an array of words to search in the lattice.
- */
-//- (id)initWithLattice:(id<LatticeCommon>)lattice andDictionaryToSearch:(NSArray *)dictionaryOfWords;
-
 
 /**
- @brief Inits the pattern matcher with a lattice and a wordlist object.
+ @brief Inits the pattern matcher with a lattice and a wordlist object. If you subclass this method, be sure to call
+ the method implemented in 'super'
+ 
  @param lattice a lattice
  @param wordList a wordlist object containing unique strings.
  */
