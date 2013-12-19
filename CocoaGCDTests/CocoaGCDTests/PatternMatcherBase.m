@@ -60,7 +60,10 @@
 	return self;
 }
 
-
+/**
+ Pre-process the word dictionary given. Find the unique words, get their reversed ones, store them
+ into the internal array, and associate them, so that if we found one, we have found the other.
+ */
 - (void)preProcessWordDictionary:(NSArray *)wordDictionary
 {
 
